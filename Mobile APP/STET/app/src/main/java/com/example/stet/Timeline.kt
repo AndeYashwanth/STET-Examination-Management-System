@@ -20,13 +20,12 @@ import java.util.*
 class Timeline : AppCompatActivity() {
     //timeline
 
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadLocate()
         setContentView(R.layout.timeline)
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val sharedPreferences = getSharedPreferences(

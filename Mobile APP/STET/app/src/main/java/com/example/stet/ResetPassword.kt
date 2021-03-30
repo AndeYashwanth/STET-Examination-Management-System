@@ -22,13 +22,12 @@ import kotlin.collections.HashMap
 class ResetPassword :AppCompatActivity(){
     //reset password
 
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadLocate()
         setContentView(R.layout.reset)
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)

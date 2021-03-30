@@ -27,7 +27,6 @@ import java.util.*
 class five : AppCompatActivity() {
     //this file for academics purpose.
 
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     var ses=0
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +41,7 @@ class five : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -93,7 +92,7 @@ class five : AppCompatActivity() {
         })
 
             val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(getString(R.string.api_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             val sharedPreferences = getSharedPreferences(

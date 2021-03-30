@@ -45,14 +45,13 @@ class second : AppCompatActivity() {
     var check = 0
     var ses=0
 
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     var auth2: FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadLocate()
         setContentView(R.layout.page_2)
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

@@ -3,6 +3,7 @@ package com.example.stet
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
@@ -21,8 +22,6 @@ import kotlin.collections.HashMap
 
 
 class MainActivity : AppCompatActivity() {
-    //this is for login activity
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +30,14 @@ class MainActivity : AppCompatActivity() {
 
 
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
         val sharedPreferences = getSharedPreferences(
             "Settings",
-            Context.MODE_PRIVATE
+            MODE_PRIVATE
         )
         if (sharedPreferences.getBoolean("login", false)) {
             var st: String = sharedPreferences.getString("phone", "")
@@ -51,6 +50,9 @@ class MainActivity : AppCompatActivity() {
             var c=0
            // c= validNumber(page_1_phn_et, 10)+isValidPassword(page_1_Edtpass)
             if (c == 0) {
+                /**
+                 * @todo remove?
+                 */
                 val progress = ProgressDialog(this)
                 progress.setMessage(getString(R.string.verifyingcredentials))
                 progress.setProgressStyle(ProgressDialog.STYLE_SPINNER)
@@ -183,7 +185,7 @@ class MainActivity : AppCompatActivity() {
         config.locale = locale
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
 
-        val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
+        val editor = getSharedPreferences("Settings", MODE_PRIVATE).edit()
         editor.putString("My_Lang", Lang)
         editor.apply()
     }

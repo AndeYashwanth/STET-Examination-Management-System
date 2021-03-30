@@ -31,7 +31,6 @@ class fourth : AppCompatActivity() {
     //for storing personal details
     private lateinit var gender: String
     private lateinit var husbandorfather: String
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     var ch: Int = 0
     var ses=0
     @RequiresApi(Build.VERSION_CODES.O)
@@ -49,7 +48,7 @@ class fourth : AppCompatActivity() {
         )
         //retrofit builder
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         //retrofit instance
@@ -128,7 +127,7 @@ class fourth : AppCompatActivity() {
 
         }
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

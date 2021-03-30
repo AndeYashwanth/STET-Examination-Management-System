@@ -33,7 +33,6 @@ import java.util.concurrent.TimeUnit
 class eight : AppCompatActivity() {
     //this file is for final registration .
     var ses=0
-    private val BASE_URL = "https://stet2020.herokuapp.com/"   //baseurl
     private var mAuth: FirebaseAuth? = null     //firbase auth
     var codeSent: String? = null
     var P = 0
@@ -57,7 +56,7 @@ class eight : AppCompatActivity() {
         map["eno"]=phone
         //retofit builder
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val sharedPreferencesx = getSharedPreferences(
@@ -65,7 +64,7 @@ class eight : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         //retrofit instance

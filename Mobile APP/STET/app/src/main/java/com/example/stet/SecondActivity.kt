@@ -39,7 +39,7 @@ class SecondActivity : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -121,7 +121,7 @@ class SecondActivity : AppCompatActivity() {
     //download admit function
     fun image(phone:String,str: String,coll: String){
         val retrofit1: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val progress2 = ProgressDialog(this)

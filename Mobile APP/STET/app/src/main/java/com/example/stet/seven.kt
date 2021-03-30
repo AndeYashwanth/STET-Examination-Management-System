@@ -42,7 +42,6 @@ class seven : AppCompatActivity() {
     private var filePath: Uri? = null
 
 
-    private val URL = "https://stet2020.herokuapp.com/"
     private var bit1: Bitmap? = null
     private var bit2: Bitmap? = null
     private var bit3: Bitmap? = null
@@ -99,7 +98,7 @@ class seven : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -643,7 +642,7 @@ class seven : AppCompatActivity() {
         page_7_aadhar_upload.setOnClickListener {
             if (s == 1) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -658,7 +657,7 @@ class seven : AppCompatActivity() {
         page_7_10th_upload.setOnClickListener {
             if (s == 2) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -673,7 +672,7 @@ class seven : AppCompatActivity() {
         page_7_12th_upload.setOnClickListener {
             if (s == 3) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -693,7 +692,7 @@ class seven : AppCompatActivity() {
         page_7_birth_upload.setOnClickListener {
             if (s == 4) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -714,7 +713,7 @@ class seven : AppCompatActivity() {
         page_7_community_upload.setOnClickListener {
             if (s == 5) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -738,7 +737,7 @@ class seven : AppCompatActivity() {
         page_7_graduationC_uplaod.setOnClickListener {
             if (s == 6) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -762,7 +761,7 @@ class seven : AppCompatActivity() {
         page_7_GraduationM_upload.setOnClickListener {
             if (s == 7) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -786,7 +785,7 @@ class seven : AppCompatActivity() {
         page_7_photo_upload.setOnClickListener {
             if (s == 8) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -801,7 +800,7 @@ class seven : AppCompatActivity() {
         page_7_signature_upload.setOnClickListener {
             if (s == 9) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -821,7 +820,7 @@ class seven : AppCompatActivity() {
         page_7_subject_upload.setOnClickListener {
             if (s == 10) {
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -1382,7 +1381,7 @@ class seven : AppCompatActivity() {
     private fun check(str:String, coll:String, bt: Button )
     {
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)

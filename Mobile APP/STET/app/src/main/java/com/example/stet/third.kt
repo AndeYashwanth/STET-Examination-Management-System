@@ -24,7 +24,6 @@ import java.util.*
 class third : AppCompatActivity() {
     //containing menu bar
     lateinit var Phone: String
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     var t=0
     var x=0
     var ses=0
@@ -43,7 +42,7 @@ class third : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -95,7 +94,7 @@ class third : AppCompatActivity() {
         })
 
             val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(getString(R.string.api_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -229,7 +228,7 @@ class third : AppCompatActivity() {
                     Context.MODE_PRIVATE
                 )
                 val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 

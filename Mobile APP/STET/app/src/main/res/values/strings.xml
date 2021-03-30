@@ -78,6 +78,7 @@
         <item>West Bengal</item>
     </string-array>
     <string name="app_name" translatable="false">STET</string>
+    <string name="api_url" translatable="false">https://project-stet.herokuapp.com/</string>
     <string name="select">Select</string>
     <string name="application_no">Application Number</string>
     <string name="enter_application_no">Enter Application Number</string>

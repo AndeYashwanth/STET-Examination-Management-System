@@ -30,7 +30,6 @@ class six : Activity(), PaymentResultWithDataListener {
     //payment activity
 
     val TAG:String = six::class.toString()
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     var Phone:String=""
     var Fees:String=""
     var ses=0
@@ -47,7 +46,7 @@ class six : Activity(), PaymentResultWithDataListener {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -147,7 +146,7 @@ class six : Activity(), PaymentResultWithDataListener {
         @RequiresApi(Build.VERSION_CODES.O)
         override fun onPaymentSuccess(rzpPaymentId: String?, paymentData: PaymentData?) {
             val retrofit:Retrofit=Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(getString(R.string.api_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             val retrofitInterface:RetrofitInterface=retrofit.create(RetrofitInterface::class.java)

@@ -38,8 +38,6 @@ class Status : AppCompatActivity() {
     //status page
 
     var Phone:String=""
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
-    private val URL = BASE_URL
     var ses=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +56,7 @@ class Status : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl("https://stet2020.herokuapp.com/")
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         //check session
@@ -111,7 +109,7 @@ class Status : AppCompatActivity() {
             image(phone, "photo", "Photo_Documents", status_view_photo)
             image(phone, "signature", "Signature_Documents", status_view_signature)
             val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(getString(R.string.api_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -284,7 +282,7 @@ class Status : AppCompatActivity() {
     private fun check(str:String,coll:String,text: TextView)
     {
         val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
@@ -392,7 +390,7 @@ class Status : AppCompatActivity() {
     }
     fun image(phone:String,str: String,coll: String,id:ImageView){
         val retrofit1: Retrofit = Retrofit.Builder()
-            .baseUrl(URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         var retrofitInterface1: Retro3? = retrofit1.create(Retro3::class.java)

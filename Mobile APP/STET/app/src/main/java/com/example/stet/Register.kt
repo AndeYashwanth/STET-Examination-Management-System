@@ -20,7 +20,6 @@ import java.util.*
 
 class Register : AppCompatActivity() {
     //for register page
-    private val BASE_URL = "https://stet2020.herokuapp.com/"
     var a=0
     var b=0
     var c=0
@@ -37,7 +36,7 @@ class Register : AppCompatActivity() {
         progress.dismiss()
         val phone: String = intent.getStringExtra("phone")
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -54,7 +53,7 @@ class Register : AppCompatActivity() {
             Context.MODE_PRIVATE
         )
         val retrofitx: Retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         //check session
