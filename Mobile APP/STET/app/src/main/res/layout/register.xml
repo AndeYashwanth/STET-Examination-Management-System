@@ -27,7 +27,7 @@
             android:textColor="#000000"
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
-            android:text="@string/sikkim_teacher_eligibility_test_2020"
+            android:text="@string/global__stet_title"
             android:textSize="30sp"
             android:textStyle="bold">
 
@@ -103,7 +103,7 @@
                     android:layout_marginRight="50dp"
                     android:background="@drawable/button_shape"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:text="@string/back_register"/>
+                    android:text="@string/global__back"/>
 
                 <Button
                     android:id="@+id/register_submit"
@@ -112,7 +112,7 @@
                     android:layout_marginLeft="100dp"
                     android:background="@drawable/button_shape"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:text="@string/submit_register"
+                    android:text="@string/global__submit"
 
                     />
             </LinearLayout>

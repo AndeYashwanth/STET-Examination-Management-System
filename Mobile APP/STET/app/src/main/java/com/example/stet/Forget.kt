@@ -74,7 +74,7 @@ class Forget : AppCompatActivity() {
                         getString(R.string.verificationsuccessfull),
                         Toast.LENGTH_LONG
                     ).show()
-                    page_forget_verify.text = getString(R.string.verify)
+                    page_forget_verify.text = getString(R.string.global__verify)
                         page_forget_verify.background = getDrawable(R.drawable.button_shape2)
                         page_forget_enter_otp.visibility = View.INVISIBLE
                         page_forget_sendotp.visibility = View.INVISIBLE
@@ -130,7 +130,7 @@ class Forget : AppCompatActivity() {
             ) {
                 super.onCodeSent(s, forceResendingToken)
                 codeSent = s
-                page_forget_sendotp.text = getString(R.string.resendotp)
+                page_forget_sendotp.text = getString(R.string.global__resend_otp)
                 Toast.makeText(
                     this@Forget,
                     getString(R.string.otpsent),

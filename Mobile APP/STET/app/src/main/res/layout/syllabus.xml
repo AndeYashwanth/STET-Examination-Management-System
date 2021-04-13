@@ -412,7 +412,7 @@
                         android:id="@+id/syllabus_content10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:text="@string/syllabus_content10"
                         />
                 </LinearLayout>
@@ -442,7 +442,7 @@
                         android:id="@+id/syllabus_content11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginBottom="30dp"
                         android:text="@string/syllabus_content11"
                         />

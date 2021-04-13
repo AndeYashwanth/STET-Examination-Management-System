@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
-            android:text="@string/sikkim_teacher_eligibility_test_2020"
+            android:text="@string/global__stet_title"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
-                        android:text="@string/phone_no_page_1"
+                        android:text="@string/global__phone_no"
                         android:textSize="14dp"
                         android:textStyle="bold" />
 
@@ -76,7 +76,6 @@
                         android:layout_width="175dp"
                         android:layout_height="30dp"
                         android:background="@drawable/box"
-                        android:hint="@string/phone_no_page_1_hint"
                         android:inputType="phone"
                         android:paddingLeft="10dp"
                         android:textSize="13dp">
@@ -99,7 +98,7 @@
                 android:background="@drawable/button_shape"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
-                android:text="@string/send_otp" />
+                android:text="@string/global__send_otp" />
 
 
             <LinearLayout
@@ -115,7 +114,7 @@
                     android:id="@+id/page_forget_otp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/enter_otp"
+                    android:text="@string/global__enter_otp"
                     android:textAlignment="center"
                     tools:layout_editor_absoluteX="116dp"
                     tools:layout_editor_absoluteY="175dp">
@@ -144,7 +143,7 @@
                 android:background="@drawable/button_shape"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
-                android:text="@string/verify" />
+                android:text="@string/global__verify" />
 
             <Button
                 android:id="@+id/page_forget_submit"
@@ -156,7 +155,7 @@
                 android:background="@drawable/button_shape"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
-                android:text="@string/submit" />
+                android:text="@string/global__submit" />
 
             <TextView
                 android:layout_width="wrap_content"

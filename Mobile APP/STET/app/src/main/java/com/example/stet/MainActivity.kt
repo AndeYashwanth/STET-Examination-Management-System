@@ -2,8 +2,6 @@ package com.example.stet
 
 import android.app.Activity
 import android.app.ProgressDialog
-import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
@@ -41,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         )
         if (sharedPreferences.getBoolean("login", false)) {
             var st: String = sharedPreferences.getString("phone", "")
-            val i = Intent(this@MainActivity, third::class.java)
+            val i = Intent(this@MainActivity, ExamRegisterClickActivity::class.java)
             i.putExtra("phone", st)
             startActivity(i)
         }
@@ -84,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                                 Toast.LENGTH_LONG
                             ).show()
                             progress.dismiss()
-                            val i = Intent(this@MainActivity, third::class.java)
+                            val i = Intent(this@MainActivity, ExamRegisterClickActivity::class.java)
                             if (remember.isChecked) {
                                 myEdit.putBoolean("login", true).apply()
                                 myEdit.putString("phone", page_1_phn_et.text.toString()).apply()
@@ -124,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         page_1_signup.setOnClickListener {
-            val i = Intent(this, ten::class.java)
+            val i = Intent(this, SignupActivity::class.java)
             startActivity(i)
         }
         page_1_forget.setOnClickListener {

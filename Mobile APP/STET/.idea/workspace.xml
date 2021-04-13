@@ -28,38 +28,89 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51979a0f-772e-45bb-9081-4d293cc73c26" name="Default Changelist" comment="">
+    <list default="true" id="51979a0f-772e-45bb-9081-4d293cc73c26" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nexmo_verify_4_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nexmo_verify_4_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_wajahatkarim3_easyvalidation_easyvalidation_core_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_wajahatkarim3_easyvalidation_easyvalidation_core_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/STET.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/STET.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Help.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Help.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Home1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Home1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Image.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Personal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Personal.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Register.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ResetPassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ResetPassword.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Retro2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Retro3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/UploadRetro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/RetrofitInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/RetrofitInterface.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SecondActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SecondActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Status.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Timeline.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Timeline.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/eight.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/eight.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/five.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/five.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/fourth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/fourth.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ThirdActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamPatternActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/eight.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FinalRegistrationActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/fourth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PersonalInfoFormActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/home.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/seven.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/seven.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/six.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/six.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ten.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ten.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/third.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/third.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/seven.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FIleUploadActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/six.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PaymentActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ten.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/third.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v23/page_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admitcard_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admitcard_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/application_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/application_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/eligibility_criteria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/eligibility_criteria.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/exam_pattern.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/exam_pattern.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/faqs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/faqs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/forget.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/forget.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/help.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/help.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/homepage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/homepage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_1_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/register_click.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/personal_info_form__activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/file_upload.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/final_registration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/prepare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/prepare.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/reset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reset.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/syllabus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/syllabus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/timeline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/timeline.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ne/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-ne/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +183,7 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -141,14 +193,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="multi-representation-previewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
   </component>
   <component name="RecentsManager">
     <key name="CreateKotlinClassDialog.RecentsKey">
@@ -344,87 +398,104 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1616839525035" />
+    <state x="484" y="4" key="#app" timestamp="1617442866343">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="484" y="4" key="#app/0.0.1536.834@0.0.1536.834" timestamp="1617442866343" />
     <state x="516" y="308" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1616869042027">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="516" y="308" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.834@0.0.1536.834" timestamp="1616869042027" />
-    <state x="100" y="100" width="1336" height="634" key="AVDManager" timestamp="1616860010070">
+    <state x="100" y="100" width="1336" height="634" key="AVDManager" timestamp="1617389528987">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="100" y="100" width="1336" height="634" key="AVDManager/0.0.1536.834@0.0.1536.834" timestamp="1616860010070" />
+    <state x="100" y="100" width="1336" height="634" key="AVDManager/0.0.1536.834@0.0.1536.834" timestamp="1617389528987" />
     <state x="349" y="172" key="AndroidCreateResourceDirectoryDialog" timestamp="1616856372898">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="349" y="172" key="AndroidCreateResourceDirectoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1616856372898" />
-    <state width="1491" height="212" key="GridCell.Tab.0.bottom" timestamp="1617129131105">
+    <state x="614" y="207" key="AndroidCreateXmlResourceDialog" timestamp="1617478955241">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.0.center" timestamp="1617129131105">
+    <state x="614" y="207" key="AndroidCreateXmlResourceDialog/0.0.1536.834@0.0.1536.834" timestamp="1617478955241" />
+    <state width="1491" height="212" key="GridCell.Tab.0.bottom" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.0.left" timestamp="1617129131105">
+    <state width="1491" height="212" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.0.center" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.0.right" timestamp="1617129131105">
+    <state width="1491" height="212" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.0.left" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.1.bottom" timestamp="1617129131105">
+    <state width="1491" height="212" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.0.right" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.1.center" timestamp="1617129131105">
+    <state width="1491" height="212" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.1.bottom" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.1.left" timestamp="1617129131105">
+    <state width="1491" height="212" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.1.center" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state width="1491" height="212" key="GridCell.Tab.1.right" timestamp="1617129131105">
+    <state width="1491" height="212" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.1.left" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1617129131105" />
-    <state x="277" y="62" key="SettingsEditor" timestamp="1616860275858">
+    <state width="1491" height="212" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="212" key="GridCell.Tab.1.right" timestamp="1617379085148">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1616860275858" />
+    <state width="1491" height="212" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state x="277" y="62" key="SettingsEditor" timestamp="1617443384235">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1617443384235" />
     <state x="471" y="226" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1616859543408">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="471" y="226" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1536.834@0.0.1536.834" timestamp="1616859543408" />
-    <state x="475" y="16" width="646" height="801" key="find.popup" timestamp="1617128577870">
+    <state x="521" y="203" width="1225" height="818" key="dock-window-1" timestamp="1617477482266">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="475" y="16" width="646" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1617128577870" />
+    <state x="521" y="203" width="1225" height="818" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1617477482266" />
+    <state x="304" y="33" width="655" height="801" key="find.popup" timestamp="1618337453995">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="304" y="33" width="655" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1618337453995" />
     <state x="453" y="313" key="psd.add.library.dependency.panel.dimension" timestamp="1616869468970">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="453" y="313" key="psd.add.library.dependency.panel.dimension/0.0.1536.834@0.0.1536.834" timestamp="1616869468970" />
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1616907929804">
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1618330572581">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1616907929804" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1617127423171">
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1618330572581" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1618337511250">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1617127423171" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1618337511250" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt</url>
-          <line>284</line>
+          <line>270</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt</url>
-          <line>379</line>
+          <line>365</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt</url>
+          <line>137</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

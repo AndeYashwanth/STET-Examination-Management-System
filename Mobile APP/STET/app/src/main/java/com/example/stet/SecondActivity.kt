@@ -2,7 +2,6 @@ package com.example.stet
 
 import android.app.Activity
 import android.app.ProgressDialog
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -129,21 +128,21 @@ class SecondActivity : AppCompatActivity() {
         progress2.setProgressStyle(ProgressDialog.STYLE_SPINNER)
         progress2.isIndeterminate = true
         progress2.show()
-        var retrofitInterface1: Retro3? = retrofit1.create(Retro3::class.java)
-        val call: Call<Image?>? = retrofitInterface1?.downloadfile(phone+"_"+str+".pdf",coll)
-        call!!.enqueue(object : Callback<Image?> {
-            override fun onFailure(call: Call<Image?>, t: Throwable) {
+        var retrofitInterface1: UploadRetro? = retrofit1.create(UploadRetro::class.java)
+        val call: Call<String?>? = retrofitInterface1?.downloadfile(phone+"_"+str+".pdf",coll)
+        call!!.enqueue(object : Callback<String?> {
+            override fun onFailure(call: Call<String?>, t: Throwable) {
                 Toast.makeText(this@SecondActivity,t.message, Toast.LENGTH_SHORT).show()
                 progress2.dismiss()
             }
-            override fun onResponse(call: Call<Image?>, response: Response<Image?>) {
+            override fun onResponse(call: Call<String?>, response: Response<String?>) {
                 if(response.code()==200)
                 {
-                    val Res: Image? =response.body()
+                    val imageURL: String? =response.body()
                     progress2.dismiss()
-                    if(Res!=null)
+                    if(imageURL!=null)
                     {
-                        val st: String =Res.imageURL
+                        val st: String =imageURL
                         progress2.dismiss()
                         val pureBase64Encoded:String  = st.substring(st.indexOf(",")  + 1);
                         val decodedString: ByteArray = android.util.Base64.decode(pureBase64Encoded, android.util.Base64.DEFAULT)

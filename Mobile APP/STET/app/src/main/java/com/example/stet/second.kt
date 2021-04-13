@@ -8,10 +8,8 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.stet.R
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -20,7 +18,6 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken
 import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCallbacks
-import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.android.synthetic.main.page_2.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -67,10 +64,8 @@ class second : AppCompatActivity() {
         Password = pass
         page_2_email.text = "Email ID : $email"
         page_2_get_phn.text = "Phone Number : $phone"
-        page_2_aadhar.text = "Aadhar No: $aadhar"
-        page_2_phn_verify.visibility = View.INVISIBLE
+        global__verify.visibility = View.INVISIBLE
         page_2_email_verify.visibility = View.INVISIBLE
-        page_2_aadhar_verify.visibility = View.INVISIBLE
         val sharedPreferences = getSharedPreferences(
             "Settings",
             Context.MODE_PRIVATE
@@ -116,7 +111,7 @@ class second : AppCompatActivity() {
                                     getString(R.string.signupsuccess), Toast.LENGTH_LONG
                                 ).show()
                                 progress.dismiss()
-                                val i = Intent(this@second, third::class.java)
+                                val i = Intent(this@second, ExamRegisterClickActivity::class.java)
                                 i.putExtra("phone", phone)
 
 
@@ -147,21 +142,12 @@ class second : AppCompatActivity() {
         }
 
         page_2_back.setOnClickListener {
-            val i = Intent(this, ten::class.java)
+            val i = Intent(this, SignupActivity::class.java)
             startActivity(i)
         }
 
-        page_2_send_aadhar_otp.setOnClickListener {
-            val URL: String = "https://aadhar-backend.herokuapp.com/"
-            verifyAadhar(aadhar, URL)
-        }
-        page_2_aadhar_verify.setOnClickListener {
-            val URL: String = "https://aadhar-backend.herokuapp.com/"
-            verifyotp(URL)
-        }
 
-
-        page_2_send_phn_otp.setOnClickListener {
+        global__send_otp.setOnClickListener {
 
             //progress.setMessage("Sending OTP :) ")
             //progress.show()
@@ -170,7 +156,7 @@ class second : AppCompatActivity() {
 
         }
 
-        page_2_phn_verify.setOnClickListener {
+        global__verify.setOnClickListener {
             // progress3.show()
             verifySignInCode()
 
@@ -257,6 +243,7 @@ class second : AppCompatActivity() {
                                 .show()
                             Log.d("TAG", "Verify:failed")
                             page_2_send_email_link.visibility = View.VISIBLE
+                            page_2_email_verify.visibility = View.INVISIBLE
                             //   progress5.dismiss()
                         }
 
@@ -300,11 +287,11 @@ class second : AppCompatActivity() {
                     ).show()
                     // progress3.dismiss()
                     page_2_phn.text = getString(R.string.phonesuccess)
-                    page_2_phn_verify.text = getString(R.string.verified)
-                    page_2_enter_otp_phn.visibility = View.INVISIBLE
+                    global__verify.text = getString(R.string.verified)
+                    global__enter_otp.visibility = View.INVISIBLE
                     page_2_otp_phn.visibility = View.INVISIBLE
-                    page_2_send_phn_otp.visibility = View.INVISIBLE
-                    page_2_phn_verify.background=getDrawable(R.drawable.button_shape2)
+                    global__send_otp.visibility = View.INVISIBLE
+                    global__verify.background=getDrawable(R.drawable.button_shape2)
                     P = 1
 
                 } else {
@@ -313,9 +300,9 @@ class second : AppCompatActivity() {
                             applicationContext,
                             getString(R.string.incorrectcode), Toast.LENGTH_LONG
                         ).show()
-                        page_2_send_phn_otp.visibility = View.VISIBLE
-                        page_2_phn_verify.visibility = View.INVISIBLE
-                        page_2_send_phn_otp.text = getString(R.string.resendotp)
+                        global__send_otp.visibility = View.VISIBLE
+                        global__verify.visibility = View.INVISIBLE
+                        global__send_otp.text = getString(R.string.global__resend_otp)
                         // progress3.dismiss()
                     }
                 }
@@ -358,18 +345,18 @@ class second : AppCompatActivity() {
 
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
              /*   page_2_phn.text = "Phone Verifciation Success"
-                page_2_phn_verify.text = "Verified"
-                page_2_enter_otp_phn.visibility = View.INVISIBLE
+                global__verify.text = "Verified"
+                global__enter_otp.visibility = View.INVISIBLE
                 page_2_otp_phn.visibility = View.INVISIBLE
-                page_2_send_phn_otp.visibility = View.INVISIBLE*/
+                global__send_otp.visibility = View.INVISIBLE*/
                 //progress3.dismiss()
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
                 page_2_phn.text = getString(R.string.failed)
                 Log.d("error", e.toString())
-                page_2_phn_verify.visibility = View.INVISIBLE
-                page_2_send_phn_otp.visibility = View.VISIBLE
+                global__verify.visibility = View.INVISIBLE
+                global__send_otp.visibility = View.VISIBLE
                 // progress.dismiss()
             }
 
@@ -379,8 +366,8 @@ class second : AppCompatActivity() {
             ) {
                 super.onCodeSent(s, forceResendingToken)
                 page_2_phn.text = getString(R.string.otpsent)
-                page_2_phn_verify.visibility = View.VISIBLE
-                page_2_send_phn_otp.visibility = View.INVISIBLE
+                global__verify.visibility = View.VISIBLE
+                global__send_otp.visibility = View.INVISIBLE
                 codeSent = s
                 //progress.dismiss()
 
@@ -390,154 +377,6 @@ class second : AppCompatActivity() {
 
         }
 
-
-    //verify aadhar
-
-    private fun verifyAadhar(aadhar: String, URL: String) {
-        val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        var retrofitInterface2: Retro2? = retrofit.create(Retro2::class.java)
-        val map: HashMap<String, String> = HashMap()
-        map["username"] = aadhar
-        val call: Call<Void?>? = retrofitInterface2?.checkAadhar(map)
-        call!!.enqueue(object : Callback<Void?> {
-            override fun onResponse(
-                call: Call<Void?>?,
-                response: Response<Void?>
-            ) {
-                if (response.code() == 200) {
-                    Toast.makeText(
-                        this@second,
-                        getString(R.string.aadharvalidate), Toast.LENGTH_LONG
-                    ).show()
-                    val call1: Call<Body1?>? =
-                        retrofitInterface2?.getPhn(aadhar) //idhar doubt hai ki ye phone number return karega ki nhi
-                    call1!!.enqueue(object : Callback<Body1?> {
-                        override fun onResponse(
-                            call1: Call<Body1?>?,
-                            response1: Response<Body1?>
-                        ) {
-                            if (response1.code() == 200) {
-                                var bd: Body1 = response1.body()!!
-                                Toast.makeText(
-                                    this@second,
-                                    bd.phoneNumber.toString(), Toast.LENGTH_LONG
-                                ).show()
-                                val map1: HashMap<String, String?> = HashMap()
-                                map1["messengerId"] = "8192836451"
-                                map1["phoneNumber"] = bd.phoneNumber
-                                val call2: Call<Void?>? = retrofitInterface2?.getotp(map1)
-                                call2!!.enqueue(object : Callback<Void?> {
-                                    override fun onResponse(p0: Call<Void?>, p1: Response<Void?>) {
-
-                                        Toast.makeText(
-                                            this@second,
-                                            getString(R.string.otpgenerated), Toast.LENGTH_LONG
-                                        ).show()
-                                        page_2_aadhar_verify.visibility=View.VISIBLE
-                                        page_2_aadhar_check.text=getString(R.string.otpsent)
-
-
-                                    }
-
-                                    override fun onFailure(p0: Call<Void?>, t3: Throwable) {
-                                        Toast.makeText(
-                                            this@second, t3.message,
-                                            Toast.LENGTH_LONG
-                                        ).show()
-                                        page_2_aadhar_check.text=getString(R.string.otpsentfailed)
-                                    }
-                                })
-
-
-                            }
-                            else
-                            {
-                                page_2_aadhar_check.text=getString(R.string.fetchmob)
-                            }
-                        }
-
-                        override fun onFailure(
-                            call1: Call<Body1?>?,
-                            t2: Throwable
-                        ) {
-                            Toast.makeText(
-                                this@second, t2.message,
-                                Toast.LENGTH_LONG
-                            ).show()
-                            page_2_aadhar_check.text=getString(R.string.fetchmob)
-                        }
-                    })
-
-                }
-                else
-                {
-                    page_2_aadhar_check.text=getString(R.string.failedaadharvalid)
-                }
-            }
-
-            override fun onFailure(
-                call: Call<Void?>?,
-                t1: Throwable
-            ) {
-                Toast.makeText(
-                    this@second, t1.message,
-                    Toast.LENGTH_LONG
-                ).show()
-                page_2_aadhar_check.text=getString(R.string.failedaadharvalid)
-            }
-        })
-
-
-    }
-    //verify aadhar otp
-    private fun verifyotp(URL: String){
-        val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        var retrofitInterface2: Retro2? = retrofit.create(Retro2::class.java)
-        val call3: Call<Void?>? =
-            retrofitInterface2?.matchotp(page_2_aadhar_otp.text.toString())
-        call3!!.enqueue(object : Callback<Void?> {
-            override fun onResponse(
-                p00: Call<Void?>,
-                p11: Response<Void?>
-            ) {
-                if (p11.code() == 200) {
-                    Toast.makeText(
-                        this@second,
-                        "Aadhar Verified ", Toast.LENGTH_LONG
-                    ).show()
-                    page_2_aadhar_check.text = getString(R.string.aadharsuccess)
-                    page_2_aadhar_verify.text = getString(R.string.verified)
-                    page_2_enter_otp_aadhar.visibility = View.INVISIBLE
-                    page_2_send_aadhar_otp.visibility = View.INVISIBLE
-                    page_2_aadhar_otp.visibility=View.INVISIBLE
-                    page_2_aadhar_verify.background=getDrawable(R.drawable.button_shape2)
-                } else {
-                    Toast.makeText(
-                        this@second,
-                        getString(R.string.aadharnotverified),
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-
-            override fun onFailure(
-                p00: Call<Void?>,
-                t4: Throwable
-            ) {
-                Toast.makeText(
-                    this@second, t4.message,
-                    Toast.LENGTH_LONG
-                ).show()
-
-            }
-        })
-    }
     private fun setLocate(Lang: String) {
         val locale = Locale(Lang)
         val config = Configuration()
@@ -549,6 +388,7 @@ class second : AppCompatActivity() {
         editor.putString("My_Lang", Lang)
         editor.apply()
     }
+
     private fun loadLocate() {
         val sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
         val language = sharedPreferences.getString("My_Lang", "")

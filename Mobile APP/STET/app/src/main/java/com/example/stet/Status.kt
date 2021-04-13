@@ -22,7 +22,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.status.*
-import org.w3c.dom.Document
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,7 +45,7 @@ class Status : AppCompatActivity() {
         val phone: String = intent.getStringExtra("phone")
         Phone=phone
        /* status_back.setOnClickListener {
-            val i = Intent(this, third::class.java)
+            val i = Intent(this, ExamRegisterClickActivity::class.java)
             i.putExtra("phone", phone)
             startActivity(i)
 
@@ -134,28 +133,20 @@ class Status : AppCompatActivity() {
                         val result = response.body()
 
                         if (result != null) {
-                            status_view_aadhar.text = result.Aadhar
-                            status_view_address.text = result.AddressOne
                             status_view_candidate.text =
                                 result.Fname + " " + result.Mname + " " + result.Lname
-                            status_view_mother.text =
-                                result.MFname + " " + result.MMname + " " + result.MLname
                             status_view_father.text =
                                 result.FHFname + " " + result.FHMname + " " + result.FHLname
-                            status_view_dist.text = result.DistrictOne
                             status_view_dob.text = result.DOB
                             status_view_gender.text = result.gender
-                            status_view_state.text = result.StateOne
-                            status_view_email.text = result.Email1
-                            status_view_mobile.text = result.Phone1
-                            status_view_registration_no.text=result.Phone1
-                            staus_view_pin.text = result.PinCodeOne
-                            status_view_father_husband.text = result.FH
-                            status_view_address2.text =
-                                result.AddressTwo + " " + result.DistrictTwo + " " + result.StateTwo
-                            status_view_community.text = result.Category
-                            status_view_mobile2.text = result.Phone2
-                            status_view_email2.text = result.Email2
+                            status_view_mobile.text = result.Phone
+                            status_view_email.text = result.Email
+                            status_view_registration_no.text=result.Phone
+                            global__hno.text = result.Hno
+                            global__area.text = result.Area
+                            status_view_dist.text = result.District
+                            status_view_state.text = result.State
+                            staus_view_pin.text = result.PinCode
 
 
                         }
@@ -219,7 +210,7 @@ class Status : AppCompatActivity() {
             })
             //get payment
             val call4: Call<Payment> = retrofitInterface.getpayment(cookie, phone)
-            call4!!.enqueue(object : Callback<Payment> {
+            call4.enqueue(object : Callback<Payment> {
                 override fun onResponse(
                     call: Call<Payment>,
                     response: Response<Payment>
@@ -257,7 +248,6 @@ class Status : AppCompatActivity() {
             check("tenth", "Tenth_Documents", status_view_certi5)
             check("twelveth", "Twelveth_Documents", status_view_certi6)
             check("birthcertificate", "Birth_Certificate_Documents", status_view_certi1)
-            check("communitycertificate", "Community_Certificate_Documents", status_view_certi2)
             check("graduationcertificate", "Graduation_Certificate_Documents", status_view_certi8)
             check("graduationmarksheet", "Graduation_Marksheet_Documents", status_view_certi7)
             check("sikkimsubject", "Sikkim_Subject_Documents", status_view_certi3)
@@ -285,7 +275,7 @@ class Status : AppCompatActivity() {
         .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        var retrofitInterface2: Retro3? = retrofit.create(Retro3::class.java)
+        var retrofitInterface2: UploadRetro? = retrofit.create(UploadRetro::class.java)
         val req: Call<Void?>? = retrofitInterface2?.getfile( Phone+"_"+str+".png",coll)
         req!!.enqueue(object : Callback<Void?> {
             override fun onResponse(
@@ -293,7 +283,7 @@ class Status : AppCompatActivity() {
                 response: Response<Void?>
             ) {
                 if (response.code() == 200) {
-                    text.text=getString(R.string.Uploaded)
+                    text.text=getString(R.string.uploaded)
                 }
 
             }
@@ -393,19 +383,19 @@ class Status : AppCompatActivity() {
             .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        var retrofitInterface1: Retro3? = retrofit1.create(Retro3::class.java)
-        val call:Call<Image?>? = retrofitInterface1?.imagefile(phone+"_"+str+".png",coll)
-        call!!.enqueue(object : Callback<Image?>{
-            override fun onFailure(call: Call<Image?>, t: Throwable) {
+        var retrofitInterface1: UploadRetro? = retrofit1.create(UploadRetro::class.java)
+        val call:Call<String?>? = retrofitInterface1?.imagefile(phone+"_"+str+".png",coll)
+        call!!.enqueue(object : Callback<String?>{
+            override fun onFailure(call: Call<String?>, t: Throwable) {
                 Toast.makeText(this@Status,t.message,Toast.LENGTH_SHORT).show()
             }
-            override fun onResponse(call: Call<Image?>, response: Response<Image?>) {
+            override fun onResponse(call: Call<String?>, response: Response<String?>) {
                if(response.code()==200)
                {
-                   val Res: Image? =response.body()
-                   if(Res!=null)
+                   val imageURL: String? =response.body()
+                   if(imageURL!=null)
                    {
-                       val st: String =Res.imageURL
+                       val st: String =imageURL
                        val pureBase64Encoded:String  = st.substring(st.indexOf(",")  + 1);
                        val decodedString: ByteArray = android.util.Base64.decode(pureBase64Encoded, android.util.Base64.DEFAULT)
                        val decodedByte =

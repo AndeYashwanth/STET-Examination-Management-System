@@ -1,17 +1,12 @@
 package com.example.stet
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import kotlinx.android.synthetic.main.homepage.*
 import java.util.*
 
@@ -32,7 +27,7 @@ class Home1 : AppCompatActivity() {
         }
 
         homepage_examPattern.setOnClickListener {
-            val intent2 = Intent(this, ThirdActivity::class.java)
+            val intent2 = Intent(this, ExamPatternActivity::class.java)
             startActivity(intent2)
         }
 

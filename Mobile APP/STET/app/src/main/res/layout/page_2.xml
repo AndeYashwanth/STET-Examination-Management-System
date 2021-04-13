@@ -19,10 +19,10 @@
             android:src="@drawable/stet_logo"/>
 
         <TextView
-            android:id="@+id/homepage_textview1"
+            android:id="@+id/global__stet_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/homepage_textview1"
+            android:text="@string/global__stet_title"
             android:textColor="#000000"
             android:gravity="center_horizontal"
             android:textSize="30sp"
@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/page_2_phn_no"
+                    android:text="@string/global__phone_no"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:id="@+id/page_2_get_phn"
@@ -66,12 +66,12 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/page_2_send_phn_otp"
+                    android:id="@+id/global__send_otp"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:background="@drawable/button_shape"
-                    android:text="@string/page_2_sendPhnOTP">
+                    android:text="@string/global__send_otp">
 
                 </Button>
 
@@ -97,10 +97,10 @@
 
 
                 <TextView
-                    android:id="@+id/page_2_enter_otp_phn"
+                    android:id="@+id/global__enter_otp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/page_2_enterPhnOTP" />
+                    android:text="@string/global__enter_otp" />
 
                 <EditText
                     android:id="@+id/page_2_otp_phn"
@@ -113,13 +113,13 @@
                 </EditText>
 
                 <Button
-                    android:id="@+id/page_2_phn_verify"
+                    android:id="@+id/global__verify"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:background="@drawable/button_shape"
                     android:layout_marginLeft="40dp"
-                    android:text="@string/page_2_phnVerify" />
+                    android:text="@string/global__verify" />
 
             </LinearLayout>
             <TextView
@@ -140,7 +140,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/page_2_emailID"
+                    android:text="@string/global__email"
                     android:textSize="18dp"
                     android:textStyle="normal|bold"
                     android:id="@+id/page_2_email"
@@ -195,99 +195,9 @@
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:layout_marginLeft="60dp"
                     android:background="@drawable/button_shape"
-                    android:text="@string/page_2_emailVerify" />
+                    android:text="@string/global__verify" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="___________________________________________________"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/page_2_aadhar"
-                    android:textStyle="normal|bold"
-                    android:textSize="18dp"
-                    android:id="@+id/page_2_aadhar"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="0dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/page_2_send_aadhar_otp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:background="@drawable/button_shape"
-                    android:text="@string/page_2_sendAadharOTP">
-
-                </Button>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/page_2_aadharVerification"
-                    android:layout_marginLeft="30dp"
-                    android:gravity="center_vertical"
-                    android:id="@+id/page_2_aadhar_check"
-                    android:textColor="@android:color/holo_blue_bright" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp">
-
-
-                <TextView
-                    android:id="@+id/page_2_enter_otp_aadhar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/page_2_enter_aadharOTP" />
-
-                <EditText
-                    android:id="@+id/page_2_aadhar_otp"
-                    android:layout_width="90dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/box"
-                    android:inputType="numberPassword">
-
-                </EditText>
-
-                <Button
-                    android:id="@+id/page_2_aadhar_verify"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="47dp"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:background="@drawable/button_shape"
-                    android:text="@string/page_2_aadharVerify" />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -298,7 +208,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="30dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="10dp">
@@ -312,18 +222,18 @@
                     android:layout_marginRight="0dp"
                     android:background="@drawable/button_shape"
                     android:textSize="16dp"
-                    android:text="@string/page_2_back" />
+                    android:text="@string/global__back" />
 
                 <Button
                     android:id="@+id/page_2_next"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="115dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/button_shape"
-                    android:text="@string/page_2_next"
+                    android:text="@string/global__next"
                     android:textSize="16dp" />
 
             </LinearLayout>
