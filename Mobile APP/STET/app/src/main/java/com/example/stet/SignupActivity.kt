@@ -92,7 +92,7 @@ class SignupActivity : AppCompatActivity() {
                             progress.dismiss()
 
                         } else {
-                            val i = Intent(this@SignupActivity, second::class.java)
+                            val i = Intent(this@SignupActivity, SignupOTPVerificationActivity::class.java)
                             i.putExtra("Name", page_1_signup_name_et.text.toString())
                             i.putExtra("Email", page_1_signup_email_et.text.toString())
                             i.putExtra("Phone", page_1_signup_phn_et.text.toString())
@@ -200,7 +200,7 @@ class SignupActivity : AppCompatActivity() {
                            } else {
                                if(p==0 && e==0 && c==0)
                                {
-                                   val i = Intent(this@SignupActivity, second::class.java)
+                                   val i = Intent(this@SignupActivity, SignupOTPVerificationActivity::class.java)
                                    i.putExtra("Name", page_1_signup_name_et.text.toString())
                                    i.putExtra("Email", page_1_signup_email_et.text.toString())
                                    i.putExtra("Phone", page_1_signup_phn_et.text.toString())

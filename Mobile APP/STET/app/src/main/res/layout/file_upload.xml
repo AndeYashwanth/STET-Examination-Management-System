@@ -199,7 +199,7 @@
                             android:layout_width="60dp"
                             android:layout_height="30dp"
                             android:text="@string/page_7_take"
-                            android:id="@+id/global__birth_cert_cam"
+                            android:id="@+id/page_7_birth_cert_cam"
                             android:textSize="13sp"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:textColor="@android:color/holo_blue_bright"
@@ -224,10 +224,96 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
-                            android:id="@+id/global__birth_cert_upload"
+                            android:id="@+id/page_7_birth_cert_upload"
                             android:text="@string/page_7_upl"
                             android:layout_marginStart="30dp"
                             android:textSize="13sp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/button_shape"
+                            />
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/page_7_community"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/global__community_certificate"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp" />
+
+
+                    <LinearLayout
+                        android:layout_marginTop="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/page_7_select_community"
+                            android:layout_width="70dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@android:color/holo_blue_bright"
+                            android:background="@drawable/box"
+                            android:text="@string/page_7_choose"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/page_7_or_3"
+                            android:text="@string/page_7_or"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"/>
+
+                        <Button
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:text="@string/page_7_take"
+                            android:id="@+id/page_7_community_cam"
+                            android:textSize="13dp"
+                            android:textColor="@android:color/holo_blue_bright"
+                            android:layout_marginLeft="0dp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:background="@drawable/box" />
+
+                        <ImageView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/stet_logo"
+                            android:visibility="invisible"
+                            android:id="@+id/image_community" />
+
+                        <ImageButton
+                            android:id="@+id/cancel_community"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/cancel" />
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:text="@string/page_7_upl"
+                            android:id="@+id/page_7_community_upload"
+                            android:layout_marginLeft="30dp"
+                            android:textSize="13dp"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/button_shape"
@@ -286,7 +372,7 @@
                             android:layout_width="60dp"
                             android:layout_height="30dp"
                             android:text="@string/page_7_take"
-                            android:id="@+id/global__signature_cam"
+                            android:id="@+id/page_7_signature_cam"
                             android:textSize="13sp"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:textColor="@android:color/holo_blue_bright"
@@ -312,7 +398,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:text="@string/page_7_upl"
-                            android:id="@+id/global__signature_upload"
+                            android:id="@+id/page_7_signature_upload"
                             android:layout_marginStart="30dp"
                             android:textSize="13sp"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -370,7 +456,7 @@
                             android:layout_width="60dp"
                             android:layout_height="30dp"
                             android:text="@string/page_7_take"
-                            android:id="@+id/global__subject_cert_cam"
+                            android:id="@+id/page_7_subject_cert_cam"
                             android:textSize="13sp"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
 
@@ -397,7 +483,7 @@
                             android:layout_height="30dp"
                             android:text="@string/page_7_upl"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:id="@+id/global__subject_cert_upload"
+                            android:id="@+id/page_7_subject_cert_upload"
                             android:layout_marginStart="30dp"
                             android:textSize="13sp"
                             android:layout_marginBottom="10dp"
@@ -809,7 +895,7 @@
                                 android:layout_height="30dp"
                                 android:text="@string/page_7_upl"
                                 android:foreground="?attr/selectableItemBackgroundBorderless"
-                                android:id="@+id/page_7_GraduationM_upload"
+                                android:id="@+id/page_7_GraduationDeg_upload"
                                 android:layout_marginStart="10dp"
                                 android:textSize="13dp"
                                 android:layout_marginBottom="10dp"
@@ -876,7 +962,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="30dp"
                                 android:text="@string/page_7_take"
-                                android:id="@+id/global__graduation_cert_cam"
+                                android:id="@+id/page_7_graduation_cert_cam"
                                 android:textSize="13dp"
                                 android:foreground="?attr/selectableItemBackgroundBorderless"
                                 android:textColor="@android:color/holo_blue_bright"
@@ -909,7 +995,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
                                 android:text="@string/page_7_upl"
-                                android:id="@+id/global__graduation_cert_uplaod"
+                                android:id="@+id/page_7_graduation_cert_upload"
                                 android:layout_marginStart="10dp"
                                 android:textSize="13sp"
                                 android:foreground="?attr/selectableItemBackgroundBorderless"

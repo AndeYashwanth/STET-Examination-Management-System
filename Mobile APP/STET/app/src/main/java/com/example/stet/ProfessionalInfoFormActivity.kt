@@ -13,9 +13,8 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.example.stet.R
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
-import kotlinx.android.synthetic.main.page_5.*
+import kotlinx.android.synthetic.main.professional_info_form_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,14 +23,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
 
-class five : AppCompatActivity() {
+class ProfessionalInfoFormActivity : AppCompatActivity() {
     //this file for academics purpose.
 
     var ses=0
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.page_5)
+        setContentView(R.layout.professional_info_form_activity)
         page_5_progress_bar.progress = 100
         val phone: String = intent.getStringExtra("phone")
         loadLocate()
@@ -61,17 +60,17 @@ class five : AppCompatActivity() {
                     myEditx.putString("phone", "").apply()
                     myEditx.putString("user_cookie", "").apply()
                     Toast.makeText(
-                        this@five, getString(R.string.logkro),
+                        this@ProfessionalInfoFormActivity, getString(R.string.logkro),
                         Toast.LENGTH_LONG
                     ).show()
-                    val i = Intent(this@five, MainActivity::class.java)
+                    val i = Intent(this@ProfessionalInfoFormActivity, MainActivity::class.java)
                     startActivity(i)
                 } else if (response.code() == 200) {
 
                     ses=1
                 } else {
                     Toast.makeText(
-                        this@five, getString(R.string.toastslowinternet),
+                        this@ProfessionalInfoFormActivity, getString(R.string.toastslowinternet),
                         Toast.LENGTH_LONG
                     ).show()
 
@@ -83,7 +82,7 @@ class five : AppCompatActivity() {
                 t: Throwable
             ) {
                 Toast.makeText(
-                    this@five, getString(R.string.poorinternet),
+                    this@ProfessionalInfoFormActivity, getString(R.string.poorinternet),
                     Toast.LENGTH_LONG
                 ).show()
 
@@ -129,11 +128,6 @@ class five : AppCompatActivity() {
                             page_5_spin_language.setSelection(getSpinLanguage(result.PaperLanguage))
                             page_5_next.text = getString(R.string.update)
                         }
-
-
-                    } else {
-
-
                     }
 
                 }
@@ -144,7 +138,7 @@ class five : AppCompatActivity() {
                 ) {
                     Log.d("Failure", t.message)
                     Toast.makeText(
-                        this@five, getString(R.string.poorinternet),
+                        this@ProfessionalInfoFormActivity, getString(R.string.poorinternet),
                         Toast.LENGTH_LONG
                     ).show()
                 }
@@ -198,16 +192,16 @@ class five : AppCompatActivity() {
                             if (response.code() == 200) {
                                 Log.d("Success", "Data Stored")
                                 Toast.makeText(
-                                    this@five,
+                                    this@ProfessionalInfoFormActivity,
                                     getString(R.string.datastored), Toast.LENGTH_LONG
                                 ).show()
-                                val i = Intent(this@five, Register::class.java)
+                                val i = Intent(this@ProfessionalInfoFormActivity, Register::class.java)
                                 i.putExtra("phone", phone)
                                 startActivity(i)
                                 progress.dismiss()
                             } else {
                                 Toast.makeText(
-                                               this@five,
+                                               this@ProfessionalInfoFormActivity,
                             getString(R.string.toastslowinternet), Toast.LENGTH_LONG
                             ).show()
                             progress.dismiss()
@@ -221,7 +215,7 @@ class five : AppCompatActivity() {
                         ) {
                             Log.d("Failure", t.message)
                             Toast.makeText(
-                                this@five, getString(R.string.poorinternet),
+                                this@ProfessionalInfoFormActivity, getString(R.string.poorinternet),
                                 Toast.LENGTH_LONG
                             ).show()
                             progress.dismiss()

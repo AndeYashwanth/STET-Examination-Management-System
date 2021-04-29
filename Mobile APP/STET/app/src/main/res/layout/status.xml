@@ -325,7 +325,7 @@
                         android:text="@string/global__hno" />
 
                     <TextView
-                        android:id="@+id/global__hno"
+                        android:id="@+id/status_hno"
                         android:layout_width="158dp"
                         android:layout_height="20dp"
                         android:background="@drawable/box_2"
@@ -348,7 +348,7 @@
                         android:text="@string/global__area" />
 
                     <TextView
-                        android:id="@+id/global__area"
+                        android:id="@+id/status_area"
                         android:layout_width="158dp"
                         android:layout_height="20dp"
                         android:background="@drawable/box_2"

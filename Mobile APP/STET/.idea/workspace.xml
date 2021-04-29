@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="BranchesTreeState">
@@ -29,88 +29,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51979a0f-772e-45bb-9081-4d293cc73c26" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/public/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/public/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/logo-negative.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/logo-negative.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeaderDropdownNotif.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeaderDropdownNotif.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/_nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/_nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/polyfill.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/polyfill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/scss/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/scss/_custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/controls/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/controls/controls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/newports.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/newports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page404/Page404.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page404/Page404.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page500/Page500.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page500/Page500.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/users/RegisterdUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/users/RegisterdUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/users/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/users/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/users/Users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/widgets/WidgetsDropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/widgets/WidgetsDropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/models/admit_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/models/admit_card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/public/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/public/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Admin System/views/ejs_admit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/views/ejs_admit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nexmo_verify_4_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nexmo_verify_4_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_wajahatkarim3_easyvalidation_easyvalidation_core_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_wajahatkarim3_easyvalidation_easyvalidation_core_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/STET.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/STET.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FIleUploadActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FIleUploadActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FinalRegistrationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FinalRegistrationActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Help.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Help.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Home1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Home1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Image.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Important.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Important.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Personal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Personal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PersonalInfoFormActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PersonalInfoFormActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Register.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Retro2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Retro3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/UploadRetro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ResetPassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ResetPassword.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/RetrofitInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/RetrofitInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SecondActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SecondActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Status.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ThirdActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamPatternActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/eight.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FinalRegistrationActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/fourth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PersonalInfoFormActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/home.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/seven.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FIleUploadActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/six.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PaymentActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ten.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/third.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v23/page_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/admitcard_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admitcard_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/application_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/application_form.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/eligibility_criteria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/eligibility_criteria.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/exam_pattern.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/exam_pattern.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/faqs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/faqs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Timeline.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Timeline.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/five.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ProfessionalInfoFormActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupOTPVerificationActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/file_upload.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/file_upload.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/final_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/final_registration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/forget.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/forget.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/help.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/help.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/homepage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/homepage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_1_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/register_click.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/personal_info_form__activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/file_upload.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/final_registration.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/prepare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/prepare.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup_otp_verification_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/professional_info_form_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/personal_info_form__activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/personal_info_form__activity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/reset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reset.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/status.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/syllabus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/syllabus.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/timeline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/timeline.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ne/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-ne/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ne/strings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,11 +204,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-28/android/widget/TextView.java_SELECTED" value="TextView" />
     <property name="android-custom-viewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="multi-representation-previewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-28/android/widget/TextView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/Ande Yashwanth/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -326,8 +339,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.STET [app:build]" />
         <item itemvalue="Gradle.STET [signingReport]" />
+        <item itemvalue="Gradle.STET [app:build]" />
       </list>
     </recent_temporary>
   </component>
@@ -418,38 +431,42 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="614" y="207" key="AndroidCreateXmlResourceDialog/0.0.1536.834@0.0.1536.834" timestamp="1617478955241" />
-    <state width="1491" height="212" key="GridCell.Tab.0.bottom" timestamp="1617379085148">
+    <state x="93" y="93" width="1350" height="648" maximized="true" key="DiffContextDialog" timestamp="1619534409344">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.0.center" timestamp="1617379085148">
+    <state x="93" y="93" width="1350" height="648" maximized="true" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1619534409344" />
+    <state width="1491" height="215" key="GridCell.Tab.0.bottom" timestamp="1619711887382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.0.left" timestamp="1617379085148">
+    <state width="1491" height="215" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1619711887382" />
+    <state width="1491" height="215" key="GridCell.Tab.0.center" timestamp="1619711887381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.0.right" timestamp="1617379085148">
+    <state width="1491" height="215" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1619711887381" />
+    <state width="1491" height="215" key="GridCell.Tab.0.left" timestamp="1619711887381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.1.bottom" timestamp="1617379085148">
+    <state width="1491" height="215" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1619711887381" />
+    <state width="1491" height="215" key="GridCell.Tab.0.right" timestamp="1619711887381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.1.center" timestamp="1617379085148">
+    <state width="1491" height="215" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1619711887381" />
+    <state width="1491" height="215" key="GridCell.Tab.1.bottom" timestamp="1619711887382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.1.left" timestamp="1617379085148">
+    <state width="1491" height="215" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1619711887382" />
+    <state width="1491" height="215" key="GridCell.Tab.1.center" timestamp="1619711887382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
-    <state width="1491" height="212" key="GridCell.Tab.1.right" timestamp="1617379085148">
+    <state width="1491" height="215" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1619711887382" />
+    <state width="1491" height="215" key="GridCell.Tab.1.left" timestamp="1619711887382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="212" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1617379085148" />
+    <state width="1491" height="215" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1619711887382" />
+    <state width="1491" height="215" key="GridCell.Tab.1.right" timestamp="1619711887382">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1491" height="215" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1619711887382" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1617443384235">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -458,44 +475,58 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="471" y="226" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1536.834@0.0.1536.834" timestamp="1616859543408" />
+    <state x="578" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619454919722">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="578" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1619454919722" />
     <state x="521" y="203" width="1225" height="818" key="dock-window-1" timestamp="1617477482266">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="521" y="203" width="1225" height="818" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1617477482266" />
-    <state x="304" y="33" width="655" height="801" key="find.popup" timestamp="1618337453995">
+    <state x="304" y="33" width="655" height="801" key="find.popup" timestamp="1619712243266">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="304" y="33" width="655" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1618337453995" />
+    <state x="304" y="33" width="655" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1619712243266" />
     <state x="453" y="313" key="psd.add.library.dependency.panel.dimension" timestamp="1616869468970">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="453" y="313" key="psd.add.library.dependency.panel.dimension/0.0.1536.834@0.0.1536.834" timestamp="1616869468970" />
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1618330572581">
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1619623954513">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1618330572581" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1618337511250">
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1619623954513" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1619622585519">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1618337511250" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1619622585519" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt</url>
-          <line>270</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/MainPresenter.kt</url>
+          <line>36</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt</url>
-          <line>365</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/ChatBot.kt</url>
+          <line>20</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt</url>
-          <line>137</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupOTPVerificationActivity.kt</url>
+          <line>354</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupOTPVerificationActivity.kt</url>
+          <line>366</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt</url>
+          <line>134</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

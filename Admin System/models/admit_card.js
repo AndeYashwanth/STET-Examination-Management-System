@@ -1,92 +1,83 @@
 const mongoose = require("mongoose");
-
+/**
+ * @todo remove last fields
+ */
 const admit_details = mongoose.Schema({
-  fname: {
+  Fname: {
     type: String,
     required: true,
   },
-  mname: {
+  Mname: {
     type: String,
   },
-  lname: {
-    type: String,
-    required: true,
-  },
-  ffname: {
+  Lname: {
     type: String,
     required: true,
   },
-  fmname: {
-    type: String,
-  },
-  flname: {
+  FHFname: {
     type: String,
     required: true,
   },
-  mfname: {
+  FHMname: {
+    type: String,
+  },
+  FHLname: {
     type: String,
     required: true,
   },
-  mmname: {
-    type: String,
-  },
-  mlname: {
+  Aadhar: {
     type: String,
     required: true,
   },
-  category: {
+  DOB: {
     type: String,
     required: true,
   },
-  aadhar: {
+  Gender: {
     type: String,
     required: true,
   },
-  dob: {
+  Hno: {
     type: String,
     required: true,
   },
-  address: {
+  Area: {
     type: String,
     required: true,
   },
-  district: {
+  District: {
     type: String,
     required: true,
   },
-  state: {
+  State: {
     type: String,
     required: true,
   },
-  pincode: {
+  Pincode: {
     type: Number,
     required: true,
   },
-  sex: {
+  Phone: {
     type: String,
     required: true,
   },
-  phone: {
+  Email: {
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-  },
-  exam: {
+  Exam: {
       type: String,
       required: true
   },
-  exam_date: {
+  Exam_date: {
     type: String,
     required: true
   },
-  venue: {
+  Venue: {
     type: String,
     required: true
   },
-  eno: {
+  Eno: {
       type: String,
       required: true
   },

@@ -210,21 +210,17 @@ module.exports = async (app, myDb) => {
                 Fname: result.Fname,
                 Mname: result.Mname,
                 Lname: result.Lname,
-                gender: result.Gender,
-                FH: result.FH,
                 FHFname: result.FHFname,
                 FHMname: result.FHMname,
                 FHLname: result.FHLname,
-                MFname: result.MFname,
-                MMname: result.MMname,
-                MLname: result.MLname,
                 DOB: result.DOB,
-                Category: result.Category,
+                Gender: result.Gender,
                 Aadhar: result.Aadhar,
-                Address: result.Address,
+                Hno: result.Hno,
+                Area: result.Area,
                 District: result.District,
                 State: result.State,
-                PinCode: result.PinCode,
+                Pincode: result.Pincode,
                 Phone: result.Phone,
                 Email: result.Email,
             };
@@ -243,10 +239,10 @@ module.exports = async (app, myDb) => {
                 return res.status(404).send();
             }
             const objToSend = {
-                MinQualification: result.Min_Qual,
-                ProfessionalQualification: result.Pro_Qual,
                 Percentage: result.Percentage,
                 University: result.University,
+                MinQualification: result.Min_Qual,
+                ProfessionalQualification: result.Pro_Qual,
                 PaperLanguage: result.Language,
                 ApplicationCategory: result.App_Category,
                 Phone: result.Phone,
@@ -263,21 +259,17 @@ module.exports = async (app, myDb) => {
             Fname: req.body.Fname,
             Mname: req.body.Mname,
             Lname: req.body.Lname,
-            Gender: req.body.gender,
-            FH: req.body.FH,
             FHFname: req.body.FHFname,
             FHMname: req.body.FHMname,
             FHLname: req.body.FHLname,
-            MFname: req.body.MFname,
-            MMname: req.body.MMname,
-            MLname: req.body.MLname,
             DOB: req.body.DOB,
-            Category: req.body.Category,
+            Gender: req.body.Gender,
             Aadhar: req.body.Aadhar,
-            Address: req.body.Address,
+            Hno: req.body.Hno,
+            Area: req.body.Area,
             District: req.body.District,
             State: req.body.State,
-            PinCode: req.body.PinCode,
+            Pincode: req.body.Pincode,
             Phone: req.body.Phone,
             Email: req.body.Email,
         };
@@ -288,28 +280,7 @@ module.exports = async (app, myDb) => {
                 return res.status(200).send();
             }
             const User = {
-                $set: {
-                    Fname: req.body.Fname,
-                    Mname: req.body.Mname,
-                    Lname: req.body.Lname,
-                    Gender: req.body.gender,
-                    FH: req.body.FH,
-                    FHFname: req.body.FHFname,
-                    FHMname: req.body.FHMname,
-                    FHLname: req.body.FHLname,
-                    MFname: req.body.MFname,
-                    MMname: req.body.MMname,
-                    MLname: req.body.MLname,
-                    DOB: req.body.DOB,
-                    Category: req.body.Category,
-                    Aadhar: req.body.Aadhar,
-                    Address: req.body.Address,
-                    District: req.body.District,
-                    State: req.body.State,
-                    PinCode: req.body.PinCode,
-                    Phone: req.body.Phone,
-                    Email: req.body.Email,
-                },
+                $set: newUser,
             };
             await myDb.collection("personals").updateOne({ Phone: req.body.Phone }, User)
             return res.status(200).send();
@@ -356,29 +327,27 @@ module.exports = async (app, myDb) => {
 
     app.post("/timing", async (req, res) => {
         const newUser = {
-            fname: req.body.fname,
-            mname: req.body.mname,
-            lname: req.body.lname,
-            ffname: req.body.ffname,
-            fmname: req.body.fmname,
-            flname: req.body.flname,
-            mfname: req.body.mfname,
-            mmname: req.body.mmname,
-            mlname: req.body.mlname,
-            category: req.body.category,
-            aadhar: req.body.aadhar,
-            dob: req.body.dob,
-            address: req.body.address,
-            district: req.body.district,
-            state: req.body.state,
-            pincode: req.body.pincode,
-            sex: req.body.sex,
-            phone: req.body.phone,
-            email: req.body.email,
-            exam: req.body.exam,
-            exam_date: req.body.exam_date,
-            venue: req.body.venue,
-            eno: req.body.eno,
+            Fname: req.body.fname,
+            Mname: req.body.mname,
+            Lname: req.body.lname,
+            FHFname: req.body.ffname,
+            FHMname: req.body.fmname,
+            FHLname: req.body.flname,
+            Category: req.body.category,
+            Aadhar: req.body.aadhar,
+            DOB: req.body.dob,
+            Hno: req.body.hno,
+            Area: req.body.area,
+            District: req.body.district,
+            State: req.body.state,
+            Pincode: req.body.pincode,
+            Gender: req.body.gender,
+            Phone: req.body.phone,
+            Email: req.body.email,
+            Exam: req.body.exam,
+            Exam_date: req.body.exam_date,
+            Venue: req.body.venue,
+            Eno: req.body.eno,
             Date: req.body.Date,
         };
         const collection2 = myDb.collection("registration");
@@ -394,7 +363,10 @@ module.exports = async (app, myDb) => {
     });
     app.get("/available/:filename/:coll", async (req, res) => {
         try {
-            const obj = await db.collection(req.params.coll + ".files").findOne({ filename: req.params.filename }, { _id: 1 })
+            /**
+             * @todo don't use separate collections for each type of document
+             */
+            const obj = await myDb.collection(req.params.coll + ".files").findOne({ filename: req.params.filename }, { _id: 1 })
             if (obj != null) {
                 return res.status(200).send();
             } else {
@@ -523,22 +495,6 @@ module.exports = async (app, myDb) => {
                 date_of_result_declaration: result.date_of_result_declaration,
             };
             res.status(200).send(JSON.stringify(newUser));
-        } catch (err) {
-            res.status(500).send();
-            console.log(err);
-        }
-    });
-
-    app.get("/showpassword/:Phone", async (req, res) => {
-        try {
-            const result = await myDb.collection("signups").findOne({ Phone: req.params.Phone })
-            if (result == null) {
-                return res.status(404).send();
-            }
-            const newUser = {
-                password: result.Password,
-            };
-            return res.status(200).send(JSON.stringify(newUser));
         } catch (err) {
             res.status(500).send();
             console.log(err);

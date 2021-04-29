@@ -19,7 +19,7 @@
             android:src="@drawable/stet_logo"/>
 
         <TextView
-            android:id="@+id/global__stet_title"
+            android:id="@+id/homepage_textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/global__stet_title"
@@ -66,7 +66,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/global__send_otp"
+                    android:id="@+id/page_2_send_phn_otp"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -97,7 +97,7 @@
 
 
                 <TextView
-                    android:id="@+id/global__enter_otp"
+                    android:id="@+id/page_2_enter_otp_phn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/global__enter_otp" />
@@ -113,7 +113,7 @@
                 </EditText>
 
                 <Button
-                    android:id="@+id/global__verify"
+                    android:id="@+id/page_2_phn_verify"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:foreground="?attr/selectableItemBackgroundBorderless"

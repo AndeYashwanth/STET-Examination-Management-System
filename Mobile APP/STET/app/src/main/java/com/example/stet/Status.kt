@@ -138,15 +138,15 @@ class Status : AppCompatActivity() {
                             status_view_father.text =
                                 result.FHFname + " " + result.FHMname + " " + result.FHLname
                             status_view_dob.text = result.DOB
-                            status_view_gender.text = result.gender
+                            status_view_gender.text = result.Gender
                             status_view_mobile.text = result.Phone
                             status_view_email.text = result.Email
                             status_view_registration_no.text=result.Phone
-                            global__hno.text = result.Hno
-                            global__area.text = result.Area
+                            status_hno.text = result.Hno
+                            status_area.text = result.Area
                             status_view_dist.text = result.District
                             status_view_state.text = result.State
-                            staus_view_pin.text = result.PinCode
+                            staus_view_pin.text = result.Pincode
 
 
                         }

@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.stet.R
-import kotlinx.android.synthetic.main.page_1.*
+import kotlinx.android.synthetic.main.signup.*
 import kotlinx.android.synthetic.main.timeline.*
 import retrofit2.Call
 import retrofit2.Callback

@@ -196,7 +196,7 @@ class Register : AppCompatActivity() {
                 startActivity(i)
             }
             register_professional.setOnClickListener {
-                val i = Intent(this, five::class.java)
+                val i = Intent(this, ProfessionalInfoFormActivity::class.java)
                 i.putExtra("phone", phone)
                 startActivity(i)
             }

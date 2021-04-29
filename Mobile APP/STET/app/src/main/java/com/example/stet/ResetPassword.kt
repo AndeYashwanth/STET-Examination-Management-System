@@ -32,114 +32,60 @@ class ResetPassword :AppCompatActivity(){
             .build()
         var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
         val phone:String=intent.getStringExtra("Phone")
-        show_password.setOnClickListener {
-            password.visibility=View.VISIBLE
-            page_reset_Edtconfirmpass.visibility=View.INVISIBLE
-            page_reset_Edtpass.visibility=View.INVISIBLE
-            page_reset_confirm_pass.visibility=View.INVISIBLE
-            page_reset_pass.visibility=View.INVISIBLE
-            reset_password.visibility=View.INVISIBLE
-            //show password
-            val call: Call<Password> = retrofitInterface.showpassword(phone)
-
-            call!!.enqueue(object : Callback<Password> {
-                override fun onResponse(
-                    call: Call<Password>,
-                    response: Response<Password>
-                ) {
-                    if (response.code() == 200) {
-                        val Pass: Password? =response.body()
-                        if (Pass != null) {
-                           password.text=getString(R.string.password)+Pass.password.toString()
-                        }
-                        else
-                        {
-                            Toast.makeText(
-                                this@ResetPassword, getString(R.string.empty),
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    } else if (response.code() == 404) {
-                        Toast.makeText(
-                            this@ResetPassword, getString(R.string.phonenotfound),
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                }
-
-                override fun onFailure(
-                    call: Call<Password>,
-                    t: Throwable
-                ) {
-                    Toast.makeText(
-                        this@ResetPassword,  getString(R.string.poorinternet),
-                        Toast.LENGTH_LONG
-                    ).show()
-
-                }
-
-            })
-        }
         reset_back.setOnClickListener {
             val i= Intent(this,MainActivity::class.java)
             startActivity(i)
         }
-        edit_password.setOnClickListener {
 
-            page_reset_Edtconfirmpass.visibility=View.VISIBLE
-            page_reset_Edtpass.visibility=View.VISIBLE
-            page_reset_confirm_pass.visibility=View.VISIBLE
-            page_reset_pass.visibility=View.VISIBLE
-            reset_password.visibility=View.VISIBLE
-            password.text=""
-            password.visibility=View.INVISIBLE
-        }
         reset_password.setOnClickListener {
-            if(page_reset_Edtconfirmpass.text.toString()==page_reset_Edtpass.text.toString() && isValidPassword(page_reset_Edtpass)==0) {
-                val map: HashMap<String, String> = HashMap()
-                map["phone"] = phone
-                map["password"]=page_reset_Edtpass.text.toString()
-                val call: Call<Void?>? = retrofitInterface.resetpassword(map)
-                //set new password
-                call!!.enqueue(object : Callback<Void?> {
-                    override fun onResponse(
-                        call: Call<Void?>?,
-                        response: Response<Void?>?
-                    ) {
-                        if (response != null) {
-                            if (response.code() == 200) {
+            if(page_reset_Edtconfirmpass.text.toString()==page_reset_Edtpass.text.toString()) {
+                if(isValidPassword(page_reset_Edtpass)==0){
 
-                                Toast.makeText(
-                                    this@ResetPassword, getString(R.string.passwordreset),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                                page_reset_Edtconfirmpass.visibility=View.INVISIBLE
-                                page_reset_Edtpass.visibility=View.INVISIBLE
-                                page_reset_confirm_pass.visibility=View.INVISIBLE
-                                page_reset_pass.visibility=View.INVISIBLE
-                                reset_password.background=getDrawable(R.drawable.button_shape2)
-                            } else if (response.code() == 404) {
-                                Toast.makeText(
-                                    this@ResetPassword, getString(R.string.phonenotfound),
-                                    Toast.LENGTH_LONG
-                                ).show()
+                    val map: HashMap<String, String> = HashMap()
+                    map["phone"] = phone
+                    map["password"]=page_reset_Edtpass.text.toString()
+                    val call: Call<Void?>? = retrofitInterface.resetpassword(map)
+                    //set new password
+                    call!!.enqueue(object : Callback<Void?> {
+                        override fun onResponse(
+                            call: Call<Void?>?,
+                            response: Response<Void?>?
+                        ) {
+                            if (response != null) {
+                                if (response.code() == 200) {
+                                    /**
+                                     * @todo verify toast success message is comming or not
+                                     */
+                                    Toast.makeText(
+                                        this@ResetPassword, getString(R.string.passwordreset),
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    val i = Intent(this@ResetPassword, MainActivity::class.java)
+                                    i.putExtra("phone", phone)
+                                    startActivity(i)
+                                } else if (response.code() == 404) {
+                                    Toast.makeText(
+                                        this@ResetPassword, getString(R.string.phonenotfound),
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
                             }
                         }
-                    }
 
-                    override fun onFailure(
-                        call: Call<Void?>?,
-                        t: Throwable
-                    ) {
-                        Toast.makeText(
-                            this@ResetPassword,  getString(R.string.poorinternet),
-                            Toast.LENGTH_LONG
-                        ).show()
+                        override fun onFailure(
+                            call: Call<Void?>?,
+                            t: Throwable
+                        ) {
+                            Toast.makeText(
+                                this@ResetPassword,  getString(R.string.poorinternet),
+                                Toast.LENGTH_LONG
+                            ).show()
 
-                    }
+                        }
 
-                })
+                    })
 
+                }
             }
             else
             {

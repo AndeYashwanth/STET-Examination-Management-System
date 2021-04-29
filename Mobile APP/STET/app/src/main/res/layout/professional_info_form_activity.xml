@@ -82,13 +82,13 @@
                     android:textSize="17sp" />
 
                 <Spinner
+                    android:id="@+id/page_5_spin_category"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:background="@drawable/box"
                     android:theme="@style/Animation.AppCompat.DropDownUp"
                     android:layout_marginBottom="15dp"
                     style="@android:style/Widget.Holo.Light.Spinner"
-                    android:id="@+id/page_5_spin_category"
                     android:prompt="@string/global__select"
                     android:entries="@array/application_category"
                     >

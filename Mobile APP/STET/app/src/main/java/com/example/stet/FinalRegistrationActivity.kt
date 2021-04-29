@@ -119,6 +119,7 @@ class FinalRegistrationActivity : AppCompatActivity() {
                 retrofit.create(RetrofitInterface::class.java)
             val y: Int = Calendar.getInstance().get(Calendar.YEAR)
             val year: String = y.toString()
+    map["exam_date"] = year;
             val call: Call<Schedule>? = cookie?.let { retrofitInterface2.timeline(it, year) }
 
             call!!.enqueue(object : Callback<Schedule> {
@@ -126,36 +127,17 @@ class FinalRegistrationActivity : AppCompatActivity() {
                     call: Call<Schedule>,
                     response: Response<Schedule>
                 ) {
-                    if (response.code() == 200) {
-                        val time: Schedule? = response.body()
-                        if (time != null) {
-
-                            map["exam_date"] = time.date_of_examination.toString()
-
-                        }
-
-                    } else if (response.code() == 404) {
-                        Toast.makeText(
-                            this@FinalRegistrationActivity, getString(R.string.currentyear),
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
                 }
 
                 override fun onFailure(
                     call: Call<Schedule>,
                     t: Throwable
                 ) {
-                    Toast.makeText(
-                        this@FinalRegistrationActivity, getString(R.string.poorinternet),
-                        Toast.LENGTH_LONG
-                    ).show()
-
                 }
 
             })
             val map1: HashMap<String?, String?> = HashMap()
-            map1["Phone1"] = phone
+            map1["Phone"] = phone
             //return response body to get personal details from db
             val call1: Call<Personal?>? = retrofitInterface2.getPersonal(cookie, map1)
             call1!!.enqueue(object : Callback<Personal?> {
@@ -175,19 +157,16 @@ class FinalRegistrationActivity : AppCompatActivity() {
                             map["fmname"] = result.FHMname
                             map["flname"] = result.FHLname
                             map["dob"] = result.DOB
-                            map["gender"] = result.gender
-//                            map["category"] = result.Category
+                            map["gender"] = result.Gender
                             map["aadhar"] = result.Aadhar
                             map["hno"] = result.Hno
                             map["area"] = result.Area
                             map["district"] = result.District
                             map["state"] = result.State
-                            map["pincode"] = result.PinCode
+                            map["pincode"] = result.Pincode
                             map["email"] = result.Email
                             map["phone"] = result.Phone
                         }
-
-
                     }
                 }
 
@@ -244,7 +223,7 @@ class FinalRegistrationActivity : AppCompatActivity() {
             })
 
 
-        global__submit.setOnClickListener {
+    final_registration_btn__submit.setOnClickListener {
             if (P == 1) {
                 Toast.makeText(this, getString(R.string.registrationsuccessfull), Toast.LENGTH_SHORT).show()
                 val current = LocalDateTime.now()
@@ -286,7 +265,7 @@ class FinalRegistrationActivity : AppCompatActivity() {
         page_8_sendotp.setOnClickListener {
             sendVerificationCode(phone)     //send phone otp
         }
-        page_8_verify.setOnClickListener {
+        final_registration_btn__verify.setOnClickListener {
             if (codeSent != null) {
                 verifySignInCode()  //verify otp
             }
@@ -311,9 +290,9 @@ class FinalRegistrationActivity : AppCompatActivity() {
                         getString(R.string.verificationsuccessfull),
                         Toast.LENGTH_LONG
                     ).show()
-                    page_8_verify.text = getString(R.string.Verified)
+                    final_registration_btn__verify.text = getString(R.string.Verified)
                     P = 1
-                    page_8_verify.background = getDrawable(R.drawable.button_shape2)
+                    final_registration_btn__verify.background = getDrawable(R.drawable.button_shape2)
                     page_8_enter_otp.visibility = View.INVISIBLE
                     page_8_sendotp.visibility = View.INVISIBLE
                     page_8_otp.visibility = View.INVISIBLE

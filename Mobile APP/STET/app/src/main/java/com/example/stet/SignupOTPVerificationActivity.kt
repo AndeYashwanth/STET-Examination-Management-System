@@ -18,7 +18,7 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken
 import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCallbacks
-import kotlinx.android.synthetic.main.page_2.*
+import kotlinx.android.synthetic.main.signup_otp_verification_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.collections.HashMap
 
 
-class second : AppCompatActivity() {
+class SignupOTPVerificationActivity : AppCompatActivity() {
 
     //verification of email,phn,aadhar and signup
 
@@ -46,7 +46,7 @@ class second : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadLocate()
-        setContentView(R.layout.page_2)
+        setContentView(R.layout.signup_otp_verification_activity)
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
@@ -58,13 +58,12 @@ class second : AppCompatActivity() {
         var name: String = intent.getStringExtra("Name")
         var email: String = intent.getStringExtra("Email")
         var phone: String = intent.getStringExtra("Phone")
-        var aadhar: String = intent.getStringExtra("Aadhar")
         var pass: String = intent.getStringExtra("Password")
         Email = email
         Password = pass
         page_2_email.text = "Email ID : $email"
         page_2_get_phn.text = "Phone Number : $phone"
-        global__verify.visibility = View.INVISIBLE
+        page_2_phn_verify.visibility = View.INVISIBLE
         page_2_email_verify.visibility = View.INVISIBLE
         val sharedPreferences = getSharedPreferences(
             "Settings",
@@ -92,7 +91,6 @@ class second : AppCompatActivity() {
                     map["name"] = name
                     map["email"] = email
                     map["password"] = pass
-                    map["aadhar"] = aadhar
                     map["phone"] = phone
                     //execute signup
                     val call: Call<Void?>? = retrofitInterface.executeSignup(map)
@@ -107,18 +105,18 @@ class second : AppCompatActivity() {
                                     myEdit.putString("user_cookie", cookie.split(";")[0]).apply()
                                 }
                                 Toast.makeText(
-                                    this@second,
+                                    this@SignupOTPVerificationActivity,
                                     getString(R.string.signupsuccess), Toast.LENGTH_LONG
                                 ).show()
                                 progress.dismiss()
-                                val i = Intent(this@second, ExamRegisterClickActivity::class.java)
+                                val i = Intent(this@SignupOTPVerificationActivity, ExamRegisterClickActivity::class.java)
                                 i.putExtra("phone", phone)
 
 
                                 startActivity(i)
                             } else if (response.code() == 400) {
                                 Toast.makeText(
-                                    this@second,
+                                    this@SignupOTPVerificationActivity,
                                     getString(R.string.alreadyregist), Toast.LENGTH_LONG
                                 ).show()
                                 progress.dismiss()
@@ -130,7 +128,7 @@ class second : AppCompatActivity() {
                             t: Throwable
                         ) {
                             Toast.makeText(
-                                this@second,  getString(R.string.poorinternet),
+                                this@SignupOTPVerificationActivity,  getString(R.string.poorinternet),
                                 Toast.LENGTH_LONG
                             ).show()
                             progress.dismiss()
@@ -147,7 +145,7 @@ class second : AppCompatActivity() {
         }
 
 
-        global__send_otp.setOnClickListener {
+        page_2_send_phn_otp.setOnClickListener {
 
             //progress.setMessage("Sending OTP :) ")
             //progress.show()
@@ -156,7 +154,7 @@ class second : AppCompatActivity() {
 
         }
 
-        global__verify.setOnClickListener {
+        page_2_phn_verify.setOnClickListener {
             // progress3.show()
             verifySignInCode()
 
@@ -287,11 +285,11 @@ class second : AppCompatActivity() {
                     ).show()
                     // progress3.dismiss()
                     page_2_phn.text = getString(R.string.phonesuccess)
-                    global__verify.text = getString(R.string.verified)
-                    global__enter_otp.visibility = View.INVISIBLE
+                    page_2_phn_verify.text = getString(R.string.verified)
+                    page_2_enter_otp_phn.visibility = View.INVISIBLE
                     page_2_otp_phn.visibility = View.INVISIBLE
-                    global__send_otp.visibility = View.INVISIBLE
-                    global__verify.background=getDrawable(R.drawable.button_shape2)
+                    page_2_send_phn_otp.visibility = View.INVISIBLE
+                    page_2_phn_verify.background=getDrawable(R.drawable.button_shape2)
                     P = 1
 
                 } else {
@@ -300,9 +298,9 @@ class second : AppCompatActivity() {
                             applicationContext,
                             getString(R.string.incorrectcode), Toast.LENGTH_LONG
                         ).show()
-                        global__send_otp.visibility = View.VISIBLE
-                        global__verify.visibility = View.INVISIBLE
-                        global__send_otp.text = getString(R.string.global__resend_otp)
+                        page_2_send_phn_otp.visibility = View.VISIBLE
+                        page_2_phn_verify.visibility = View.INVISIBLE
+                        page_2_send_phn_otp.text = getString(R.string.global__resend_otp)
                         // progress3.dismiss()
                     }
                 }
@@ -334,7 +332,8 @@ class second : AppCompatActivity() {
 //            60,
 //            TimeUnit.SECONDS,
 //            this,
-//            mCallbacks
+
+    //            mCallbacks
 //        )
 
     }
@@ -345,18 +344,18 @@ class second : AppCompatActivity() {
 
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
              /*   page_2_phn.text = "Phone Verifciation Success"
-                global__verify.text = "Verified"
-                global__enter_otp.visibility = View.INVISIBLE
+                page_2_phn_verify.text = "Verified"
+                page_2_enter_otp_phn.visibility = View.INVISIBLE
                 page_2_otp_phn.visibility = View.INVISIBLE
-                global__send_otp.visibility = View.INVISIBLE*/
+                page_2_send_phn_otp.visibility = View.INVISIBLE*/
                 //progress3.dismiss()
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
                 page_2_phn.text = getString(R.string.failed)
                 Log.d("error", e.toString())
-                global__verify.visibility = View.INVISIBLE
-                global__send_otp.visibility = View.VISIBLE
+                page_2_phn_verify.visibility = View.INVISIBLE
+                page_2_send_phn_otp.visibility = View.VISIBLE
                 // progress.dismiss()
             }
 
@@ -366,8 +365,8 @@ class second : AppCompatActivity() {
             ) {
                 super.onCodeSent(s, forceResendingToken)
                 page_2_phn.text = getString(R.string.otpsent)
-                global__verify.visibility = View.VISIBLE
-                global__send_otp.visibility = View.INVISIBLE
+                page_2_phn_verify.visibility = View.VISIBLE
+                page_2_send_phn_otp.visibility = View.INVISIBLE
                 codeSent = s
                 //progress.dismiss()
 

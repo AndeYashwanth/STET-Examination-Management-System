@@ -116,11 +116,11 @@ class ExamRegisterClickActivity : AppCompatActivity() {
                 ) {
                     if (response.code() == 200) {
                         Log.d("1", "2")
-                        exam_register_btn.background = getDrawable(R.drawable.button_shape2)
                         t = 1
                         x = 1
                     } else if (response.code() == 404) {
                         x = 1
+                        exam_register_btn.background = getDrawable(R.drawable.button_shape2)
                     }
                 }
 

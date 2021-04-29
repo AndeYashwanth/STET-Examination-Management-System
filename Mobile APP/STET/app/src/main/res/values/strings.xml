@@ -192,10 +192,11 @@
     <string name="page_7_upl">Upload</string>
     <string name="global__12th_marksheet">12th Marksheet</string>
     <string name="global__graduation_cert">Graduation Certificate (BA/BSc)</string>
-    <string name="global__graduation_degree">Graduation Degree(BA/BSc)</string>
+    <string name="global__graduation_degree">Graduation Degree(B.Ed)</string>
     <string name="page_7_marksheet">B.Ed/D.El.Ed Marksheet</string>
     <string name="global__birth_cert">Birth Certificate</string>
     <string name="global__subject_cert">Sikkim Subject Certificate</string>
+    <string name="global__community_certificate">Community Certificate</string>
     <string name="global__signature">Signature</string>
     <string name="page_7_photo">Passport Size Photo</string>
     <string name="page_7_checkbox">I have read all terms and conditions.................</string>
@@ -282,7 +283,7 @@
     <string name="update_payment_detail">Update Payment Detail</string>
     <string name="remember_me">Remember Me</string>
     <string name="forget_password_bt">Forget Password</string>
-    <string name="enter_phone_no_to_retreive_and_reset_paassword">Enter phone number to reset pFaaassword</string>
+    <string name="enter_phone_no_to_retreive_and_reset_password">Enter phone number to reset password</string>
     <string name="global__personal_info">Personal Info</string>
     <string name="personal_info_form_activity__tv__cand_name">Candidate Name</string>
     <string name="global__fname">First Name</string>

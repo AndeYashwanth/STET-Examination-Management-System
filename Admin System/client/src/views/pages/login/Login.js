@@ -50,7 +50,7 @@ class Login extends React.Component {
   OnSubmit(e)
   {
     console.log(this.state.username,process.env.REACT_APP_USER)
-    console.log(this.state.password,process.env.REACT_APP_Password)
+    console.log(this.state.password,process.env.PASSWORD)
     if(this.state.username===cred.USER && this.state.password===cred.PASSWORD)
     {
       this.setState({

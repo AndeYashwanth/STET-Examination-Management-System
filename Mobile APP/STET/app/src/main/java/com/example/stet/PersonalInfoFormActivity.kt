@@ -130,47 +130,42 @@ class PersonalInfoFormActivity : AppCompatActivity() {
             .build()
 
         var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
-//        val map: HashMap<String?, String?> = HashMap()
-//
-//        map["phone"] = personal_info_form_activity__tv__phone_noedit.text.toString()
+        val map: HashMap<String?, String?> = HashMap()
+
+        map["phone"] = personal_info_form_activity__tv__phone_noedit.text.toString()
         val sharedPreferences = getSharedPreferences(
             "Settings",
             Context.MODE_PRIVATE
         )
         val cookie:String?=sharedPreferences.getString("user_cookie","")
-//        // fetching signup details  from db
-//        val call1: Call<Important?>? = cookie?.let { retrofitInterface.getDetails(it,map) }
-//        call1!!.enqueue(object : Callback<Important?> {
-//            override fun onResponse(
-//                call: Call<Important?>?,
-//                response: Response<Important?>
-//            ) {
-//                if (response.code() == 200) {
-//                    Log.d("Success", "Data Stored")
-//                    val result = response.body()
-//
-//                    if (result != null) {
-//                        global__email_noedit.text = result.email
-//                        personal_info_form__et_aadhar.text = result.aadhar
-//                    }
-//
-//
-//                } else {
-//
-//                }
-//            }
-//
-//            override fun onFailure(
-//                call1: Call<Important?>?,
-//                t: Throwable
-//            ) {
-//                Log.d("Failure", t.message)
-//                Toast.makeText(
-//                    this@PersonalInfoFormActivity, getString(R.string.poorinternet),
-//                    Toast.LENGTH_LONG
-//                ).show()
-//            }
-//        })
+        // fetching signup details  from db
+        val call1: Call<Important?>? = cookie?.let { retrofitInterface.getDetails(it,map) }
+        call1!!.enqueue(object : Callback<Important?> {
+            override fun onResponse(
+                call: Call<Important?>?,
+                response: Response<Important?>
+            ) {
+                if (response.code() == 200) {
+                    Log.d("Success", "Data Stored")
+                    val result = response.body()
+
+                    if (result != null) {
+                        personal_info_form_activity__tv__email_noedit.text = result.email
+                    }
+                }
+            }
+
+            override fun onFailure(
+                call1: Call<Important?>?,
+                t: Throwable
+            ) {
+                Log.d("Failure", t.message)
+                Toast.makeText(
+                    this@PersonalInfoFormActivity, getString(R.string.poorinternet),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
 
         val map2: HashMap<String?, String?> = HashMap()
         map2["Phone"] = personal_info_form_activity__tv__phone_noedit.text.toString()
@@ -191,7 +186,7 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                     val result = response.body()
 
                     if (result != null) {
-                        global__email_noedit.text = result.Email
+                        personal_info_form_activity__tv__email_noedit.text = result.Email
                         personal_info_form__et_aadhar.setText(result.Aadhar)
                         personal_info_form_activity__et__cand_fname.setText(result.Fname)
                         personal_info_form_activity__et__cand_mname.setText(result.Mname)
@@ -199,18 +194,18 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                         personal_info_form_activity__et__fath_fname.setText(result.FHFname)
                         personal_info_form_activity__et__fath_mname.setText(result.FHMname)
                         personal_info_form_activity__et__fath_lname.setText(result.FHLname)
-                        if (result.gender == "Male") {
-                            global__male.isChecked = true
-                        } else if (result.gender == "Female") {
-                            global__female.isChecked = true
-                        } else if (result.gender == "Others") {
+                        if (result.Gender == "Male") {
+                            personal_info_form_activity__rd__male.isChecked = true
+                        } else if (result.Gender == "Female") {
+                            personal_info_form_activity__rd__female.isChecked = true
+                        } else if (result.Gender == "Others") {
                             personal_info_form_activity__rb__other.isChecked = true
                         }
                         personal_info_form_activity__et__dob.setText(result.DOB)
                         personal_info_form_activity__et__hno.setText(result.Hno)
                         personal_info_form_activity__et__area.setText(result.Area)
                         personal_info_form_activity__et__district.setText(result.District)
-                        personal_info_form_activity__et__zip.setText(result.PinCode)
+                        personal_info_form_activity__et__zip.setText(result.Pincode)
                         personal_info_form_activity__sp__state.setSelection(getSpinState(result.State))
                         ch = 1
                         personal_info_form__btn_next.text = getString(R.string.update)
@@ -254,7 +249,7 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                 && validAddress(personal_info_form_activity__et__hno) == 0
                 && validAddress(personal_info_form_activity__et__area) == 0
                 && validAddress(personal_info_form_activity__et__district) == 0
-                && validGender(global__male, global__female, personal_info_form_activity__rb__other) == 0
+                && validGender(personal_info_form_activity__rd__male, personal_info_form_activity__rd__female, personal_info_form_activity__rb__other) == 0
                 && global__terms.isChecked
             ) {
 
@@ -262,19 +257,19 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                 Personal["Fname"] = personal_info_form_activity__et__cand_fname.text.toString()
                 Personal["Mname"] = personal_info_form_activity__et__cand_mname.text.toString()
                 Personal["Lname"] = personal_info_form_activity__et__cand_lname.text.toString()
-                Personal["gender"] = gender
+                Personal["Gender"] = gender
                 Personal["FHFname"] = personal_info_form_activity__et__fath_fname.text.toString()
                 Personal["FHMname"] = personal_info_form_activity__et__fath_mname.text.toString()
                 Personal["FHLname"] = personal_info_form_activity__et__fath_lname.text.toString()
                 Personal["DOB"] = personal_info_form_activity__et__dob.text.toString()
-//                Personal["Category"] = global__select.selectedItem.toString()
                 Personal["Aadhar"] = personal_info_form__et_aadhar.text.toString()
-                Personal["Hno"] = personal_info_form_activity__et__hno.text.toString()
                 Personal["Hno"] = personal_info_form_activity__et__hno.text.toString()
                 Personal["Area"] = personal_info_form_activity__et__area.text.toString()
                 Personal["District"] = personal_info_form_activity__et__district.text.toString()
                 Personal["State"] = personal_info_form_activity__sp__state.selectedItem.toString()
-                Personal["PinCode"] = personal_info_form_activity__et__zip.text.toString()
+                Personal["Pincode"] = personal_info_form_activity__et__zip.text.toString()
+                Personal["Phone"] = personal_info_form_activity__tv__phone_noedit.text.toString()
+                Personal["Email"] = personal_info_form_activity__tv__email_noedit.text.toString()
                 val sharedPreferences = getSharedPreferences(
                     "Settings",
                     Context.MODE_PRIVATE

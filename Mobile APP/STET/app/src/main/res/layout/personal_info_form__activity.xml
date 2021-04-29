@@ -143,14 +143,14 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/global__male"
+                    android:id="@+id/personal_info_form_activity__rd__male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/global__male"
                     android:textSize="14sp" />
 
                 <RadioButton
-                    android:id="@+id/global__female"
+                    android:id="@+id/personal_info_form_activity__rd__female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/global__female"
@@ -281,7 +281,6 @@
                 android:layout_height="40dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/box"
-                android:gravity="center"
                 android:hint="@string/global__aadhar_no"
                 android:inputType="text"
                 android:maxLength="12"
@@ -392,7 +391,8 @@
                 android:layout_marginBottom="9dp"
                 android:background="@drawable/box"
                 android:inputType="numberSigned"
-                android:paddingStart="3dp">
+                android:paddingStart="3dp"
+                android:textSize="14sp">
             </EditText>
 
 
@@ -416,7 +416,7 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/global__email"
+                android:id="@+id/personal_info_form_activity__tv__email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
@@ -425,7 +425,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/global__email_noedit"
+                android:id="@+id/personal_info_form_activity__tv__email_noedit"
                 android:layout_width="350dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="05dp"

@@ -12,10 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import com.example.stet.ResetPassword
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.*
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.android.synthetic.main.forget.*
 import java.util.*
@@ -102,13 +99,20 @@ class Forget : AppCompatActivity() {
         if (phone.length < 10) {
             return
         }
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-            phone,
-            60,
-            TimeUnit.SECONDS,
-            this,
-            mCallbacks
-        )
+        val options = PhoneAuthOptions.newBuilder(FirebaseAuth.getInstance())
+            .setPhoneNumber(phone)       // Phone number to verify
+            .setTimeout(60, TimeUnit.SECONDS) // Timeout and unit
+            .setActivity(this)                 // Activity (for callback binding)
+            .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+            .build()
+        PhoneAuthProvider.verifyPhoneNumber(options)
+//        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+//            phone,
+//            60,
+//            TimeUnit.SECONDS,
+//            this,
+//            mCallbacks
+//        )
 
     }
     //otp callback

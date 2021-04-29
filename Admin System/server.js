@@ -23,12 +23,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-const url = "mongodb://127.0.0.1:27017/stetadmin"
+const url = "mongodb+srv://dbuser:Kmit123@cluster0.wmp3k.mongodb.net/project-stet?retryWrites=true&w=majority"
 
 const back_url = "http://localhost:" + PORT;
 console.log(back_url);
 
-const conn = mongoose.createConnection("mongodb://127.0.0.1:27017/stetadmin");
+const conn = mongoose.createConnection(url);
 
 // Init gfs
 let gfs;
@@ -234,45 +234,46 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
 
         //=============== PDF ROUTES BEGIN =========================================
 
-    app.get('/pdf/:fname/:lname/:ffname/:flname/:dob/:exam/:eno/:address/:venue/:exam_date/:sex/:img',function(req,res){
+    app.get('/pdf/:Fname/:Fname/:FHFname/:FHLname/:DOB/:Exam/:Eno/:Address/:Venue/:Exam_date/:Gender/:img',function(req,res){
         const data = {
-            fname: req.params.fname,
-            lname: req.params.lname,
-            ffname: req.params.ffname,
-            flname: req.params.flname,
-            dob: req.params.dob,
+            Fname: req.params.Fname,
+            Lname: req.params.Lname,
+            FHFname: req.params.FHFname,
+            Flname: req.params.FHLname,
+            DOB: req.params.DOB,
             img: req.params.img,
             simg: '/sikkim.png',
-            exam: req.params.exam,
-            eno: req.params.eno,
-            address: req.params.address,
-            venue: req.params.venue,
-            exam_date: req.params.exam_date,
-            sex: req.params.sex
+            Exam: req.params.Exam,
+            Eno: req.params.Eno,
+            Address: req.params.Address,
+            Venue: req.params.Venue,
+            Exam_date: req.params.Exam_date,
+            Gender: req.params.Gender
         };
         res.render('ejs_admit.html', {data: data});
     });
+
     async function findData({phone}){
         return new Promise(async function(resolve, reject){
-        const user = await User.findOne({ phone });
+        const user = await User.findOne({ 'Phone': phone });
         if(user==null)
             resolve(null);
         else
         {
             const data = {
-                fname: user.fname,
-                lname: user.lname,
-                ffname: user.ffname,
-                flname: user.flname,
-                dob: user.dob,
-                img: `${user.phone}_photo.png`,
-                exam: user.exam,
-                eno: user.eno,
-                address: user.address,
-                venue: user.venue,
-                exam_date: user.exam_date,
-                sex: user.sex,
-                phone: user.phone
+                Fname: user.Fname,
+                Lname: user.Lname,
+                FHFname: user.FHFname,
+                FHLname: user.FHLname,
+                DOB: user.DOB,
+                img: `${user.Phone}_photo.png`,
+                Exam: user.Exam,
+                Eno: user.Eno,
+                Address: user.Hno + user.Area  + user.District + user.State + user.Pincode,
+                Venue: user.Venue,
+                Exam_date: user.Exam_date,
+                Gender: user.Gender,
+                Phone: user.Phone
             };
             resolve(data);
         }
@@ -292,25 +293,22 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                 const browser = await puppeteer.launch();     // run browser
                 const page = await browser.newPage();         // create new tab
                 //await page.addStyleTag({path : "../public/card.css"});
-                await page.goto(back_url + `/pdf/${data.fname}/${data.lname}/${data.ffname}/${data.flname}/${data.dob}/${data.exam}/${data.eno}/${data.address}/${data.venue}/${data.exam_date}/${data.sex}/${data.img}`, {waitUntil: 'load', timeout: 0 });  // go to page
+                await page.goto(back_url + `/pdf/${data.Fname}/${data.Lname}/${data.FHFname}/${data.FHLname}/${data.DOB}/${data.Exam}/${data.Eno}/${data.Address}/${data.Venue}/${data.Exam_date}/${data.Gender}/${data.img}`, {waitUntil: 'load', timeout: 0 });  // go to page
                 await page.emulateMedia('screen');            // use screen media
-                buffer = await page.pdf({path: data.phone + '_admit.pdf', displayHeaderFooter: true, printBackground: true});  // generate pdf
+                buffer = await page.pdf({path: data.Phone + '_admit.pdf', displayHeaderFooter: true, printBackground: true});  // generate pdf
                 //upload.single(buffer);
                 await browser.close();                       // close browser
                 
                 var bucket = new mongodb.GridFSBucket(myDb);
-                
-                fs.createReadStream('./'+ data.phone + '_admit.pdf').
-                    pipe(bucket.openUploadStream(data.phone + '_admit.pdf')).
+                /**
+                 * @todo revert unlink and upload file in db.
+                 */
+                fs.createReadStream('./'+ data.Phone + '_admit.pdf').
+                    pipe(bucket.openUploadStream(data.Phone + '_admit.pdf')).
                     on('finish', function() {
                     console.log('done!');
                     });
-                    fs.unlink('./'+ data.phone + '_admit.pdf', (err) => {
-                    if (err) {
-                        console.error(err)
-                        return
-                    }
-                });
+                    
                 res.sendStatus(200);
             }
             })();

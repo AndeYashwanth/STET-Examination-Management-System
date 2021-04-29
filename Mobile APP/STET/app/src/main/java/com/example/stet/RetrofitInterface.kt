@@ -51,9 +51,6 @@ interface RetrofitInterface {
     @POST("/resetpassword")     //reset password
     fun resetpassword(@Body map: HashMap<String, String>): Call<Void?>?
 
-    @GET("/showpassword/{Phone}")           //show password
-    fun showpassword(@Path ("Phone") Phone:String):Call<Password>
-
     @POST("/payment")               //payment
     fun payment(@Header ("cookieName") cookieName: String,@Body map: HashMap<String, String>):Call<Void>
 
