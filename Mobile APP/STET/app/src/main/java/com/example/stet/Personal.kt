@@ -9,6 +9,7 @@ class Personal(
     val DOB: String? = null,
     val Gender: String? = null,
     val Aadhar: String? = null,
+    val Community: String? = null,
     val Hno: String? = null,
     val Area: String? = null,
     val District: String? = null,

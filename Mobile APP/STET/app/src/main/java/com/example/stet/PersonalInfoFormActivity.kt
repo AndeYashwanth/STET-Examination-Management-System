@@ -206,6 +206,7 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                         personal_info_form_activity__et__area.setText(result.Area)
                         personal_info_form_activity__et__district.setText(result.District)
                         personal_info_form_activity__et__zip.setText(result.Pincode)
+                        personal_info_form_activity__et__zip.setSelection(getSpinCommunity(result.Community))
                         personal_info_form_activity__sp__state.setSelection(getSpinState(result.State))
                         ch = 1
                         personal_info_form__btn_next.text = getString(R.string.update)
@@ -244,13 +245,13 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                 && validName(personal_info_form_activity__et__fath_lname) == 0
                 && validNumber(personal_info_form_activity__et__zip, 6) == 0
                 && validDOB(personal_info_form_activity__et__dob) == 0
-//                && validSpinner(global__select) == 0
+                && validSpinner(personal_info_form_activity__sp__community) == 0
                 && validSpinner(personal_info_form_activity__sp__state) == 0
                 && validAddress(personal_info_form_activity__et__hno) == 0
                 && validAddress(personal_info_form_activity__et__area) == 0
                 && validAddress(personal_info_form_activity__et__district) == 0
                 && validGender(personal_info_form_activity__rd__male, personal_info_form_activity__rd__female, personal_info_form_activity__rb__other) == 0
-                && global__terms.isChecked
+                && personal_info_form_activity__cb.isChecked
             ) {
 
                 val Personal: HashMap<String, String> = HashMap()
@@ -262,6 +263,7 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                 Personal["FHMname"] = personal_info_form_activity__et__fath_mname.text.toString()
                 Personal["FHLname"] = personal_info_form_activity__et__fath_lname.text.toString()
                 Personal["DOB"] = personal_info_form_activity__et__dob.text.toString()
+                Personal["Category"] = personal_info_form_activity__sp__community.selectedItem.toString()
                 Personal["Aadhar"] = personal_info_form__et_aadhar.text.toString()
                 Personal["Hno"] = personal_info_form_activity__et__hno.text.toString()
                 Personal["Area"] = personal_info_form_activity__et__area.text.toString()
@@ -314,7 +316,7 @@ class PersonalInfoFormActivity : AppCompatActivity() {
 
 
             } else {
-                if (global__terms.isChecked) {
+                if (personal_info_form_activity__cb.isChecked) {
                     Toast.makeText(this,  getString(R.string.checkerror), Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this,  getString(R.string.accepttc), Toast.LENGTH_SHORT).show()

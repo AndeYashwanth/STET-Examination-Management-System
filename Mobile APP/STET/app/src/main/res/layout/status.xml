@@ -989,7 +989,7 @@
                         android:layout_height="20dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__graduation_degree" />
+                        android:text="@string/global__bed_cert" />
 
                     <TextView
                         android:id="@+id/status_view_certi7"
@@ -1015,7 +1015,7 @@
                         android:layout_height="20dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__graduation_cert" />
+                        android:text="@string/global__ba_bsc_cert" />
 
                     <TextView
                         android:id="@+id/status_view_certi8"

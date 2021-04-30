@@ -267,6 +267,25 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/personal_info_form_activity__tv__community"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:text="@string/global__community"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/personal_info_form_activity__sp__community"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:layout_width="234dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/box"
+                android:entries="@array/community"
+                android:theme="@style/Animation.AppCompat.DropDownUp" />
+
+            <TextView
                 android:id="@+id/global__aadhar_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -435,11 +454,11 @@
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/global__terms"
+                android:id="@+id/personal_info_form_activity__cb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/global__terms"
+                android:text="@string/personal_info_form_activity__cb"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="0dp"
                 android:textSize="12sp" />

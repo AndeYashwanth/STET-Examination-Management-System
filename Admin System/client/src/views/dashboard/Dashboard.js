@@ -72,30 +72,30 @@ const Dashboard = () => {
                               <div className="progress-group-header">
                                 <CIcon className="progress-group-icon" name="cil-user" />
                                 <span className="title">Male</span>
-                                    <span className="ml-auto font-weight-bold">{(Stats.sex.Male/Stats.registerd)*100}%</span>
+                                    <span className="ml-auto font-weight-bold">{(Stats.Gender.Male/Stats.registerd)*100}%</span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="warning" value={(Stats.sex.Male/Stats.registerd)*100} />
+                                <CProgress className="progress-xs" color="warning" value={(Stats.Gender.Male/Stats.registerd)*100} />
                               </div>
                             </div>
                             <div className="progress-group mb-5">
                               <div className="progress-group-header">
                                 <CIcon className="progress-group-icon" name="cil-user-female" />
                                 <span className="title">Female</span>
-                                <span className="ml-auto font-weight-bold">{(Stats.sex.Female/Stats.registerd)*100}%</span>
+                                <span className="ml-auto font-weight-bold">{(Stats.Gender.Female/Stats.registerd)*100}%</span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="warning" value={(Stats.sex.Female/Stats.registerd)*100} />
+                                <CProgress className="progress-xs" color="warning" value={(Stats.Gender.Female/Stats.registerd)*100} />
                               </div>
                             </div>
                             <div className="progress-group mb-5">
                               <div className="progress-group-header">
                                 <CIcon className="progress-group-icon" name="cil-user-male" />
                                 <span className="title">Others</span>
-                                <span className="ml-auto font-weight-bold">{(Stats.sex.Others/Stats.registerd)*100}%</span>
+                                <span className="ml-auto font-weight-bold">{(Stats.Gender.Others/Stats.registerd)*100}%</span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="warning" value={(Stats.sex.Others/Stats.registerd)*100} />
+                                <CProgress className="progress-xs" color="warning" value={(Stats.Gender.Others/Stats.registerd)*100} />
                               </div>
                             </div>
 
@@ -104,10 +104,10 @@ const Dashboard = () => {
                               <div className="progress-group-header">
                                 <CIcon className="progress-group-icon" name="cil-chevron-right" />
                                 <span className="title">General</span>
-                                <span className="ml-auto font-weight-bold">{(Stats.category.general)}<span className="text-muted small">({(Stats.category.general/Stats.registerd)*100}%)</span></span>
+                                <span className="ml-auto font-weight-bold">{(Stats.Category.general)}<span className="text-muted small">({(Stats.Category.general/Stats.registerd)*100}%)</span></span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="success" value={(Stats.category.general/Stats.registerd)*100} />
+                                <CProgress className="progress-xs" color="success" value={(Stats.Category.general/Stats.registerd)*100} />
                               </div>
                             </div>
           
@@ -116,30 +116,30 @@ const Dashboard = () => {
                               <div className="progress-group-header">
                                 <CIcon name="cil-chevron-right" className="progress-group-icon" />
                                 <span className="title">OBC</span>
-                                <span className="ml-auto font-weight-bold">{(Stats.category.obc)} <span className="text-muted small">({(Stats.category.obc/Stats.registerd)*100}%)</span></span>
+                                <span className="ml-auto font-weight-bold">{(Stats.Category.obc)} <span className="text-muted small">({(Stats.Category.obc/Stats.registerd)*100}%)</span></span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="success" value={(Stats.category.obc/Stats.registerd)*100}/>
+                                <CProgress className="progress-xs" color="success" value={(Stats.Category.obc/Stats.registerd)*100}/>
                               </div>
                             </div>
                             <div className="progress-group">
                               <div className="progress-group-header">
                                 <CIcon name="cil-chevron-right" className="progress-group-icon" />
                                 <span className="title">SC</span>
-                                <span className="ml-auto font-weight-bold">{(Stats.category.sc)*100} <span className="text-muted small">({(Stats.category.sc/Stats.registerd)*100}%)</span></span>
+                                <span className="ml-auto font-weight-bold">{(Stats.Category.sc)*100} <span className="text-muted small">({(Stats.Category.sc/Stats.registerd)*100}%)</span></span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="success" value={(Stats.category.sc/Stats.registerd)*100} />
+                                <CProgress className="progress-xs" color="success" value={(Stats.Category.sc/Stats.registerd)*100} />
                               </div>
                             </div>
                             <div className="progress-group">
                               <div className="progress-group-header">
                                 <CIcon name="cil-chevron-right" className="progress-group-icon" />
                                 <span className="title">ST</span>
-                                <span className="ml-auto font-weight-bold">{(Stats.category.st)}<span className="text-muted small">({(Stats.category.st/Stats.registerd)*100}%)</span></span>
+                                <span className="ml-auto font-weight-bold">{(Stats.Category.st)}<span className="text-muted small">({(Stats.Category.st/Stats.registerd)*100}%)</span></span>
                               </div>
                               <div className="progress-group-bars">
-                                <CProgress className="progress-xs" color="success" value={(Stats.category.st/Stats.registerd)*100} />
+                                <CProgress className="progress-xs" color="success" value={(Stats.Category.st/Stats.registerd)*100} />
                               </div>
                             </div>
                           </CCol>
@@ -158,7 +158,7 @@ const Dashboard = () => {
                                         '#E46651',
                                         '#00D8FF'
                                       ],
-                                      data: [(Stats.exam.primary),(Stats.exam.gtart),(Stats.exam.gtscience)]
+                                      data: [(Stats.Exam.primary),(Stats.Exam.gtart),(Stats.Exam.gtscience)]
                                     }
                                   ]}
                                   labels={["Primary","GT Art","GT Science"]}

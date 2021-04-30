@@ -29,56 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51979a0f-772e-45bb-9081-4d293cc73c26" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/../../Admin System/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/public/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/public/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/logo-negative.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/assets/icons/logo-negative.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeaderDropdownNotif.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheHeaderDropdownNotif.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/TheSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/_nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/_nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/containers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/containers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/polyfill.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/polyfill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/scss/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/scss/_custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/serviceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/controls/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/controls/controls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/newports.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/newports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page404/Page404.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page404/Page404.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page500/Page500.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/pages/page500/Page500.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/users/RegisterdUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/users/RegisterdUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/users/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/users/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/users/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/client/src/views/widgets/WidgetsDropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/client/src/views/widgets/WidgetsDropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/models/admit_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/models/admit_card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/public/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/public/card.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Admin System/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Admin System/views/ejs_admit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Admin System/views/ejs_admit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -89,46 +41,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ExamRegisterClickActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FIleUploadActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FIleUploadActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FinalRegistrationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/FinalRegistrationActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Forget.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Important.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Important.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Personal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Personal.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PersonalInfoFormActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/PersonalInfoFormActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Register.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ResetPassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ResetPassword.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/RetrofitInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/RetrofitInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Status.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Timeline.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/Timeline.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/five.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/ProfessionalInfoFormActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/stet/second.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/stet/SignupOTPVerificationActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/file_upload.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/file_upload.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/final_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/final_registration.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/forget.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/forget.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup_otp_verification_activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/professional_info_form_activity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/personal_info_form__activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/personal_info_form__activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/reset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reset.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/professional_info_form_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/professional_info_form_activity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/status.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ne/strings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[75d9680d]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -483,10 +411,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="521" y="203" width="1225" height="818" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1617477482266" />
-    <state x="304" y="33" width="655" height="801" key="find.popup" timestamp="1619712243266">
+    <state x="304" y="33" width="655" height="801" key="find.popup" timestamp="1619800907298">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="304" y="33" width="655" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1619712243266" />
+    <state x="304" y="33" width="655" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1619800907298" />
     <state x="453" y="313" key="psd.add.library.dependency.panel.dimension" timestamp="1616869468970">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -495,10 +423,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1619623954513" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1619622585519">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1619800648013">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1619622585519" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1619800648013" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

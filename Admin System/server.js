@@ -55,7 +55,7 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
     }
     else {
         console.log("Connected")
-        const myDb = db.db('Mongodb')
+        const myDb = db.db('project-stet')
         
         app.get('/total', (req, res) => {
             const collection = myDb.collection('signups')
@@ -72,17 +72,17 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
 
         app.get('/stats', (req, res) => {
             Details = {
-                sex:{},
-                exam:{},
-                category:{},
+                Gender:{},
+                Exam:{},
+                Category:{},
             }
             const collection = myDb.collection('registration')
             
             var options = {
                 projection: {
-                  sex: 1,
-                  category: 1,
-                  exam: 1,
+                  Gender: 1,
+                  Category: 1,
+                  Exam: 1,
                 },
               };
             
@@ -91,17 +91,17 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                     console.log(err);
                     res.status(400).json("Error: " + err);
                   } else {
-                    Details.sex.Male = result.filter((obj) => obj.sex === "Male").length;
-                    Details.sex.Female = result.filter((obj) => obj.sex === "Female").length;
-                    Details.sex.Others = result.filter((obj) => obj.sex === "Others").length;
-                    Details.exam.primary = result.filter((obj) => obj.exam === "Primary Teacher").length;
-                    Details.exam.gtart = result.filter((obj) => obj.exam === "GT Art").length;
-                    Details.exam.gtscience = result.filter((obj) => obj.exam === "GT Science").length;
-                    Details.category.general = result.filter((obj) => obj.category === "General").length;
-                    Details.category.obc = result.filter((obj) => obj.category === "OBC").length;
-                    Details.category.sc = result.filter((obj) => obj.category === "SC").length;
-                    Details.category.st = result.filter((obj) => obj.category === "ST").length;
-                    Details.amount = (result.length)*400;
+                    Details.Gender.Male = result.filter((obj) => obj.Gender === "Male").length;
+                    Details.Gender.Female = result.filter((obj) => obj.Gender === "Female").length;
+                    Details.Gender.Others = result.filter((obj) => obj.Gender === "Others").length;
+                    Details.Exam.primary = result.filter((obj) => obj.Exam === "Primary Teacher").length;
+                    Details.Exam.gtart = result.filter((obj) => obj.Exam === "GT Art").length;
+                    Details.Exam.gtscience = result.filter((obj) => obj.Exam === "GT Science").length;
+                    Details.Category.general = result.filter((obj) => obj.Category === "General").length;
+                    Details.Category.obc = result.filter((obj) => obj.Category === "OBC").length;
+                    Details.Category.sc = result.filter((obj) => obj.Category === "SC").length;
+                    Details.Category.st = result.filter((obj) => obj.Category === "ST").length;
+                    Details.Amount = (result.length)*400;
                     Details.registerd = result.length;   
                 }
 
@@ -194,11 +194,10 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                     var count = result.length
                     result.forEach((item) => {
                             var newUser = {
-                                 "id":item.Phone_no,
+                                 "id":item.Phone,
                                 "Name": item.Name,
-                                "Email":item.Email_id,
-                                "Aadhar": item.Aadhar_no,
-                                "Phone": item.Phone_no
+                                "Email":item.Email,
+                                "Phone": item.Phone
                             }
                             array.push(newUser)
                     });
@@ -218,12 +217,12 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                     var count = result.length
                     result.forEach(item => {
                         let newUser = {
-                            "id":item.phone,
-                            "Name":item.fname+" "+item.lname,
-                            "Email":item.email,
-                            "Aadhar": item.aadhar,
-                            "Phone": item.phone,
-                            "Role": item.exam,
+                            "id":item.Phone,
+                            "Name":item.Fname+" "+item.Lname,
+                            "Email":item.Email,
+                            "Aadhar": item.Aadhar,
+                            "Phone": item.Phone,
+                            "Role": item.Exam,
                         }
                         array.push(newUser)
                     });

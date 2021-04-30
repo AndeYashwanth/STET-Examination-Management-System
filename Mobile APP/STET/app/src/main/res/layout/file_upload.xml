@@ -822,7 +822,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginStart="10dp"
-                        android:text="@string/global__graduation_degree"
+                        android:text="@string/global__bed_cert"
                         android:textSize="18sp" />
 
 
@@ -919,11 +919,11 @@
 
 
                     <TextView
-                        android:id="@+id/global__graduation_cert"
+                        android:id="@+id/global__ba_bsc_cert"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="@string/global__graduation_cert"
+                        android:text="@string/global__ba_bsc_cert"
                         android:textSize="18sp" />
 
 

@@ -174,6 +174,7 @@
     <string name="page_4_mother_name">Mother\'s Name :</string>
     <string name="personal_info_form_activity__tv__fath_hus_name">Father Name :</string>
     <string name="global__select">select</string>
+    <string name="global__community">Community</string>
     <string name="global__aadhar_no">Aadhar No</string>
     <string name="global__aadhar_card">Aadhar Card</string>
     <string name="global__postal_code">Postal Code</string>
@@ -191,9 +192,8 @@
     <string name="global__10th_marksheet">10th Marksheet</string>
     <string name="page_7_upl">Upload</string>
     <string name="global__12th_marksheet">12th Marksheet</string>
-    <string name="global__graduation_cert">Graduation Certificate (BA/BSc)</string>
-    <string name="global__graduation_degree">Graduation Degree(B.Ed)</string>
-    <string name="page_7_marksheet">B.Ed/D.El.Ed Marksheet</string>
+    <string name="global__ba_bsc_cert">BA/BSc Certificate</string>
+    <string name="global__bed_cert">B.Ed Certificate</string>
     <string name="global__birth_cert">Birth Certificate</string>
     <string name="global__subject_cert">Sikkim Subject Certificate</string>
     <string name="global__community_certificate">Community Certificate</string>
@@ -220,7 +220,7 @@
     <string name="global__address">Address</string>
     <string name="global__district">District</string>
     <string name="global__state">State</string>
-    <string name="global__terms">I have read and understood all the instructions.</string>
+    <string name="personal_info_form_activity__cb">I have read and understood all the instructions.</string>
     <string name="page_5_aca_info">Academic Information</string>
     <string name="page_6_payment">Payment</string>
     <string name="page_7_upload">Upload Your File</string>

@@ -206,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/global__terms"
+                android:text="@string/personal_info_form_activity__cb"
                 android:textSize="12dp"
                 >
 
