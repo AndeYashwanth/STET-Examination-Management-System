@@ -71,7 +71,7 @@ const Users = () => {
         <CCard>
           <CCardHeader>
             Users
-            <small className="text-muted"> Registerd on Platform</small>
+            <small className="text-muted"> Signed up on Platform</small>
           </CCardHeader>
           <CCardBody>
           {isBusy ? (
@@ -86,11 +86,11 @@ const Users = () => {
             items={UsersData}
             fields={[
               { key: 'Name', _classes: 'font-weight-bold' },
-              'Email', 'Phone',"Aadhar","Submitted"
+              'Email', 'Phone',"Submitted"
             ]}
             hover
             striped
-            itemsPerPage={7}
+            itemsPerPage={10}
             activePage={page}
             clickableRows
             onRowClick={(item) => history.push(`/users/${item.id}`)}

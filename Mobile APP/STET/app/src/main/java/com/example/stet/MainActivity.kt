@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             MODE_PRIVATE
         )
         if (sharedPreferences.getBoolean("login", false)) {
-            var st: String = sharedPreferences.getString("phone", "")
+            var st: String? = sharedPreferences.getString("phone", "")
             val i = Intent(this@MainActivity, ExamRegisterClickActivity::class.java)
             i.putExtra("phone", st)
             startActivity(i)

@@ -102,7 +102,7 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                     Details.Category.sc = result.filter((obj) => obj.Category === "SC").length;
                     Details.Category.st = result.filter((obj) => obj.Category === "ST").length;
                     Details.Amount = (result.length)*400;
-                    Details.registerd = result.length;   
+                    Details.Registerd = result.length;   
                 }
 
                 res.send(Details);
@@ -112,41 +112,31 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
         
         app.get('/alldetails/:user', (req, res) => {
             var User = {}
-            myDb.collection('personals').findOne({ "Phone_Number": req.params.user }, function (err, result) {
+            myDb.collection('personals').findOne({ "Phone": req.params.user }, function (err, result) {
                 if (err)
                     throw err
                 else if (result != null) {
-                    
                     User.Fname = result.Fname
                     User.Mname = result.Mname
                     User.Lname = result.Lname
-                    User.gender = result.Gender
-                    User.FH = result.FH
+                    User.Gender = result.Gender
                     User.FHFname = result.FHFname
                     User.FHMname = result.FHMname
                     User.FHLname = result.FHLname
-                    User.MFname = result.MFname
-                    User.MMname = result.MMname
-                    User.MLname = result.MLname
                     User.DOB = result.DOB
-                    User.Category = result.Category
+                    User.Community = result.Community
                     User.Aadhar = result.Aadhar
-                    User.AddressOne = result.AddressOne
-                    User.DistrictOne = result.DistrictOne
-                    User.StateOne = result.StateOne
-                    User.PinCodeOne = result.PinCodeOne
-                    User.AddressTwo = result.AddressTwo
-                    User.DistrictTwo = result.DistrictTwo
-                    User.StateTwo = result.StateTwo
-                    User.PinCodeTwo = result.PinCodeTwo
-                    User.Phone = result.Phone1
-                    User.Phone2 = result.Phone2
-                    User.Email1 = result.Email1
-                    User.Email2 = result.Email2
+                    User.Hno = result.Hno
+                    User.Area = result.Area
+                    User.District = result.District
+                    User.State = result.State
+                    User.Pincode = result.Pincode
+                    User.Phone = result.Phone
+                    User.Email = result.Email
                 }
             })
 
-            myDb.collection('Education').findOne({ "Phone_Number": req.params.user }, function (err, result) {
+            myDb.collection('academics').findOne({ "Phone": req.params.user }, function (err, result) {
                 if (err)
                     throw err
                 else if (result != null) {
@@ -160,16 +150,16 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
 
             })
 
-            myDb.collection('Payment_Details').findOne({ "phone": req.params.user }, function (err, result) {
+            myDb.collection('Payment_Details').findOne({ "Phone": req.params.user }, function (err, result) {
                 if (err)
                     throw err
                 else if (result != null) {
-                    User.UserContact = result.userContact
-                    User.paymentEmail = result.userEmail
-                    User.paymentId = result.paymentId
-                    User.payment_date = result.date
-                    User.payment_signature = result.signature
-                    User.amount = result.amount
+                    User.UserContact = result.UserContact
+                    User.PaymentEmail = result.UserEmail
+                    User.PaymentId = result.PaymentId
+                    User.Payment_date = result.Sate
+                    User.Payment_signature = result.Signature
+                    User.Amount = result.amount
                 }
 
             })
@@ -177,7 +167,7 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                 if (err)
                     throw err
                 else if (result != null) {
-                    User.FinalSubmissionDate = result.date
+                    User.FinalSubmissionDate = result.Date
                 }
                 res.send(JSON.stringify(User));
             })
@@ -252,9 +242,9 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
         res.render('ejs_admit.html', {data: data});
     });
 
-    async function findData({phone}){
+    async function findData({Phone}){
         return new Promise(async function(resolve, reject){
-        const user = await User.findOne({ 'Phone': phone });
+        const user = await User.findOne({ 'Phone': Phone });
         if(user==null)
             resolve(null);
         else
@@ -280,9 +270,9 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
     }
     app.post('/pdf/generate', function(req, res){
         console.log(req.body);  
-        var phone = req.body.phone;
+        var Phone = req.body.Phone;
         (async () => {
-            const data = await findData({phone});               // declare function
+            const data = await findData({Phone});               // declare function
             if(data == null){
                 console.log("Phone number not found");
                 res.sendStatus(404);
@@ -303,11 +293,16 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                  * @todo revert unlink and upload file in db.
                  */
                 fs.createReadStream('./'+ data.Phone + '_admit.pdf').
-                    pipe(bucket.openUploadStream(data.Phone + '_admit.pdf')).
+                    pipe(bucket.openUploadStream(data.Phone + '_admit.pdf', { contentType: 'application/pdf' })).
                     on('finish', function() {
-                    console.log('done!');
+                        console.log('done!');
                     });
-                    
+                    fs.unlink('./'+ data.Phone + '_admit.pdf', (err) => {
+                        if (err) {
+                            console.error(err)
+                            return
+                        }
+                    });
                 res.sendStatus(200);
             }
             })();

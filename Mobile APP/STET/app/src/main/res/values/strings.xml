@@ -88,7 +88,7 @@
     <string name="global__signin">Sign In</string>
     <string name="forget_password">Forgot Password</string>
     <string name="forget_application_no">Forgot Application Number</string>
-    <string name="global__stet_title">Sikkim Teacher Eligibility Test-2020</string>
+    <string name="global__stet_title">Teacher Eligibility Test-2021</string>
     <string name="homepage_about">About Sikkim TET</string>
     <string name="homepage_content">Contents</string>
     <string name="homepage_about_content">Sikkim Teacher Eligibility Test is one of the prestigious teaching examination of the state Sikkim. Each year, several candidates appear for this exam, and only a few candidates are able to qualify the exam.</string>
@@ -282,7 +282,7 @@
     <string name="update_professional_detail">Update Professional Detail</string>
     <string name="update_payment_detail">Update Payment Detail</string>
     <string name="remember_me">Remember Me</string>
-    <string name="forget_password_bt">Forget Password</string>
+    <string name="forget_password_bt">Forgot</string>
     <string name="enter_phone_no_to_retreive_and_reset_password">Enter phone number to reset password</string>
     <string name="global__personal_info">Personal Info</string>
     <string name="personal_info_form_activity__tv__cand_name">Candidate Name</string>
@@ -388,7 +388,7 @@
     <string name="aadharnotverified">\"Aadhar Not Verified \"</string>
     <string name="logininagain">LOGIN IN AGAIN TO DOWNLOAD ADMIT CARD</string>
     <string name="downloadadmit">Downloading Admitcard......</string>
-    <string name="admitsaved">File Saved in Downloads/AdmitCard</string>
+    <string name="admitsaved">File Saved in Downloads</string>
     <string name="notgenerated">Admit card not generated</string>
     <string name="permdenied">Oops you just denied the permission</string>
     <string name="uploading">\"Uploading \"</string>

@@ -67,8 +67,9 @@ interface UploadRetro {
 
     //check for documents
 
+    @Headers("Content-Type: application/pdf")
     @GET("/available/{filename}/{coll}")
-    fun getfile(@Path("filename") filename: String, @Path("coll") coll: String):Call<Void?>?
+    fun getfile(@Path("filename") filename: String, @Path("coll") coll: String):Call<String?>?
 
     /*@Multipart
     @POST("/uploadmultiple")

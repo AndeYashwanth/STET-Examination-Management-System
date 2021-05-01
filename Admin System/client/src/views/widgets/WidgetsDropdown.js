@@ -13,7 +13,7 @@ const WidgetsDropdown = (stats) => {
       <CCol sm="6" lg="3">
         <CWidgetDropdown
           color="gradient-info"
-          header={stats.stats.registerd}
+          header={stats.stats.Registerd}
           text="Registerd For the exam"
         >
         </CWidgetDropdown>
@@ -22,7 +22,7 @@ const WidgetsDropdown = (stats) => {
       <CCol sm="6" lg="3">
         <CWidgetDropdown
           color="gradient-warning"
-          header={stats.stats.amount}
+          header={stats.stats.Amount}
           text="Rupees Received"
         >
         </CWidgetDropdown>

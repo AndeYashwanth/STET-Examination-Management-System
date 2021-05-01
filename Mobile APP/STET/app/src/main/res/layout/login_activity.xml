@@ -22,25 +22,17 @@
         android:text="@string/global__stet_title"
         android:textSize="30sp"
         android:textColor="#000000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:paddingTop="30sp"/>
 
     <LinearLayout
         android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:paddingTop="60sp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/background"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="25dp"
-            android:textSize="25dp"
-            android:textStyle="bold" />
 
 
         <LinearLayout
@@ -53,51 +45,44 @@
 
             <TextView
                 android:id="@+id/page_1_phone"
-                android:layout_width="80dp"
+                android:layout_width="90sp"
                 android:layout_height="wrap_content"
-
                 android:text="@string/global__phone_no"
-                android:textSize="16dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/page_1_phn_et"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
+                android:layout_width="185dp"
+                android:layout_height="40dp"
                 android:background="@drawable/box"
                 android:inputType="phone"
-                android:paddingLeft="10dp"
-                android:textSize="15dp">
-
-
+                android:textSize="15sp">
             </EditText>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/page_1_pass"
-                android:layout_width="80dp"
+                android:layout_width="90sp"
                 android:layout_height="wrap_content"
-
                 android:text="@string/password"
-                android:textSize="16dp"
-
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/page_1_Edtpass"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
+                android:layout_width="185dp"
+                android:layout_height="40dp"
                 android:background="@drawable/box"
                 android:inputType="textPassword"
-                android:paddingLeft="10dp"
-                android:textSize="15dp">
+                android:textSize="15sp">
             </EditText>
         </LinearLayout>
 
@@ -106,8 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="@string/remember_me"
-            android:visibility="invisible"/>
+            android:text="@string/remember_me"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -120,19 +104,24 @@
             <Button
                 android:id="@+id/page_1_login"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="0dp"
+                android:paddingStart="15sp"
+                android:paddingEnd="15sp"
+                android:layout_height="45dp"
                 android:background="@drawable/button_shape"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:textSize="17sp"
                 android:text="@string/page_1_login" />
 
             <Button
                 android:id="@+id/page_1_signup"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:paddingStart="15sp"
+                android:paddingEnd="15sp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="93dp"
                 android:background="@drawable/button_shape"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:textSize="17sp"
                 android:text="@string/page_1_signup">
 
             </Button>
@@ -140,12 +129,16 @@
         <Button
 
             android:id="@+id/page_1_forget"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:paddingStart="15sp"
+            android:paddingEnd="15sp"
+            android:layout_marginTop="10sp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_shape"
             android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:textSize="17sp"
             android:text="@string/forget_password_bt">
 
         </Button>

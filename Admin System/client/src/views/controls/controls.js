@@ -50,7 +50,7 @@ const Controls = () => {
           method: 'POST',
           headers: headers,
           data: {
-            phone:phone_no,
+            Phone:phone_no,
           }
       }).then(function (response) {
         console.log(response);

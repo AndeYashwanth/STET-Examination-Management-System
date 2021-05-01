@@ -326,6 +326,9 @@ module.exports = async (app, myDb) => {
     });
 
     app.post("/timing", async (req, res) => {
+        /**
+         * @todo eno should be generated on server and in form yearmonthphone 
+         */
         const newUser = {
             Fname: req.body.fname,
             Mname: req.body.mname,
@@ -379,13 +382,13 @@ module.exports = async (app, myDb) => {
     });
     app.get("/paymentdetails/:phone", async (req, res) => {
         try {
-            const result = await myDb.collection("Payment_Details").findOne({ phone: req.params.phone })
+            const result = await myDb.collection("Payment_Details").findOne({ Phone: req.params.phone })
             if (result == null) {
                 return res.status(404).send();
             }
             res.status(200).json({
-                date: result.date,
-                paymentId: result.paymentId,
+                Date: result.Date,
+                PaymentId: result.PaymentId,
             });
         } catch (err) {
             res.status(500).send();
@@ -472,6 +475,7 @@ module.exports = async (app, myDb) => {
                 let finalFile =
                     "data:" + docs[0].contentType + ";base64," + fileData.join("");
                 console.log("File");
+                console.log(docs[0].contentType)
                 res.status(200).json({ imageURL: finalFile });
             }
         } catch (err) {
@@ -522,14 +526,14 @@ module.exports = async (app, myDb) => {
     });
     app.post("/payment", async (req, res) => {
         const newUser = {
-            phone: req.body.phone,
-            userContact: req.body.userContact,
-            userEmail: req.body.userEmail,
-            data: req.body.data,
-            paymentId: req.body.paymentId,
-            signature: req.body.signature,
-            amount: req.body.amount,
-            date: req.body.date,
+            Phone: req.body.phone,
+            UserContact: req.body.userContact,
+            UserEmail: req.body.userEmail,
+            Data: req.body.data,
+            PaymentId: req.body.paymentId,
+            Signature: req.body.signature,
+            Amount: req.body.amount,
+            Date: req.body.date,
         };
         try {
             const result = await myDb.collection("Payment_Details").insertOne(newUser)

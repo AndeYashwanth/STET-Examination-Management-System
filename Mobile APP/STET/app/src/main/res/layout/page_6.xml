@@ -78,7 +78,7 @@
             android:layout_marginLeft="18dp">
 
             <Button
-                android:id="@+id/global__back"
+                android:id="@+id/page_6_back"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:foreground="?attr/selectableItemBackgroundBorderless"

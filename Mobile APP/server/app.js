@@ -17,7 +17,7 @@ const init = async () => {
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(cookieParser());
         app.use(express.json()); //Used to parse JSON bodies
-        // app.use(express.urlencoded()); //Parse URL-encoded bodies
+        // app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
         
         var connection = (await mongoClient.connect(mongo_url, {useNewUrlParser: true, useUnifiedTopology: true})).db("project-stet")
         await controller(app, connection)

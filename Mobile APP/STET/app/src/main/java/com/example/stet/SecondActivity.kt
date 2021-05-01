@@ -1,5 +1,6 @@
 package com.example.stet
 
+import android.Manifest
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
@@ -8,13 +9,16 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Environment
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.admitcard_info.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 import java.io.File
 import java.io.FileOutputStream
@@ -121,6 +125,7 @@ class SecondActivity : AppCompatActivity() {
     fun image(phone:String,str: String,coll: String){
         val retrofit1: Retrofit = Retrofit.Builder()
             .baseUrl(getString(R.string.api_url))
+            .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val progress2 = ProgressDialog(this)
@@ -139,26 +144,28 @@ class SecondActivity : AppCompatActivity() {
                 if(response.code()==200)
                 {
                     val imageURL: String? =response.body()
-                    progress2.dismiss()
                     if(imageURL!=null)
                     {
                         val st: String =imageURL
-                        progress2.dismiss()
                         val pureBase64Encoded:String  = st.substring(st.indexOf(",")  + 1);
                         val decodedString: ByteArray = android.util.Base64.decode(pureBase64Encoded, android.util.Base64.DEFAULT)
-                        val myExternalFile = File(
+                        val folderLocation = File(
                             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                             "AdmitCard"
                         )
+                        folderLocation.mkdirs()
                         val filename: String =
-                            myExternalFile.path + File.separator + System.currentTimeMillis().toString() + "admitcard.png"
+                            folderLocation.path + File.separator + System.currentTimeMillis().toString() + "admitcard.pdf"
                         try {
+                            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 0x512) // https://stackoverflow.com/a/51314932/9160306
                             val fileOutPutStream = FileOutputStream(filename)
                             fileOutPutStream.write(decodedString)
                             fileOutPutStream.close()
                             Toast.makeText(this@SecondActivity,getString(R.string.admitsaved), Toast.LENGTH_LONG).show()
                             download.background=getDrawable(R.drawable.button_shape2)
                         } catch (e: IOException) {
+                            progress2.dismiss()
+                            Toast.makeText(this@SecondActivity,getString(R.string.notgenerated), Toast.LENGTH_SHORT).show()
                             e.printStackTrace()
                         }
 
@@ -172,8 +179,6 @@ class SecondActivity : AppCompatActivity() {
                 }
                 progress2.dismiss()
             }
-
         })
-
     }
 }

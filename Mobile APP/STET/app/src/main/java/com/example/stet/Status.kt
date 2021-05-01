@@ -276,18 +276,18 @@ class Status : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         var retrofitInterface2: UploadRetro? = retrofit.create(UploadRetro::class.java)
-        val req: Call<Void?>? = retrofitInterface2?.getfile( Phone+"_"+str+".png",coll)
-        req!!.enqueue(object : Callback<Void?> {
+        val req: Call<String?>? = retrofitInterface2?.getfile( Phone+"_"+str+".png",coll)
+        req!!.enqueue(object : Callback<String?> {
             override fun onResponse(
-                call: Call<Void?>?,
-                response: Response<Void?>
+                call: Call<String?>?,
+                response: Response<String?>
             ) {
                 if (response.code() == 200) {
                     text.text=getString(R.string.uploaded)
                 }
 
             }
-            override fun onFailure(call: Call<Void?>?, t: Throwable) {
+            override fun onFailure(call: Call<String?>?, t: Throwable) {
 
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT)
                     .show()
