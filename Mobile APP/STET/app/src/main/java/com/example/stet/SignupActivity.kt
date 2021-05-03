@@ -68,14 +68,7 @@ class SignupActivity : AppCompatActivity() {
                         call: Call<Void?>?,
                         response: Response<Void?>
                     ) {
-                        if (response.code() == 201) {
-                            Toast.makeText(
-                                this@SignupActivity,
-                                getString(R.string.pha),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            progress.dismiss()
-                        } else if (response.code() == 202) {
+                        if (response.code() == 202) {
                             Toast.makeText(
                                 this@SignupActivity,
                                 getString(R.string.ema),

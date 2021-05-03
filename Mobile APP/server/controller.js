@@ -179,21 +179,16 @@ module.exports = async (app, myDb) => {
             if (result == null) {
                 return res.status(400).send();
             }
-            const result1 = await myDb.collection("signups").findOne({ Aadhar: req.body.aadhar });
-            if (result1 == null) {
+            const result3 = await myDb.collection("signups").findOne({ Phone: req.body.phone });
+            if (result3 == null) {
                 const result2 = await myDb.collection("signups").findOne({ Email: req.body.email })
                 if (result2 == null) {
-                    const result3 = await myDb.collection("signups").findOne({ Phone: req.body.phone });
-                    if (result3 == null) {
-                        res.status(400).send();
-                    } else {
-                        res.status(201).send();
-                    }
+                    res.status(400).send();
                 } else {
                     res.status(202).send();
                 }
             } else {
-                res.status(203).send();
+                res.status(201).send();
             }
         } catch (err) {
             res.status(500).send();

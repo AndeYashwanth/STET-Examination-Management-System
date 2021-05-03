@@ -51,7 +51,7 @@ class FinalRegistrationActivity : AppCompatActivity() {
         )
         //shared preference for user_cookie
         val cookie:String?=sharedPreferences.getString("user_cookie","")
-        map["venue"]="Sikkim"
+        map["venue"]="Telangana"
         map["eno"]=phone
         //retofit builder
         val retrofit: Retrofit = Retrofit.Builder()

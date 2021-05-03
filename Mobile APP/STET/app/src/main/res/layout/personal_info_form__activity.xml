@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -37,7 +38,6 @@
             android:layout_gravity="center_horizontal"
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
-            android:background="@drawable/background"
             android:orientation="vertical">
 
             <ProgressBar
@@ -56,6 +56,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/global__personal_info"
                 android:textSize="25sp"
+                android:textColor="#555555"
                 android:textStyle="bold" />
 
 
@@ -65,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/personal_info_form_activity__tv__cand_name"
+                android:textColor="#777777"
                 android:textSize="17sp"
                 android:textStyle="bold"
 
@@ -484,7 +486,7 @@
                     android:id="@+id/personal_info_form__btn_next"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginStart="140dp"
+                    android:layout_marginStart="120dp"
                     android:background="@drawable/button_shape"
                     android:text="@string/global__next"/>
             </LinearLayout>

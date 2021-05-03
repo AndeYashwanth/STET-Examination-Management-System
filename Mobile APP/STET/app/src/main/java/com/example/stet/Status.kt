@@ -182,7 +182,10 @@ class Status : AppCompatActivity() {
 
 
                         if (result != null) {
-                            status_application_view_percentage.text = result.Percentage
+                            global__tenth_percentage_obtained_view.text = result.Percentage
+                            global__twelfth_percentage_obtained_view.text = result.Percentage
+                            global__bse_ba_percentage_obtained_view.text = result.Percentage
+                            global__bed_percentage_obtained_view.text = result.Percentage
                             status_application_view_uni.text = result.University
                             status_application_view_prof_quali.text =
                                 result.ProfessionalQualification
@@ -250,7 +253,7 @@ class Status : AppCompatActivity() {
             check("birthcertificate", "Birth_Certificate_Documents", status_view_certi1)
             check("graduationcertificate", "Graduation_Certificate_Documents", status_view_certi8)
             check("graduationmarksheet", "Graduation_Marksheet_Documents", status_view_certi7)
-            check("sikkimsubject", "Sikkim_Subject_Documents", status_view_certi3)
+            check("sikkimsubject", "Telangana_Subject_Documents", status_view_certi3)
             status_print.setOnClickListener {
                 val content: LinearLayout = findViewById(R.id.print)
                 val file = saveBitMap(

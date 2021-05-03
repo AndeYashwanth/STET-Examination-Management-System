@@ -17,15 +17,11 @@
     <string-array name="application_category">
         <item>Select</item>
         <item>Primary Teacher</item>
-        <item>GT Art</item>
-        <item>GT Science</item>
+        <item>Trained Graduate Teacher</item>
     </string-array>
     <string-array name="language_choice">
         <item>Select</item>
-        <item>Nepali</item>
-        <item>Bhutia</item>
-        <item>Lepcha</item>
-        <item>Limboo</item>
+        <item>Telugu</item>
         <item>Hindi</item>
         <item>English</item>
     </string-array>
@@ -40,8 +36,6 @@
     </string-array>
     <string-array name="prof_qualification">
         <item>Select</item>
-        <item>D.EI.Ed</item>
-        <item>B.Ed</item>
         <item>BA B.Ed</item>
         <item>BSc B.Ed</item>
     </string-array>
@@ -69,7 +63,7 @@
         <item>Odisha</item>
         <item>Punjab</item>
         <item>Rajasthan</item>
-        <item>Sikkim</item>
+        <item>Telangana</item>
         <item>Tamil Nadu</item>
         <item>Telangana</item>
         <item>Tripura</item>
@@ -89,18 +83,18 @@
     <string name="forget_password">Forgot Password</string>
     <string name="forget_application_no">Forgot Application Number</string>
     <string name="global__stet_title">Teacher Eligibility Test-2021</string>
-    <string name="homepage_about">About Sikkim TET</string>
+    <string name="homepage_about">About Telangana TET</string>
     <string name="homepage_content">Contents</string>
-    <string name="homepage_about_content">Sikkim Teacher Eligibility Test is one of the prestigious teaching examination of the state Sikkim. Each year, several candidates appear for this exam, and only a few candidates are able to qualify the exam.</string>
-    <string name="homepage_overview">Overview of Sikkim TET</string>
-    <string name="homepage_admitCard">Sikkim TET-2020 Admit Card</string>
-    <string name="homepage_admitCard_content">After the process of the application process is over, candidates can download their Sikkim TET admit card 2020. Those candidates who submitted application form in the year 2019 can also download their admit card this time. As per the official notification, candidates are sent an email related to the release of admit card. Candidates get their admit card through the registered email address. Once the official notification of admit card is released, candidates are advised to visit their respective email address.</string>
-    <string name="homepage_examPattern">Sikkim TET-2020 Exam Pattern</string>
-    <string name="homepage_syllabus">Sikkim TET-2020 Syllabus</string>
-    <string name="homepage_prepare">How to prepare for Sikkim TET-2020?</string>
-    <string name="homepage_applicationForm">Sikkim TET-2020 Application Form</string>
-    <string name="homepage_eligibilityCriteria">Sikkim TET-2020 Eligibility Criteria</string>
-    <string name="homepage_timeline">Sikkim TET-2020 Timeline</string>
+    <string name="homepage_about_content">Telangana Teacher Eligibility Test is one of the prestigious teaching examination of the state Telangana. Each year, several candidates appear for this exam, and only a few candidates are able to qualify the exam.</string>
+    <string name="homepage_overview">Overview of Telangana TET</string>
+    <string name="homepage_admitCard">Telangana TET-2021 Admit Card</string>
+    <string name="homepage_admitCard_content">After the application process is over, candidates can download their Telangana TET admit card 2021. Once the official notification of admit card is released, candidates are advised to visit this page</string>
+    <string name="homepage_examPattern">Telangana TET-2021 Exam Pattern</string>
+    <string name="homepage_syllabus">Telangana TET-2021 Syllabus</string>
+    <string name="homepage_prepare">How to prepare for Telangana TET-2021?</string>
+    <string name="homepage_applicationForm">Telangana TET-2021 Application Form</string>
+    <string name="homepage_eligibilityCriteria">Telangana TET-2021 Eligibility Criteria</string>
+    <string name="homepage_timeline">Telangana TET-2021 Timeline</string>
     <string name="homepage_clickhere">CLICK HERE</string>
     <string name="homepage_apply">To Check Your Profile</string>
     <string name="examPattern">An applicant who intends to participate in both the categories (Primary and Graduate) will have to apply and sit in both the papers separately and pay the fee for both the tests. Both Level I and Level II (i.e. for Primary and Graduate teacher) are conducted on the same day. </string>
@@ -117,7 +111,7 @@
     <string name="examPattern_12">2.30 hours</string>
     <string name="examPattern_13">Exam Time:</string>
     <string name="examPattern_14">10:00 am to 03:30 pm</string>
-    <string name="prepare_content1">Sikkim Teacher Eligibility Test is one of the prestigious teaching examination of the state Sikkim. Each year, several candidates appear for this exam, and only a few candidates are able to qualify the exam. It will be helpful for those candidates who are appearing for the exam to refer to the preparation strategies of TET qualified candidates. Customize their strategies as per the requirement and start the preparation of the exam.</string>
+    <string name="prepare_content1">Telangana Teacher Eligibility Test is one of the prestigious teaching examination of the state Telangana. Each year, several candidates appear for this exam, and only a few candidates are able to qualify the exam. It will be helpful for those candidates who are appearing for the exam to refer to the preparation strategies of TET qualified candidates. Customize their strategies as per the requirement and start the preparation of the exam.</string>
     <string name="prepare_content2">Time management during the preparation of STET exam is crucial. It is necessary to manage time between studying and revision. Each section of syllabus must get enough time to practise. Also, it becomes vital to revise topics with previous year papers to keep them fresh in mind.</string>
     <string name="prepare_content3">Along with hard work, smart work is also crucial for the STET preparation. It becomes necessary to identify the important topics for the exam. Practise STET previous year question papers and note down the important topics and frequently asked questions of the exam. Candidates can also start their preparation with these important section and questions.</string>
     <string name="application_form_content1">Before filling the application form, candidates must keep the following things ready:</string>
@@ -128,7 +122,7 @@
     <string name="application_form_content6">Application Fee</string>
     <string name="application_form_content7">Candidates have to pay Rs.400/- as application fee.</string>
     <string name="application_form_content8">Application fee can only be submitted online.</string>
-    <string name="eligibility_criteria_content1">Candidates who are fulfilling the Eligibility Criteria set by officials will be able to sit for the Exam, others will be rejected at the time of scrutiny of documents. Here we have mentioned the eligibility criteria for STET Sikkim Exam 2020.</string>
+    <string name="eligibility_criteria_content1">Candidates who are fulfilling the Eligibility Criteria set by officials will be able to sit for the Exam, others will be rejected at the time of scrutiny of documents. Here we have mentioned the eligibility criteria for STET Telangana Exam 2021.</string>
     <string name="eligibility_criteria_content2">12th or its equivalent with a minimum of 50% marks in aggregate for unreserved candidates and 45 % in case of SC, ST, OBC (Central), OBC (State) and passed the final year of 2 years of D. El. Ed . OR</string>
     <string name="eligibility_criteria_content3">12th or its equivalent with a minimum of 50% marks in aggregate for unreserved candidates and 45 % in case of SC, ST, OBC(Central), OBC(State) and passed in the final year of 4 years B. Ed. OR</string>
     <string name="eligibility_criteria_content4">12th or its equivalent with a minimum of 50% marks in aggregate and 45 % in case of SC, ST, OBC (Central), OBC(State) and passed in final year of 2 years Diploma in Education ( Special Education).</string>
@@ -138,7 +132,7 @@
     <string name="eligibility_criteria_content8">12th or its equivalent with a minimum 0f 50% marks for unreserved category and 45% marks in case of Sc, ST, OBC (Central), OBc (State) and passed or appearing in final year of 04 years B. A.Ed/B.Sc.Ed or B.A/B.Sc.Ed</string>
     <string name="eligibility_criteria_content9">Minimum Educational Qualification for Primary Teacher (Classes I- V: Primary Stage)</string>
     <string name="eligibility_criteria_content10">Minimum Educational qualification for Graduate Teacher for (Classes VI-VIII: Elementary Stage)</string>
-    <string name="syllabus_content1">Sikkim TET syllabus 2020 is provided below, the candidates should prepare according to the syllabus to qualify for Sikkim TET exam. Detailed knowledge of Syllabus is mandatory for each candidate to prepare for STET Sikkim 2020 Exam.</string>
+    <string name="syllabus_content1">Telangana TET syllabus 2021 is provided below, the candidates should prepare according to the syllabus to qualify for Telangana TET exam. Detailed knowledge of Syllabus is mandatory for each candidate to prepare for STET Telangana 2021 Exam.</string>
     <string name="syllabus_content2">Concept of development and its relationship with learning, Principles of the development of children, Socialization processes: Social world and children (Teachers, parents, peers.)Piaget, Kohlberg and Vygotsky: constructs and critical perspectives, Gross and fine motor development skills in infancy and preschool children. Development of speech and language.Gender as a social construct; gender roles, gender- bias and educational practice, Individual differences among learners, understanding differences based on diversity of language, caste, gender, community, religion etc.</string>
     <string name="syllabus_content3">Reading unseen passages- two passages one prose (maybe from literary, scientific, narrative or discursive ) or drama and poem with questions on comprehension, inference, grammar and verbal ability</string>
     <string name="syllabus_content4">Learning and Acquisition, Teaching Role of listening and speaking; function of language and how children use it as a tool critical perspective on the role of grammar in learning a language for communicating ideas verbally and in written form; Principles of language, Remedial Teaching, Challenges of teaching language in a diverse classroom; language difficulties, errors and disorders language, Skills Evaluating language comprehension and proficiency: speaking, listening, reading and writing teaching-learning materials: Textbook, multimedia materials, multilingual resource of the classroom</string>
@@ -164,11 +158,11 @@
     <string name="global__verify">Verify</string>
     <string name="page_2_email">Verify Email Id :</string>
     <string name="page_2_skip">Skip</string>
-    <string name="page_3_text_view1">SIKKIM TEACHER ELIGIBILITY TEST 2020</string>
+    <string name="page_3_text_view1">SIKKIM TEACHER ELIGIBILITY TEST 2021</string>
     <string name="page_3_text_view_new_candidate">NEW CANDIDATE REGISTRTION</string>
     <string name="global__register_now">REGISTER NOW</string>
     <string name="page_3_registered_candidate">REGISTERED CANDIDATE LOGIN</string>
-    <string name="tv__personal_info_form_activity__title">STET 2020 APPLICATION FORM</string>
+    <string name="tv__personal_info_form_activity__title">STET 2021 APPLICATION FORM</string>
     <string name="global__gender">Gender</string>
     <string name="selectgender">Please Select Gender</string>
     <string name="page_4_mother_name">Mother\'s Name :</string>
@@ -179,10 +173,13 @@
     <string name="global__aadhar_card">Aadhar Card</string>
     <string name="global__postal_code">Postal Code</string>
     <string name="page_5_details">QUALIFICATION DETAILS</string>
-    <string name="global__application_category">Application Category</string>
-    <string name="global__language_choice">Language Paper Choice</string>
+    <string name="global__application_category">Job Application Category</string>
+    <string name="global__exam_language">Exam Language</string>
     <string name="page_5_min_qualification">Minimum Qualification</string>
-    <string name="global__percentage_obtained">Percentage Obtained</string>
+    <string name="global__tenth_percentage_obtained">Tenth Percentage Obtained</string>
+    <string name="global__twelfth_percentage_obtained">Twelfth Percentage Obtained</string>
+    <string name="global__bse_ba_percentage_obtained">B.Sc/B.A Percentage Obtained</string>
+    <string name="global__bed_percentage_obtained">B.Ed Percentage Obtained</string>
     <string name="global__prof_qualification">Professional Qualification</string>
     <string name="global__university">University</string>
     <string name="global__back">Back</string>
@@ -195,7 +192,7 @@
     <string name="global__ba_bsc_cert">BA/BSc Certificate</string>
     <string name="global__bed_cert">B.Ed Certificate</string>
     <string name="global__birth_cert">Birth Certificate</string>
-    <string name="global__subject_cert">Sikkim Subject Certificate</string>
+    <string name="global__subject_cert">Telangana Subject Certificate</string>
     <string name="global__community_certificate">Community Certificate</string>
     <string name="global__signature">Signature</string>
     <string name="page_7_photo">Passport Size Photo</string>
@@ -209,7 +206,7 @@
     <string name="page_2_emailSendLink">Send Link</string>
     <string name="page_2_verifyEmail">Email ID Verification</string>
     <string name="page_2_aadharVerification">Aadhaar Verification</string>
-    <string name="page_3_newCandidateReg">New Candidate Registration</string>
+    <string name="page_3_newCandidateReg">Exam Registration for 2021</string>
     <string name="global__male">Male</string>
     <string name="global__female">Female</string>
     <string name="personal_info_form_activity__rb__others">Other</string>
@@ -223,7 +220,7 @@
     <string name="personal_info_form_activity__cb">I have read and understood all the instructions.</string>
     <string name="page_5_aca_info">Academic Information</string>
     <string name="page_6_payment">Payment</string>
-    <string name="page_7_upload">Upload Your File</string>
+    <string name="page_7_upload">Upload Files</string>
     <string name="page_7_or">OR</string>
     <string name="page_7_checkbox2">The certificates i have uploaded is correct according to my knowledge.</string>
     <string name="global__final_registration">Final Registration</string>
@@ -253,22 +250,22 @@
     <string name="timeline_title">Full Program Timeline</string>
     <string name="timeline_app_announced">Application Announced</string>
     <string name="timeline_date1"></string>
-    <string name="timeline_data1">Announcement of the STET Examination for the year 2020</string>
+    <string name="timeline_data1">Announcement of the STET Examination for the year 2021</string>
     <string name="timeline_regStarts">Registration starts</string>
     <string name="timeline_date_2"></string>
-    <string name="timeline_data2">Starting date of the registration of STET exam year 2020</string>
+    <string name="timeline_data2">Starting date of the registration of STET exam year 2021</string>
     <string name="timeline_lastSubmission">Last date of submission</string>
     <string name="timeline_date3"></string>
-    <string name="timeline_data3">Last date to fill the form of STET examination year 2020</string>
+    <string name="timeline_data3">Last date to fill the form of STET examination year 2021</string>
     <string name="timeline_dateOfAdmitC">Date of admit card</string>
     <string name="timeline_date4"></string>
-    <string name="timeline_data4">Date of generation of Admit Card for the year 2020</string>
+    <string name="timeline_data4">Date of generation of Admit Card for the year 2021</string>
     <string name="timeline_examdate">Exam Date</string>
     <string name="timeline_date5"></string>
-    <string name="timeline_data5">Date of examination for the year 2020</string>
+    <string name="timeline_data5">Date of examination for the year 2021</string>
     <string name="timeline_result_date">Result Date</string>
     <string name="timeline_date6"></string>
-    <string name="timeline_data6">Result date of examination for the year 2020</string>
+    <string name="timeline_data6">Result date of examination for the year 2021</string>
 
     <string name="password_reset">Password:</string>
     <string name="show_password">SHOW PASSWORD</string>
@@ -283,7 +280,7 @@
     <string name="update_payment_detail">Update Payment Detail</string>
     <string name="remember_me">Remember Me</string>
     <string name="forget_password_bt">Forgot</string>
-    <string name="enter_phone_no_to_retreive_and_reset_password">Enter phone number to reset password</string>
+    <string name="enter_phone_no_to_retreive_and_reset_password">Enter registered phone number to reset password</string>
     <string name="global__personal_info">Personal Info</string>
     <string name="personal_info_form_activity__tv__cand_name">Candidate Name</string>
     <string name="global__fname">First Name</string>
@@ -313,18 +310,18 @@
     <string name="chat_bot_menu">CHAT BOT</string>
     <string name="timeline_menu">TIMELINE</string>
     <string name="logout_menu">LOGOUT</string>
-    <string name="homepage_faq">Sikkim TET 2020 FAQs</string>
+    <string name="homepage_faq">Telangana TET 2021 FAQs</string>
     <string name="faqs">FAQs</string>
-    <string name="q1">Is there any Negative Marking in STET Sikkim 2020 Exam?</string>
+    <string name="q1">Is there any Negative Marking in STET Telangana 2021 Exam?</string>
     <string name="a1">There will be no penalty for wrong answers in STET.</string>
-    <string name="q2">Does STET Sikkim 2020 Exam will be conducted Online or Offline?</string>
-    <string name="a2">STET Sikkim 2020 Exam will be conducted online</string>
-    <string name="q3">Will I be able to take any breaks during the STET Sikkim 2020 exam?</string>
-    <string name="a3">No, you will not be given any break during the STET Sikkim 2020 exam.</string>
-    <string name="q4">How can I pay the Application Fee for STET Sikkim Exam 2020?</string>
+    <string name="q2">Does STET Telangana 2021 Exam will be conducted Online or Offline?</string>
+    <string name="a2">STET Telangana 2021 Exam will be conducted online</string>
+    <string name="q3">Will I be able to take any breaks during the STET Telangana 2021 exam?</string>
+    <string name="a3">No, you will not be given any break during the STET Telangana 2021 exam.</string>
+    <string name="q4">How can I pay the Application Fee for STET Telangana Exam 2021?</string>
     <string name="a4">Candidates have to pay Rs.400/-on account of Exam fee and it should be deposited in favour of Joint Director/ Examinations, HRDD from any bank or branches of IDBI Bank (IDBI Account Number:0108102000006767 branch: Gangtok).</string>
-    <string name="q5">Is there any Sectional Cut-off in STET Sikkim 2020 Examination?</string>
-    <string name="a5">No, there is not any Sectional Cut-off in STET Sikkim 2020 Examination.</string>
+    <string name="q5">Is there any Sectional Cut-off in STET Telangana 2021 Examination?</string>
+    <string name="a5">No, there is not any Sectional Cut-off in STET Telangana 2021 Examination.</string>
     <string name="download">DOWNLOAD ADMITCARD</string>
     <string name="online">Online</string>
     <string name="uploaded">UPLOADED</string>
@@ -402,7 +399,7 @@
     <string name="Imagefetched">Image fetched</string>
     <string name="pha">Phone number  already registered</string>
     <string name="ema">Email-id already registered</string>
-    <string name="aaa">Aadhar number  already registered</string>
+    <string name="aaa">Aadhar number already registered</string>
     <string name="submitaa">Already submitted registration form</string>
     <string name="yearnot">Current Year Not Found</string>
     <string name="digitonlu">digit Number Only</string>

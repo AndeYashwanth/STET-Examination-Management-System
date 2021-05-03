@@ -3,6 +3,8 @@
     android:id="@+id/next1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     android:orientation="vertical">
 
     <ImageView
@@ -18,7 +20,6 @@
         android:id="@+id/page_1_signup_text_view1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
         android:text="@string/global__stet_title"
         android:textColor="#000000"
@@ -46,17 +47,17 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/global__name"
-                android:textSize="14sp" />
+                android:textSize="17sp" />
 
 
             <EditText
                 android:id="@+id/page_1_signup_name_et"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:background="@drawable/box"
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
-                android:textSize="12dp"
+                android:textSize="17dp"
                 android:text="Ande Yashwanth">
 
             </EditText>
@@ -75,16 +76,16 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/global__email"
-                android:textSize="14sp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/page_1_signup_email_et"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:background="@drawable/box"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
-                android:textSize="12dp"
+                android:textSize="17dp"
                 android:text="andeyashwanth001@gmail.com">
 
             </EditText>
@@ -104,12 +105,12 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/global__phone_no"
-                android:textSize="14sp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/page_1_signup_phn_et"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:background="@drawable/box"
                 android:inputType="phone"
                 android:paddingLeft="10dp"
@@ -131,16 +132,16 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/global__password"
-                android:textSize="14sp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/page_1_signup_Edtpass"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:background="@drawable/box"
                 android:inputType="textPassword"
                 android:paddingLeft="10dp"
-                android:textSize="12dp"
+                android:textSize="17dp"
                 android:text="Kmit123$">
 
             </EditText>
@@ -150,22 +151,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/signup_back"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:textSize="17sp"
                 android:background="@drawable/button_shape"
                 android:text="@string/global__back" />
 
             <Button
                 android:id="@+id/signup_verify"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginLeft="93dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:textSize="17sp"
+                android:layout_marginLeft="85dp"
                 android:background="@drawable/button_shape"
                 android:text="@string/page_1_signup" />
         </LinearLayout>

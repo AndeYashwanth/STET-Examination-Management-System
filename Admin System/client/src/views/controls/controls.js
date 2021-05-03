@@ -168,7 +168,7 @@ const Controls = () => {
                           <CCol xs="12" md="6" xl="6">
                             <CCard>
                               <CCardHeader>
-                                Generate Admit Cards
+                                Generate All Admit Cards
                               </CCardHeader>
                               <CCardBody>
                                 <CButton variant="outline" color="info" onClick={generate_all} size="lg" block>Generate</CButton>
@@ -177,36 +177,10 @@ const Controls = () => {
 
                             <CCard>
                               <CCardHeader>
-                                Rgenerate Admit Cards
+                                Rgenerate All Admit Cards
                               </CCardHeader>
                               <CCardBody>
                                 <CButton variant="outline" color="info" onClick={regenerate_all} size="lg" block>Regenerate</CButton>
-                              </CCardBody>
-                            </CCard>
-                            <CCard>
-                              <CCardHeader>
-                                Update Result
-                              </CCardHeader>
-                              <CCardBody>
-                                <CForm action="" method="post">
-                                    <CFormGroup row>
-                                      <CCol md="3">
-                                        <CLabel htmlFor="textarea-input">Roll Numbers</CLabel>
-                                      </CCol>
-                                      <CCol xs="12" md="9">
-                                        <CTextarea 
-                                          pattern="[0-9]*,"
-                                          name="textarea-input" 
-                                          id="textarea-input" 
-                                          rows="9"
-                                          placeholder="Mobile Numbers of Selected Candidates" 
-                                        />
-                                      </CCol>
-                                    </CFormGroup>
-                                    <CFormGroup className="form-actions">
-                                      <CButton type="submit" size="sm" color="success">Submit</CButton>
-                                    </CFormGroup>
-                                  </CForm>
                               </CCardBody>
                             </CCard>
                           </CCol>

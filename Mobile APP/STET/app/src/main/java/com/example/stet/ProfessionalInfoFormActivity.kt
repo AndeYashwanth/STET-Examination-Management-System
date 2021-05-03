@@ -120,10 +120,15 @@ class ProfessionalInfoFormActivity : AppCompatActivity() {
                         val result = response.body()
 
                         if (result != null) {
-                            page_5_spin_min_qualification.setSelection(getSpinMinaqual(result.MinQualification))
                             page_5_spin_prof_qualification.setSelection(getSpinProfessQual(result.ProfessionalQualification))
                             page_5_enter_university.setText(result.University)
-                            page_5_enter_percentage.setText(result.Percentage)
+                            /**
+                             * @todo different result percentage to all values
+                             */
+                            professional_info_form_activity__et__enter_tenth_percentage.setText(result.Percentage)
+                            professional_info_form_activity__et__enter_twelfth_percentage.setText(result.Percentage)
+                            professional_info_form_activity__et__enter_bse_ba_percentage.setText(result.Percentage)
+                            professional_info_form_activity__et__enter_bed_percentage.setText(result.Percentage)
                             page_5_spin_category.setSelection(getSpinApplicationCategory(result.ApplicationCategory))
                             page_5_spin_language.setSelection(getSpinLanguage(result.PaperLanguage))
                             page_5_next.text = getString(R.string.update)
@@ -151,20 +156,17 @@ class ProfessionalInfoFormActivity : AppCompatActivity() {
                 progress.setProgressStyle(ProgressDialog.STYLE_SPINNER)
                 progress.isIndeterminate = true
                 progress.show()
-                if (validPercentage(page_5_enter_percentage, 4) == 0
+                if (validPercentage(professional_info_form_activity__et__enter_bed_percentage, 4) == 0
                     && validUniversity(page_5_enter_university) == 0
                     && validSpinner(page_5_spin_category) == 0
                     && validSpinner(page_5_spin_language) == 0
-                    && validSpinner(page_5_spin_min_qualification) == 0
                     && validSpinner(page_5_spin_prof_qualification) == 0
                     && page_5_chechbox.isChecked
                 ) {
                     val myFirstDocument: HashMap<String, String> = HashMap()
                     myFirstDocument["Phone"] = phone
-                    myFirstDocument["Percentage"] = page_5_enter_percentage.text.toString()
+                    myFirstDocument["Percentage"] = professional_info_form_activity__et__enter_bed_percentage.text.toString()
                     myFirstDocument["University"] = page_5_enter_university.text.toString()
-                    myFirstDocument["MinQualification"] =
-                        page_5_spin_min_qualification.selectedItem.toString()
                     myFirstDocument["ProfessionalQualification"] =
                         page_5_spin_prof_qualification.selectedItem.toString()
                     myFirstDocument["ApplicationCategory"] =
@@ -334,7 +336,7 @@ class ProfessionalInfoFormActivity : AppCompatActivity() {
 
         val list = resources.getStringArray(R.array.prof_qualification)
         val i = 1
-        for (i in 1..4) {
+        for (i in 1..2) {
             if (list[i] == str) {
                 return i
             }

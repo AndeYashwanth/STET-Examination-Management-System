@@ -74,14 +74,14 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
             Details = {
                 Gender:{},
                 Exam:{},
-                Category:{},
+                Community:{},
             }
             const collection = myDb.collection('registration')
             
             var options = {
                 projection: {
                   Gender: 1,
-                  Category: 1,
+                  Community: 1,
                   Exam: 1,
                 },
               };
@@ -95,16 +95,14 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                     Details.Gender.Female = result.filter((obj) => obj.Gender === "Female").length;
                     Details.Gender.Others = result.filter((obj) => obj.Gender === "Others").length;
                     Details.Exam.primary = result.filter((obj) => obj.Exam === "Primary Teacher").length;
-                    Details.Exam.gtart = result.filter((obj) => obj.Exam === "GT Art").length;
-                    Details.Exam.gtscience = result.filter((obj) => obj.Exam === "GT Science").length;
-                    Details.Category.general = result.filter((obj) => obj.Category === "General").length;
-                    Details.Category.obc = result.filter((obj) => obj.Category === "OBC").length;
-                    Details.Category.sc = result.filter((obj) => obj.Category === "SC").length;
-                    Details.Category.st = result.filter((obj) => obj.Category === "ST").length;
+                    Details.Exam.tgt = result.filter((obj) => obj.Exam === "Trained Graduate Teacher").length;
+                    Details.Community.general = result.filter((obj) => obj.Community === "General").length;
+                    Details.Community.obc = result.filter((obj) => obj.Community === "OBC").length;
+                    Details.Community.sc = result.filter((obj) => obj.Community === "SC").length;
+                    Details.Community.st = result.filter((obj) => obj.Community === "ST").length;
                     Details.Amount = (result.length)*400;
-                    Details.Registerd = result.length;   
+                    Details.Registered = result.length;   
                 }
-
                 res.send(Details);
             })
         })

@@ -2,7 +2,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
 
     >
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="0dp">
+        android:layout_margin="10dp">
 
         <ImageView
             android:id="@+id/page_5_image"
@@ -30,7 +29,6 @@
             android:text="@string/global__stet_title"
             android:textSize="30sp"
             android:textColor="#000000"
-            android:layout_marginBottom="20dp"
             android:textStyle="bold">
 
         </TextView>
@@ -72,7 +70,7 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
-                    android:id="@+id/global__application_category"
+                    android:id="@+id/professional_info_form_activity__tv__application_category"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -96,13 +94,13 @@
                 </Spinner>
 
                 <TextView
-                    android:id="@+id/global__language_choice"
+                    android:id="@+id/global__exam_language"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textSize="17sp"
-                    android:text="@string/global__language_choice" />
+                    android:text="@string/global__exam_language" />
 
                 <Spinner
                     android:layout_width="230dp"
@@ -117,25 +115,61 @@
                 </Spinner>
 
                 <TextView
-                    android:id="@+id/page_5_min_qualification"
-                    android:layout_width="match_parent"
+                    android:id="@+id/page_5__percentage_obtained"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="@string/page_5_min_qualification"
+                    android:textStyle="bold"
                     android:textSize="17sp"
-                    android:textStyle="bold"/>
+                    android:text="@string/global__tenth_percentage_obtained" />
 
-                <Spinner
+                <EditText
+                    android:id="@+id/professional_info_form_activity__et__enter_tenth_percentage"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
-                    android:layout_marginBottom="15dp"
-                    android:id="@+id/page_5_spin_min_qualification"
+                    android:paddingLeft="10dp"
                     android:background="@drawable/box"
-                    style="@android:style/Widget.Holo.Light.Spinner"
-                    android:entries="@array/min_qualification"
-                    android:prompt="@string/global__select">
+                    android:textSize="14dp"
+                    android:hint="Percentage"
+                    android:inputType="numberDecimal" />
 
-                </Spinner>
+                <TextView
+                    android:id="@+id/professional_info_form_activity_tv__percentage_obtained"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:text="@string/global__twelfth_percentage_obtained" />
+
+                <EditText
+                    android:id="@+id/professional_info_form_activity__et__enter_twelfth_percentage"
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/box"
+                    android:textSize="14dp"
+                    android:hint="Percentage"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/professional_info_form_activity__tv___percentage_obtained"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:text="@string/global__bse_ba_percentage_obtained" />
+
+                <EditText
+                    android:id="@+id/professional_info_form_activity__et__enter_bse_ba_percentage"
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/box"
+                    android:textSize="14dp"
+                    android:hint="Percentage"
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/global__percentage_obtained"
@@ -144,10 +178,10 @@
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textSize="17sp"
-                    android:text="@string/global__percentage_obtained" />
+                    android:text="@string/global__bed_percentage_obtained" />
 
                 <EditText
-                    android:id="@+id/page_5_enter_percentage"
+                    android:id="@+id/professional_info_form_activity__et__enter_bed_percentage"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:paddingLeft="10dp"

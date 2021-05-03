@@ -8,6 +8,9 @@
         android:id="@+id/print"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical">
 
         <ImageView
@@ -42,7 +45,7 @@
             <ProgressBar
                 android:id="@+id/status_progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="320dp"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
@@ -66,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginRight="10dp"
+                android:textSize="16sp"
                 android:text="@string/status_reg_number" />
 
             <TextView
@@ -73,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:textSize="16sp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
                 android:text="1938279290"
@@ -93,10 +98,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/global__personal_info"
-                android:textSize="15dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -116,7 +121,8 @@
                     <TextView
                         android:id="@+id/status_registratio_no"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
+                        android:textSize="16sp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_reg_number" />
@@ -124,7 +130,7 @@
                     <TextView
                         android:id="@+id/status_view_registration_no"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -140,7 +146,8 @@
                     <TextView
                         android:id="@+id/status_aadhar"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
+                        android:textSize="16sp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__aadhar_no" />
@@ -148,7 +155,7 @@
                     <TextView
                         android:id="@+id/status_view_aadhar"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -164,7 +171,7 @@
                     <TextView
                         android:id="@+id/status_candidate"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_can" />
@@ -172,7 +179,7 @@
                     <TextView
                         android:id="@+id/status_view_candidate"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -188,7 +195,7 @@
                     <TextView
                         android:id="@+id/status_gender"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__gender" />
@@ -196,7 +203,7 @@
                     <TextView
                         android:id="@+id/status_view_gender"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -213,7 +220,7 @@
                     <TextView
                         android:id="@+id/status_father"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__father_name" />
@@ -221,7 +228,7 @@
                     <TextView
                         android:id="@+id/status_view_father"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingStart="10dp"
                         android:text="" />
@@ -237,7 +244,7 @@
                     <TextView
                         android:id="@+id/status_dob"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__dob" />
@@ -245,7 +252,7 @@
                     <TextView
                         android:id="@+id/status_view_dob"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingStart="10dp"
                         android:text="" />
@@ -261,7 +268,7 @@
                     <TextView
                         android:id="@+id/status_mobile"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_mob" />
@@ -269,7 +276,7 @@
                     <TextView
                         android:id="@+id/status_view_mobile"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -285,7 +292,7 @@
                     <TextView
                         android:id="@+id/global__email"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__email" />
@@ -293,7 +300,7 @@
                     <TextView
                         android:id="@+id/status_view_email"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -305,7 +312,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="25dp"
                     android:layout_marginBottom="10dp"
                     android:text="@string/global__address"
                     android:textSize="15dp"
@@ -319,7 +326,7 @@
 
                     <TextView
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__hno" />
@@ -327,7 +334,7 @@
                     <TextView
                         android:id="@+id/status_hno"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -342,7 +349,7 @@
 
                     <TextView
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__area" />
@@ -350,7 +357,7 @@
                     <TextView
                         android:id="@+id/status_area"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -366,7 +373,7 @@
                     <TextView
                         android:id="@+id/status_dist"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__district" />
@@ -374,7 +381,7 @@
                     <TextView
                         android:id="@+id/status_view_dist"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -390,7 +397,7 @@
                     <TextView
                         android:id="@+id/status_state"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__state" />
@@ -398,7 +405,7 @@
                     <TextView
                         android:id="@+id/status_view_state"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -414,7 +421,7 @@
                     <TextView
                         android:id="@+id/status_pin"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__postal_code" />
@@ -422,7 +429,7 @@
                     <TextView
                         android:id="@+id/staus_view_pin"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -436,7 +443,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/status_aca_info"
                 android:textSize="15dp"
@@ -460,7 +467,7 @@
                     <TextView
                         android:id="@+id/status_application_category"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__application_category"
@@ -470,7 +477,7 @@
                     <TextView
                         android:id="@+id/status_application_view_category"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
@@ -491,17 +498,17 @@
                     <TextView
                         android:id="@+id/status_application_paper_choice"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__language_choice"
+                        android:text="@string/global__exam_language"
 
                         />
 
                     <TextView
                         android:id="@+id/status_application_view_paper_choice"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
@@ -522,7 +529,7 @@
                     <TextView
                         android:id="@+id/status_application_min_quali"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/page_5_min_qualification"
@@ -532,7 +539,7 @@
                     <TextView
                         android:id="@+id/status_application_view_min_quali"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
@@ -551,23 +558,76 @@
                     >
 
                     <TextView
-                        android:id="@+id/status_application_percentage"
+                        android:id="@+id/global__tenth_percentage_obtained"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__percentage_obtained"
+                        android:text="@string/global__tenth_percentage_obtained"
 
                         />
 
                     <TextView
-                        android:id="@+id/status_application_view_percentage"
+                        android:id="@+id/global__tenth_percentage_obtained_view"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
+                        />
+                    <TextView
+                        android:id="@+id/global__twelfth_percentage_obtained"
+                        android:layout_width="158dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/box_2"
+                        android:gravity="center_horizontal"
+                        android:text="@string/global__twelfth_percentage_obtained"
 
+                        />
+
+                    <TextView
+                        android:id="@+id/global__twelfth_percentage_obtained_view"
+                        android:layout_width="158dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/box_2"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        />
+                    <TextView
+                        android:id="@+id/global__bse_ba_percentage_obtained"
+                        android:layout_width="158dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/box_2"
+                        android:gravity="center_horizontal"
+                        android:text="@string/global__bse_ba_percentage_obtained"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/global__bse_ba_percentage_obtained_view"
+                        android:layout_width="158dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/box_2"
+                        android:paddingLeft="10dp"
+                        android:text=""
+                        />
+                    <TextView
+                        android:id="@+id/global__bed_percentage_obtained"
+                        android:layout_width="158dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/box_2"
+                        android:gravity="center_horizontal"
+                        android:text="@string/global__bed_percentage_obtained"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/global__bed_percentage_obtained_view"
+                        android:layout_width="158dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/box_2"
+                        android:paddingLeft="10dp"
+                        android:text=""
                         />
 
                 </LinearLayout>
@@ -582,7 +642,7 @@
                     <TextView
                         android:id="@+id/status_application_prof_quali"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__prof_qualification"
@@ -592,7 +652,7 @@
                     <TextView
                         android:id="@+id/status_application_view_prof_quali"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
@@ -612,7 +672,7 @@
                     <TextView
                         android:id="@+id/status_application_uni"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__university"
@@ -622,7 +682,7 @@
                     <TextView
                         android:id="@+id/status_application_view_uni"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
@@ -638,7 +698,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/status_scanned_pht"
                 android:textSize="15dp"
@@ -708,7 +768,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/status_fee_detail"
                 android:textSize="15dp"
@@ -731,7 +791,7 @@
                     <TextView
                         android:id="@+id/status_payment_mode"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_pay_mode" />
@@ -739,7 +799,7 @@
                     <TextView
                         android:id="@+id/status_view_payment_mode"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -755,7 +815,7 @@
                     <TextView
                         android:id="@+id/status_tran_ID"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_transection" />
@@ -763,7 +823,7 @@
                     <TextView
                         android:id="@+id/status_view_tran_ID"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -781,7 +841,7 @@
                     <TextView
                         android:id="@+id/status_transaction"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_date_tran" />
@@ -789,7 +849,7 @@
                     <TextView
                         android:id="@+id/status_view_transaction"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text="" />
@@ -805,7 +865,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/status_uploaded_docs"
                 android:textSize="15dp"
@@ -829,7 +889,7 @@
                     <TextView
                         android:id="@+id/status_docs"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/status_docs" />
@@ -837,7 +897,7 @@
                     <TextView
                         android:id="@+id/status_uploaded_or_not"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -854,7 +914,7 @@
                     <TextView
                         android:id="@+id/status_certi1"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__birth_cert" />
@@ -862,7 +922,7 @@
                     <TextView
                         android:id="@+id/status_view_certi1"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -881,7 +941,7 @@
                     <TextView
                         android:id="@+id/status_certi3"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__subject_cert" />
@@ -889,7 +949,7 @@
                     <TextView
                         android:id="@+id/status_view_certi3"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -907,7 +967,7 @@
                     <TextView
                         android:id="@+id/status_certi4"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__aadhar_card" />
@@ -915,7 +975,7 @@
                     <TextView
                         android:id="@+id/status_view_certi4"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -934,7 +994,7 @@
                     <TextView
                         android:id="@+id/status_certi5"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__10th_marksheet" />
@@ -942,7 +1002,7 @@
                     <TextView
                         android:id="@+id/status_view_certi5"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -960,7 +1020,7 @@
                     <TextView
                         android:id="@+id/status_certi6"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__12th_marksheet" />
@@ -968,7 +1028,7 @@
                     <TextView
                         android:id="@+id/status_view_certi6"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -986,7 +1046,7 @@
                     <TextView
                         android:id="@+id/status_certi7"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__bed_cert" />
@@ -994,7 +1054,7 @@
                     <TextView
                         android:id="@+id/status_view_certi7"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
@@ -1012,7 +1072,7 @@
                     <TextView
                         android:id="@+id/status_certi8"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
                         android:text="@string/global__ba_bsc_cert" />
@@ -1020,7 +1080,7 @@
                     <TextView
                         android:id="@+id/status_view_certi8"
                         android:layout_width="158dp"
-                        android:layout_height="20dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"

@@ -78,7 +78,6 @@ class FIleUploadActivity : AppCompatActivity() {
         image_gradc.visibility=View.INVISIBLE
         image_gradm.visibility=View.INVISIBLE
         image_signature.visibility=View.INVISIBLE
-        image_subject.visibility=View.INVISIBLE
         image_photo.visibility=View.INVISIBLE
         image_community.visibility=View.INVISIBLE
         cancel_10th.visibility=View.INVISIBLE
@@ -88,7 +87,6 @@ class FIleUploadActivity : AppCompatActivity() {
         cancel_gradc.visibility=View.INVISIBLE
         cancel_gradm.visibility=View.INVISIBLE
         cancel_signature.visibility=View.INVISIBLE
-        cancel_subject.visibility=View.INVISIBLE
         cancel_photo.visibility=View.INVISIBLE
         cancel_community.visibility=View.INVISIBLE
         phone= intent.getStringExtra("phone")
@@ -168,11 +166,9 @@ class FIleUploadActivity : AppCompatActivity() {
             )
             check("photo", "Photo_Documents", page_7_photo_upload)
             check("signature", "Signature_Documents", page_7_signature_upload)
-            check("sikkimsubject", "Sikkim_Subject_Documents", page_7_subject_cert_upload)
             page_7_next.setOnClickListener {
                 if (page_7_checkbox.isChecked) {
-                    if (page_7_subject_cert_upload.text == getString(R.string.uploaded)
-                        && page_7_aadhar_upload.text == getString(R.string.uploaded)
+                    if (page_7_aadhar_upload.text == getString(R.string.uploaded)
                         && page_7_birth_cert_upload.text == getString(R.string.uploaded)
                         && page_7_signature_upload.text == getString(R.string.uploaded)
                         && page_7_photo_upload.text == getString(R.string.uploaded)
@@ -266,12 +262,6 @@ class FIleUploadActivity : AppCompatActivity() {
                 storage()
 
             }
-            page_7_select_subject.setOnClickListener {
-                t = 10
-                page_7_subject_cert_upload.visibility = View.VISIBLE
-                storage()
-
-            }
             page_7_aadhar_cam.setOnClickListener {
                 t = 1
                 page_7_aadhar_upload.visibility = View.VISIBLE
@@ -326,12 +316,6 @@ class FIleUploadActivity : AppCompatActivity() {
                 camera()
 
             }
-            page_7_subject_cert_cam.setOnClickListener {
-                t = 10
-                page_7_subject_cert_upload.visibility = View.VISIBLE
-                camera()
-
-            }
             cancel_aadhar.setOnClickListener {
                 image_aadhar.visibility = View.INVISIBLE
                 cancel_aadhar.visibility = View.INVISIBLE
@@ -360,11 +344,6 @@ class FIleUploadActivity : AppCompatActivity() {
             cancel_gradm.setOnClickListener {
                 image_gradm.visibility = View.INVISIBLE
                 cancel_gradm.visibility = View.INVISIBLE
-                s = 0
-            }
-            cancel_subject.setOnClickListener {
-                image_subject.visibility = View.INVISIBLE
-                cancel_subject.visibility = View.INVISIBLE
                 s = 0
             }
             cancel_signature.setOnClickListener {
@@ -542,12 +521,6 @@ class FIleUploadActivity : AppCompatActivity() {
                                 cancel_signature.visibility = View.VISIBLE
                                 image_signature.setImageBitmap(bit)
                             }
-                            10 -> {
-                                bit10 = bit
-                                image_subject.visibility = View.VISIBLE
-                                cancel_subject.visibility = View.VISIBLE
-                                image_subject.setImageBitmap(bit)
-                            }
 
                         }
                     } catch (e: IOException) {
@@ -621,12 +594,6 @@ class FIleUploadActivity : AppCompatActivity() {
                                 image_signature.visibility = View.VISIBLE
                                 cancel_signature.visibility = View.VISIBLE
                                 image_signature.setImageBitmap(bit)
-                            }
-                            10 -> {
-                                bit10 = bit
-                                image_subject.visibility = View.VISIBLE
-                                cancel_subject.visibility = View.VISIBLE
-                                image_subject.setImageBitmap(bit)
                             }
                         }
 
@@ -814,27 +781,6 @@ class FIleUploadActivity : AppCompatActivity() {
                     page_7_signature_upload
                 )
             }
-        }
-        page_7_subject_cert_upload.setOnClickListener {
-            if (s == 10) {
-                val retrofit: Retrofit = Retrofit.Builder()
-                    .baseUrl(getString(R.string.api_url))
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                val retrofitInterface2: UploadRetro? = retrofit.create(UploadRetro::class.java)
-                if (page_7_subject_cert_upload.text == getString(R.string.uploaded)) {
-                    remove("sikkimsubject", "Sikkim_Subject_Documents", retrofitInterface2)
-                } else {
-
-                }
-                multipartImageUploadsubject(
-                    bit,
-                    retrofitInterface2,
-                    "sikkimsubject",
-                    page_7_subject_cert_upload
-                )
-            }
-
         }
 
     }
@@ -1059,79 +1005,7 @@ class FIleUploadActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
-    private fun multipartImageUploadsubject(
-        mBitmap: Bitmap?,
-        retrofitInterface2: UploadRetro?,
-        str: String,
-        bt: Button
-    ) {
-        try {
-            val progress2 = ProgressDialog(this)
-            progress2.setMessage(getString(R.string.uploading)+" $str.png  :) ")
-            progress2.setProgressStyle(ProgressDialog.STYLE_SPINNER)
-            progress2.isIndeterminate = true
-            progress2.show()
-            val filesDir = applicationContext.filesDir
-            val file = File(filesDir, phone+"_"+str+".png")
 
-                val bos = ByteArrayOutputStream()
-                mBitmap?.compress(Bitmap.CompressFormat.PNG, 0, bos)
-                val bitmapdata = bos.toByteArray()
-            val filesize = bitmapdata.size
-            val filesizeInKB = filesize / 102400
-            if (filesizeInKB > 100) {
-                progress2.dismiss()
-                Toast.makeText(this, getString(R.string.filesize), Toast.LENGTH_LONG).show()
-            } else {
-                val fos = FileOutputStream(file)
-                fos.write(bitmapdata)
-                fos.flush()
-                fos.close()
-                val reqFile = RequestBody.create(MediaType.parse("image/*"), file)
-                val body =
-                    MultipartBody.Part.createFormData("upload", file.name, reqFile)
-                val name = RequestBody.create(MediaType.parse("text/plain"), phone)
-                val req: Call<ResponseBody?>? = retrofitInterface2?.postImagesubject(body, name)
-                req!!.enqueue(object : Callback<ResponseBody?> {
-                    override fun onResponse(
-                        call: Call<ResponseBody?>?,
-                        response: Response<ResponseBody?>
-                    ) {
-                        if (response.code() == 200) {
-                            Toast.makeText(
-                                applicationContext,
-                                getString(R.string.uploaded),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            bt.text = getString(R.string.uploaded)
-                            image_subject.visibility=View.INVISIBLE
-                            cancel_subject.visibility=View.INVISIBLE
-                            bt.background = getDrawable(R.drawable.button_shape2)
-                            progress2.dismiss()
-                            map["subject"] = phone + "_" + str + ".png"
-                            d1 = 1
-                        } else {
-                            map["subject"] = "NA"
-                        }
-                        progress2.dismiss()
-                    }
-
-                    override fun onFailure(call: Call<ResponseBody?>?, t: Throwable) {
-
-                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT)
-                            .show()
-                        t.printStackTrace()
-                        progress2.dismiss()
-                        map["subject"] = "NA"
-                    }
-                })
-            }
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-    }
     private fun multipartImageUploadgradc(
         mBitmap: Bitmap?,
         retrofitInterface2: UploadRetro?,
