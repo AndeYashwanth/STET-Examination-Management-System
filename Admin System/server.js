@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const PORT = 8081;//process.env.PORT||
@@ -14,6 +15,7 @@ const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 var cors = require('cors');
+var nodemailer = require('nodemailer');
 
 app.use(express.static(__dirname + '/public')); // change to whichever directory has images, should contain card.css
 app.use(cors());
@@ -40,6 +42,14 @@ conn.once('open', () => {
   gfs = Grid(conn.db, mongoose.mongo);
   gfs.collection('Photo_Documents');
 });
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.MAIL_USERNAME,
+      pass: process.env.MAIL_PASSWORD
+    }
+  });
 
 if(process.env.NODE_ENV === 'production')
 {
@@ -260,7 +270,8 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                 Venue: user.Venue,
                 Exam_date: user.Exam_date,
                 Gender: user.Gender,
-                Phone: user.Phone
+                Phone: user.Phone,
+                Email: user.Email
             };
             resolve(data);
         }
@@ -279,11 +290,9 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
             {
                 const browser = await puppeteer.launch();     // run browser
                 const page = await browser.newPage();         // create new tab
-                //await page.addStyleTag({path : "../public/card.css"});
                 await page.goto(back_url + `/pdf/${data.Fname}/${data.Lname}/${data.FHFname}/${data.FHLname}/${data.DOB}/${data.Exam}/${data.Eno}/${data.Address}/${data.Venue}/${data.Exam_date}/${data.Gender}/${data.img}`, {waitUntil: 'load', timeout: 0 });  // go to page
                 await page.emulateMedia('screen');            // use screen media
                 buffer = await page.pdf({path: data.Phone + '_admit.pdf', displayHeaderFooter: true, printBackground: true});  // generate pdf
-                //upload.single(buffer);
                 await browser.close();                       // close browser
                 
                 var bucket = new mongodb.GridFSBucket(myDb);
@@ -301,6 +310,20 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                             return
                         }
                     });
+                    var mailOptions = {
+                        from: process.env.MAIL_USERNAME,
+                        to: data.Email,
+                        subject: 'Admit card generated successfully',
+                        text: 'Your admit card was generated successfully. Please download by logging in to the app.'
+                      };
+                      
+                      transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                          console.log(error);
+                        } else {
+                          console.log('Email sent: ' + info.response);
+                        }
+                      });
                 res.sendStatus(200);
             }
             })();
