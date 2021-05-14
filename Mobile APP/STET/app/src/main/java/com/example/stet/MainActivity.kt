@@ -5,9 +5,11 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.messaging.FirebaseMessaging
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.android.synthetic.main.login_activity.*
 import retrofit2.Call
@@ -25,28 +27,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         loadLocate()
         setContentView(R.layout.login_activity)
-
-
+        FirebaseMessaging.getInstance().isAutoInitEnabled = false
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(getString(R.string.api_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        val retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
         val sharedPreferences = getSharedPreferences(
             "Settings",
             MODE_PRIVATE
         )
         if (sharedPreferences.getBoolean("login", false)) {
-            var st: String? = sharedPreferences.getString("phone", "")
+            val st: String? = sharedPreferences.getString("phone", "")
             val i = Intent(this@MainActivity, ExamRegisterClickActivity::class.java)
             i.putExtra("phone", st)
             startActivity(i)
         }
         val myEdit = sharedPreferences.edit()
+
         page_1_login.setOnClickListener {
             var c=0
-           // c= validNumber(page_1_phn_et, 10)+isValidPassword(page_1_Edtpass)
+            c= validNumber(page_1_phn_et, 10)+isValidPassword(page_1_Edtpass)
             if (c == 0) {
                 /**
                  * @todo remove?

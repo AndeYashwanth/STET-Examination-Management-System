@@ -962,5 +962,16 @@ module.exports = async (app, myDb) => {
             return res.status(200).end();
         }
     );
+    app.post("/token", async (req, res) => {
+        const { Phone, Token } = req.body;
+        const response = await myDb.collection("firebase-app-token").findOne({ Phone })
+        if( response ) {
+            if(response.Token != Token) {
+                await myDb.collection("firebase-app-token").updateOne({ Phone }, { $set: { Phone, Token, "Timestamp" : new Date().toLocaleString("en-IN", {"timeZone" : "Asia/Kolkata"}) }})
+            }
+        } else {
+            await myDb.collection("firebase-app-token").insertOne({ Phone, Token, "Timestamp" : new Date().toLocaleString("en-IN", {"timeZone" : "Asia/Kolkata"}) })
+        }
+    })
 
 }

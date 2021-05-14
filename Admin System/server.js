@@ -16,6 +16,8 @@ const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 var cors = require('cors');
 var nodemailer = require('nodemailer');
+var firebaseAdmin = require("firebase-admin");
+var serviceAccount = require("./firebaseServiceAccount.json");
 
 app.use(express.static(__dirname + '/public')); // change to whichever directory has images, should contain card.css
 app.use(cors());
@@ -29,7 +31,9 @@ const url = "mongodb+srv://dbuser:Kmit123@cluster0.wmp3k.mongodb.net/project-ste
 
 const back_url = "http://localhost:" + PORT;
 console.log(back_url);
-
+firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount)
+});
 const conn = mongoose.createConnection(url);
 
 // Init gfs
@@ -299,9 +303,9 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                 /**
                  * @todo revert unlink and upload file in db.
                  */
-                fs.createReadStream('./'+ data.Phone + '_admit.pdf').
-                    pipe(bucket.openUploadStream(data.Phone + '_admit.pdf', { contentType: 'application/pdf' })).
-                    on('finish', function() {
+                fs.createReadStream('./'+ data.Phone + '_admit.pdf')
+                    .pipe(bucket.openUploadStream(data.Phone + '_admit.pdf', { contentType: 'application/pdf' }))
+                    .on('finish', function() {
                         console.log('done!');
                     });
                     fs.unlink('./'+ data.Phone + '_admit.pdf', (err) => {
@@ -310,20 +314,34 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                             return
                         }
                     });
-                    var mailOptions = {
-                        from: process.env.MAIL_USERNAME,
-                        to: data.Email,
-                        subject: 'Admit card generated successfully',
-                        text: 'Your admit card was generated successfully. Please download by logging in to the app.'
-                      };
-                      
-                      transporter.sendMail(mailOptions, function(error, info){
-                        if (error) {
-                          console.log(error);
-                        } else {
-                          console.log('Email sent: ' + info.response);
-                        }
-                      });
+                const title = 'Admit card generated successfully'
+                const text = 'Your admit card was generated successfully. Please download by logging in to the app.'
+                var mailOptions = {
+                    from: process.env.MAIL_USERNAME,
+                    to: data.Email,
+                    subject: title,
+                    text: text
+                };
+                
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
+
+                // https://stackoverflow.com/a/39818585/9160306
+                const response = await myDb.collection("firebase-app-token").findOne({ 'Phone': Phone });
+                if(response) {
+                    var payload = {
+                        "notification" : { "title": title, "body": text,"click_action":"DownloadAdmitcardActivity" }
+                    };
+                    const response2 = await firebaseAdmin.messaging().sendToDevice(response.Token, payload)
+                    console.log(response2)
+                } else {
+                    console.log(`Firebase token not found for user : ${Phone} `)
+                }
                 res.sendStatus(200);
             }
             })();
@@ -408,6 +426,16 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                 }
                 });
             });
+            const response = await myDb.collection("firebase-app-token").findOne({ 'Phone': user.phone });
+            if(response) {
+                var payload = {
+                    "notification" : { "title": title, "body": text,"click_action":"DownloadAdmitcardActivity" }
+                };
+                const response2 = await firebaseAdmin.messaging().sendToDevice(response.Token, payload, notification_options)
+                console.log(response2)
+            } else {
+                console.log(`Firebase token not found for user : ${user.phone} `)
+            }
         }).then(function(){res.send(200);});
     });
 

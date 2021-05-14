@@ -21,7 +21,7 @@ class Home1 : AppCompatActivity() {
             showChangeLang()
         }
         homepage_admitCard.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, DownloadAdmitcardActivity::class.java)
             intent.putExtra("phone","0")
             startActivity(intent)
         }

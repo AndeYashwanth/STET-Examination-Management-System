@@ -76,7 +76,7 @@
         <activity android:name="Home1" />
         <activity android:name=".SixthActivity" />
         <activity android:name="ExamPatternActivity" />
-        <activity android:name="SecondActivity" />
+        <activity android:name="DownloadAdmitcardActivity" />
         <activity android:name="FourthActivity" />
         <activity android:name=".FifthActivity" />
         <activity android:name=".NinthActivity" />
@@ -88,6 +88,38 @@
             android:value="rzp_test_AxRDGA0FR61SiA">
 
         </meta-data>
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@android:drawable/ic_notification_clear_all" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/app_firebase_channel_id" />
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
     </application>
 

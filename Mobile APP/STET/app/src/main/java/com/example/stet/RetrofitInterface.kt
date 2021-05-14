@@ -68,4 +68,7 @@ interface RetrofitInterface {
 
     @GET("/otp/123456789/{number}")                     //check otp
     fun matchotp(@Path("number") number: String?): Call<Void?>?
+
+    @POST("/token")
+    fun sendFirebaseToken(@Body map: HashMap<String, String>): Call<Void>
 }

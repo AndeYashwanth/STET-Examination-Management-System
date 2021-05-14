@@ -12,6 +12,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.ktx.messaging
+import com.google.android.gms.tasks.OnCompleteListener
 import kotlinx.android.synthetic.main.register_click.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -100,7 +103,7 @@ class ExamRegisterClickActivity : AppCompatActivity() {
 
             val retrofitInterface: RetrofitInterface =
                 retrofit.create(RetrofitInterface::class.java)
-
+        sendFirebaseToken(retrofitInterface, phone)
             val sharedPreferences = getSharedPreferences(
                 "Settings",
                 Context.MODE_PRIVATE
@@ -193,7 +196,7 @@ class ExamRegisterClickActivity : AppCompatActivity() {
                 return true
             }
             R.id.admit -> {
-                val it = Intent(this, SecondActivity::class.java)
+                val it = Intent(this, DownloadAdmitcardActivity::class.java)
                 it.putExtra("phone", Phone)
                 startActivity(it)
                 return true
@@ -337,5 +340,33 @@ class ExamRegisterClickActivity : AppCompatActivity() {
         if (language != null) {
             setLocate(language)
         }
+    }
+    private fun sendFirebaseToken(retrofitInterface: RetrofitInterface, phone: String) {
+        Firebase.messaging.getToken().addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("MAIN_ACTIVITY", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            val map:HashMap<String,String> = HashMap()
+            map["Phone"] = phone
+            map["Token"] = token.toString()
+            val call: Call<Void> = retrofitInterface.sendFirebaseToken(map)
+            call!!.enqueue(object : Callback<Void> {
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                }
+
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    if(response.code()==200)
+                    {
+                    }
+                }
+            })
+            // Log and toast
+            Log.d("Main token: ", token)
+        })
     }
 }

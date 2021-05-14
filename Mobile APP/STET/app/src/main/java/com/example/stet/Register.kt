@@ -40,6 +40,7 @@ class Register : AppCompatActivity() {
             .build()
 
         var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
         val map: HashMap<String?, String?> = HashMap()
         map["Phone"] = phone
         val sharedPreferences = getSharedPreferences(
