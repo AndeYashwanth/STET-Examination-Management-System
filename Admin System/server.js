@@ -122,12 +122,11 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
         })
 
         
-        app.get('/alldetails/:user', (req, res) => {
+        app.get('/alldetails/:user', async (req, res) => {
             var User = {}
-            myDb.collection('personals').findOne({ "Phone": req.params.user }, function (err, result) {
-                if (err)
-                    throw err
-                else if (result != null) {
+            try {
+                var result = await myDb.collection('personals').findOne({ "Phone": req.params.user })
+                if (result != null) {
                     User.Fname = result.Fname
                     User.Mname = result.Mname
                     User.Lname = result.Lname
@@ -146,44 +145,35 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                     User.Phone = result.Phone
                     User.Email = result.Email
                 }
-            })
-
-            myDb.collection('academics').findOne({ "Phone": req.params.user }, function (err, result) {
-                if (err)
-                    throw err
-                else if (result != null) {
+                var result = await myDb.collection('academics').findOne({ "Phone": req.params.user })
+                if (result != null) {
                     User.MinQualification = result.Min_Qual;
                     User.ProfessionalQualification = result.Pro_Qual;
                     User.Percentage = result.Percentage;
                     User.University = result.University;
                     User.PaperLanguage = result.Language;
-                    User.ApplicationCategory = result.ApplicationCategory;
+                    User.App_Category = result.App_Category;
                 }
 
-            })
-
-            myDb.collection('Payment_Details').findOne({ "Phone": req.params.user }, function (err, result) {
-                if (err)
-                    throw err
-                else if (result != null) {
+                var result = await myDb.collection('Payment_Details').findOne({ "Phone": req.params.user })
+                if (result != null) {
                     User.UserContact = result.UserContact
                     User.PaymentEmail = result.UserEmail
                     User.PaymentId = result.PaymentId
                     User.Payment_date = result.Sate
-                    User.Payment_signature = result.Signature
+                    // User.Payment_signature = result.Signature
                     User.Amount = result.amount
                 }
 
-            })
-            myDb.collection('registration').findOne({ "Phone": req.params.user }, function (err, result) {
-                if (err)
-                    throw err
-                else if (result != null) {
+                var result = await myDb.collection('registration').findOne({ "Phone": req.params.user })
+                if (result != null) {
                     User.FinalSubmissionDate = result.Date
                 }
                 res.send(JSON.stringify(User));
-            })
 
+            } catch (e) {
+                console.log(e);
+            }
         })
         
         app.get('/allusers', (req, res) => {
@@ -225,6 +215,7 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                             "Aadhar": item.Aadhar,
                             "Phone": item.Phone,
                             "Role": item.Exam,
+                            "Status": item.Status || "Pending"
                         }
                         array.push(newUser)
                     });
@@ -382,49 +373,49 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
             })();
         }
     })
-    app.post('/generate_all', function(req, res){
-        User.find({}, (err, users)=>{
-        console.log("I am Alive");
-        if(err)
-            console.log(err);
-        
-        users.map(async function(user){
-            console.log("I can feel it");
-            const data = {
-                fname: user.fname,
-                lname: user.lname,
-                ffname: user.ffname,
-                flname: user.flname,
-                dob: user.dob,
-                img: `${user.phone}_photo.png`,
-                exam: user.exam,
-                eno: user.eno,
-                address: user.address,
-                venue: user.venue,
-                exam_date: user.exam_date,
-                sex: user.sex
-            };
-            const browser = await puppeteer.launch();     // run browser
-            const page = await browser.newPage();         // create new tab
-            //await page.addStyleTag({path : "../public/card.css"});
-            await page.goto(back_url + `/pdf/${data.fname}/${data.lname}/${data.ffname}/${data.flname}/${data.dob}/${data.exam}/${data.eno}/${data.address}/${data.venue}/${data.exam_date}/${data.sex}/${data.img}`, {waitUntil: 'load', timeout: 0 });  // go to page
-            await page.emulateMedia('screen');            // use screen media
-            buffer = await page.pdf({path: user.phone + '_admit.pdf', displayHeaderFooter: true, printBackground: true});  // generate pdf
-            //upload.single(buffer);
-            await browser.close();                       // close browser    
-            var bucket = new mongodb.GridFSBucket(myDb);
+    app.post('/generate_all', async function(req, res){
+        User.find({}, async (err, users)=>{
+            console.log("I am Alive");
+            if(err)
+                console.log(err);
             
-            fs.createReadStream('./'+ user.phone + '_admit.pdf').
-                pipe(bucket.openUploadStream(user.phone + '_admit.pdf')).
-                on('finish', function() {
-                console.log('done!');
-                });
-                fs.unlink('./'+ user.phone + '_admit.pdf', (err) => {
-                if (err) {
-                    console.error(err)
-                    return
-                }
-                });
+            users.map(async function(user){
+                console.log("I can feel it");
+                const data = {
+                    fname: user.fname,
+                    lname: user.lname,
+                    ffname: user.ffname,
+                    flname: user.flname,
+                    dob: user.dob,
+                    img: `${user.phone}_photo.png`,
+                    exam: user.exam,
+                    eno: user.eno,
+                    address: user.address,
+                    venue: user.venue,
+                    exam_date: user.exam_date,
+                    sex: user.sex
+                };
+                const browser = await puppeteer.launch();     // run browser
+                const page = await browser.newPage();         // create new tab
+                //await page.addStyleTag({path : "../public/card.css"});
+                await page.goto(back_url + `/pdf/${data.fname}/${data.lname}/${data.ffname}/${data.flname}/${data.dob}/${data.exam}/${data.eno}/${data.address}/${data.venue}/${data.exam_date}/${data.sex}/${data.img}`, {waitUntil: 'load', timeout: 0 });  // go to page
+                await page.emulateMedia('screen');            // use screen media
+                buffer = await page.pdf({path: user.phone + '_admit.pdf', displayHeaderFooter: true, printBackground: true});  // generate pdf
+                //upload.single(buffer);
+                await browser.close();                       // close browser    
+                var bucket = new mongodb.GridFSBucket(myDb);
+                
+                fs.createReadStream('./'+ user.phone + '_admit.pdf').
+                    pipe(bucket.openUploadStream(user.phone + '_admit.pdf')).
+                    on('finish', function() {
+                        console.log('done!');
+                    });
+                    fs.unlink('./'+ user.phone + '_admit.pdf', (err) => {
+                        if (err) {
+                            console.error(err)
+                            return
+                        }
+                    });
             });
             const response = await myDb.collection("firebase-app-token").findOne({ 'Phone': user.phone });
             if(response) {

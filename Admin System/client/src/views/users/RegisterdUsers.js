@@ -11,16 +11,17 @@ import {
   CCol,
   CDataTable,
   CRow,
-  CPagination
+  CPagination,
+  CButton
 } from '@coreui/react'
 import axios from 'axios'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"  
 import Loader from 'react-loader-spinner'
 const getBadge = status => {
   switch (status) {
-    case 'Submitted': return 'success'
-    case 'Pending': return 'warning'
-    default: return 'primary'
+    case 'Approved': return 'success'
+    case 'Rejected': return 'danger'
+    default: return 'warning'
   }
 }
 const { ServerPORT } = require('../newports');
@@ -86,7 +87,7 @@ const RegisterdUsers = () => {
             items={UsersData}
             fields={[
               { key: 'Name', _classes: 'font-weight-bold' },
-              'Email', 'Phone',"Aadhar","Role"
+              'Email', 'Phone',"Aadhar","Role","Status","Documents"
             ]}
             hover
             striped
@@ -95,13 +96,19 @@ const RegisterdUsers = () => {
             clickableRows
             onRowClick={(item) => history.push(`/users/${item.id}`)}
             scopedSlots = {{
-              'Submitted':
+              'Status':
                 (item)=>(
                   <td>
-                    <CBadge color={getBadge(item.Submitted)}>
-                      {item.Submitted}
+                    <CBadge color={getBadge(item.Status)} style={{"color":"black","fontSize":"12px"}}>
+                      {item.Status}
                     </CBadge>
                   </td>
+                ),
+                'Documents':
+                (item)=>(
+                  <td>
+                    <CButton component="a" color="primary" href={`/#/users/documents/${item.id}`} role="button">View</CButton>
+                  </td>  
                 )
             }}
           />

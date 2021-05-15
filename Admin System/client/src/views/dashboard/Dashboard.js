@@ -113,7 +113,7 @@ const Dashboard = () => {
           
           
                             <div className="progress-group">
-                              <div className="progress-group-header">
+                                <div className="progress-group-header">
                                 <CIcon name="cil-chevron-right" className="progress-group-icon" />
                                 <span className="title">OBC</span>
                                 <span className="ml-auto font-weight-bold">{(Stats.Community.obc)} <span className="text-muted small">({(Stats.Community.obc/Stats.Registered)*100}%)</span></span>
