@@ -1,31 +1,31 @@
 export default [
   {
-    _tag: 'CSidebarNavItem',
-    name: 'Dashboard',
-    to: '/dashboard',
-    icon: 'cil-speedometer',
+    _tag: "CSidebarNavItem",
+    name: "Dashboard",
+    to: "/dashboard",
+    icon: "cil-speedometer",
     badge: {
-      color: 'info',
-      text: 'NEW',
-    }
+      color: "info",
+      text: "NEW",
+    },
   },
   {
-    _tag: 'CSidebarNavItem',
-    name: 'All Users',
-    to: '/users',
-    icon: 'cil-user',
+    _tag: "CSidebarNavItem",
+    name: "All Users",
+    to: "/users",
+    icon: "cil-user",
   },
   {
-    _tag: 'CSidebarNavItem',
-    name: 'Registerd Users',
-    to: '/registerd',
-    icon: 'cil-user',
+    _tag: "CSidebarNavItem",
+    name: "Registerd Users",
+    to: "/registerd",
+    icon: "cil-user",
   },
   {
-    _tag: 'CSidebarNavItem',
-    name: 'Controls',
-    to: '/controls',
-    icon: 'cil-user',
+    _tag: "CSidebarNavItem",
+    name: "Controls",
+    to: "/controls",
+    icon: "cil-user",
   },
   // {
   //   _tag: 'CSidebarNavTitle',
@@ -60,8 +60,7 @@ export default [
   //   ],
   // },
   {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-2'
-  }
-]
-
+    _tag: "CSidebarNavDivider",
+    className: "m-2",
+  },
+];

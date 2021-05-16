@@ -1,5 +1,5 @@
-import React from 'react'
-import {Redirect} from 'react-router-dom'
+import React from "react";
+import { Redirect } from "react-router-dom";
 // import Alert from 'react-bootstrap/Alert'
 import {
   CButton,
@@ -13,18 +13,18 @@ import {
   CInputGroup,
   CInputGroupPrepend,
   CInputGroupText,
-  CRow
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-var cred = require('./cred.js');
+  CRow,
+} from "@coreui/react";
+import CIcon from "@coreui/icons-react";
+var cred = require("./cred.js");
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username:'',
-      password: '',
-      loggedIn:false,
+      username: "",
+      password: "",
+      loggedIn: false,
     };
     this.handleUserName = this.handleUserName.bind(this);
     this.handleUserPassword = this.handleUserPassword.bind(this);
@@ -43,21 +43,21 @@ class Login extends React.Component {
   }
   renderRedirect = () => {
     if (this.state.loggedIn) {
-      return <Redirect to='/dashboard' />
+      return <Redirect to="/dashboard" />;
     }
-  }
+  };
 
-  OnSubmit(e)
-  {
-    console.log(this.state.username,process.env.REACT_APP_USER)
-    console.log(this.state.password,process.env.PASSWORD)
-    if(this.state.username===cred.USER && this.state.password===cred.PASSWORD)
-    {
+  OnSubmit(e) {
+    console.log(this.state.username, process.env.REACT_APP_USER);
+    console.log(this.state.password, process.env.PASSWORD);
+    if (
+      this.state.username === cred.USER &&
+      this.state.password === cred.PASSWORD
+    ) {
       this.setState({
-        loggedIn:true
-      })
-    }
-    else{
+        loggedIn: true,
+      });
+    } else {
       // [
       //   'danger',
       //   'warning',
@@ -70,49 +70,67 @@ class Login extends React.Component {
     }
   }
 
-  render(){
-  return (
-    <div className="c-app c-default-layout flex-row align-items-center">
-      <CContainer>
-        <CRow className="justify-content-center">
-          <CCol md="8">
-            <CCardGroup>
-              <CCard className="p-4">
-                <CCardBody>
-                  <CForm>
-                    <h1>Login</h1>
-                    <p className="text-muted">Sign In to your account</p>
-                    <CInputGroup className="mb-3">
-                      <CInputGroupPrepend>
-                        <CInputGroupText>
-                          <CIcon name="cil-user" />
-                        </CInputGroupText>
-                      </CInputGroupPrepend>
-                      <CInput type="text" placeholder="Username" value={this.username} onChange={this.handleUserName}  autoComplete="username" />
-                    </CInputGroup>
-                    <CInputGroup className="mb-4">
-                      <CInputGroupPrepend>
-                        <CInputGroupText>
-                          <CIcon name="cil-lock-locked" />
-                        </CInputGroupText>
-                      </CInputGroupPrepend>
-                      <CInput type="password" placeholder="Password" value={this.username} onChange={this.handleUserPassword} autoComplete="current-password" />
-                    </CInputGroup>
-                    <CRow>
+  render() {
+    return (
+      <div className="c-app c-default-layout flex-row align-items-center">
+        <CContainer>
+          <CRow className="justify-content-center">
+            <CCol md="8">
+              <CCardGroup>
+                <CCard className="p-4">
+                  <CCardBody>
+                    <CForm>
+                      <h1>Login</h1>
+                      <p className="text-muted">Sign In to your account</p>
+                      <CInputGroup className="mb-3">
+                        <CInputGroupPrepend>
+                          <CInputGroupText>
+                            <CIcon name="cil-user" />
+                          </CInputGroupText>
+                        </CInputGroupPrepend>
+                        <CInput
+                          type="text"
+                          placeholder="Username"
+                          value={this.username}
+                          onChange={this.handleUserName}
+                          autoComplete="username"
+                        />
+                      </CInputGroup>
+                      <CInputGroup className="mb-4">
+                        <CInputGroupPrepend>
+                          <CInputGroupText>
+                            <CIcon name="cil-lock-locked" />
+                          </CInputGroupText>
+                        </CInputGroupPrepend>
+                        <CInput
+                          type="password"
+                          placeholder="Password"
+                          value={this.username}
+                          onChange={this.handleUserPassword}
+                          autoComplete="current-password"
+                        />
+                      </CInputGroup>
+                      <CRow>
                         {this.renderRedirect()}
                         <CCol xs="6">
-                              <CButton color="primary" onClick={this.OnSubmit} className="px-4">Login</CButton>
+                          <CButton
+                            color="primary"
+                            onClick={this.OnSubmit}
+                            className="px-4"
+                          >
+                            Login
+                          </CButton>
                         </CCol>
-                    </CRow>
-                  </CForm>
-                </CCardBody>
-              </CCard>
-            </CCardGroup>
-          </CCol>
-        </CRow>
-      </CContainer>
-    </div>
-  )
+                      </CRow>
+                    </CForm>
+                  </CCardBody>
+                </CCard>
+              </CCardGroup>
+            </CCol>
+          </CRow>
+        </CContainer>
+      </div>
+    );
   }
 }
-export default Login
+export default Login;

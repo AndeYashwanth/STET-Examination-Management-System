@@ -66,25 +66,25 @@ const admit_details = mongoose.Schema({
     required: true,
   },
   Exam: {
-      type: String,
-      required: true
+    type: String,
+    required: true,
   },
   Exam_date: {
     type: String,
-    required: true
+    required: true,
   },
   Venue: {
     type: String,
-    required: true
+    required: true,
   },
   Eno: {
-      type: String,
-      required: true
+    type: String,
+    required: true,
   },
   Date: {
     type: Date,
-    required: true
-  }
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("admit_card", admit_details, 'registration');
+module.exports = mongoose.model("admit_card", admit_details, "registration");

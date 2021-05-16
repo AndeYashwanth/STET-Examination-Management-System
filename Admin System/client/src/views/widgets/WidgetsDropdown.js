@@ -1,22 +1,16 @@
-import React from 'react'
-import {
-  CWidgetDropdown,
-  CRow,
-  CCol,
-} from '@coreui/react'
+import React from "react";
+import { CWidgetDropdown, CRow, CCol } from "@coreui/react";
 
 const WidgetsDropdown = (stats) => {
   // render
   return (
     <CRow>
-
       <CCol sm="6" lg="3">
         <CWidgetDropdown
           color="gradient-info"
           header={stats.stats.Registered}
           text="Registered For the exam"
-        >
-        </CWidgetDropdown>
+        ></CWidgetDropdown>
       </CCol>
 
       <CCol sm="6" lg="3">
@@ -24,10 +18,9 @@ const WidgetsDropdown = (stats) => {
           color="gradient-warning"
           header={stats.stats.Amount}
           text="Rupees Received"
-        >
-        </CWidgetDropdown>
+        ></CWidgetDropdown>
       </CCol>
-      
+
       {/* 
       <CCol sm="6" lg="3">
         <CWidgetDropdown
@@ -37,9 +30,8 @@ const WidgetsDropdown = (stats) => {
         >
         </CWidgetDropdown>
       </CCol> */}
-      
     </CRow>
-  )
-}
+  );
+};
 
-export default WidgetsDropdown
+export default WidgetsDropdown;
