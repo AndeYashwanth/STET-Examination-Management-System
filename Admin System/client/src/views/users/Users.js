@@ -31,7 +31,7 @@ const Users = () => {
   const queryPage = useLocation().search.match(/page=([0-9]+)/, '')
   const currentPage = Number(queryPage && queryPage[1] ? queryPage[1] : 1)
   const [page, setPage] = useState(currentPage)
-  const [UsersData, setData] = useState({});
+  const [UsersData, setUsersData] = useState({});
   const [isBusy, setBusy] = useState(true)
   const pageChange = newPage => {
     currentPage !== newPage && history.push(`/users?page=${newPage}`)
@@ -55,7 +55,7 @@ const Users = () => {
           method: 'GET',
           headers: headers
       })
-      setData(res.data)
+      setUsersData(res.data)
       setBusy(false)
     }
   }
@@ -63,7 +63,7 @@ const Users = () => {
   useEffect(() => {
     fetchData();
     console.log(UsersData);
-  }); 
+  }, []); 
 
   return (
     <CRow>

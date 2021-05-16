@@ -8,7 +8,7 @@ import Loader from 'react-loader-spinner'
 const { ServerPORT } = require('../newports');
 const uri = "http://localhost:"+ServerPORT;
 const User = ({match}) => {
-  const [user, setData] = useState({});
+  const [user, setUser] = useState({});
   const [isBusy, setBusy] = useState(true);
   const [userDetails,setDetails] = useState({})
   //http://localhost:8081
@@ -26,17 +26,20 @@ const User = ({match}) => {
           method: 'GET',
           headers: headers
       })
-      setData(res.data)
-      setDetails(user ? Object.entries(user) : 
-      [['id', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]])
+      setUser(res.data)
       setBusy(false)
     }
   }
 
   useEffect(() => {
     fetchData();
-  }); 
+  }, []); 
 
+  useEffect(()=>{
+    setDetails(user ? Object.entries(user) : 
+    [['id', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]])
+  }, [user])
+  
   return (
     <CRow>
       <CCol lg={6}>

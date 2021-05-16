@@ -64,7 +64,7 @@ const RegisterdUsers = () => {
 
   useEffect(() => {
     fetchData();
-  }); 
+  }, []); 
 
   return (
     <CRow>

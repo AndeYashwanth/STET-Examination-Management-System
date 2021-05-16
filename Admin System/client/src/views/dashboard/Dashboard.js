@@ -32,15 +32,13 @@ const Dashboard = () => {
           headers: headers
       })
       setStats(res.data)
-      console.log(Stats.stats)
       setBusy(false)
     }
   }
 
   useEffect(() => {
     fetchData();
-    console.log(Stats.Gender);
-  }); 
+  }, []); 
 
 
   return (

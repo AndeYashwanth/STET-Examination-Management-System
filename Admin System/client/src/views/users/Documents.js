@@ -27,7 +27,6 @@ const uri = "http://localhost:"+ServerPORT;
 const Documents = ({match}) => {
   const [documents, setData] = useState({});
   const [isBusy, setBusy] = useState(true);
-  const [modal, setModal] = useState(false);
   const [modalState, setModalState] = useState(false);
   //http://localhost:8081
   const url = uri+"/documentnames/";
@@ -52,11 +51,8 @@ const Documents = ({match}) => {
 
   useEffect(() => {
     fetchData();
-  }); 
+  }, []);
 
-  const toggle = ()=>{
-    setModal(!modal);
-  }
   const toggleModal = (key) => {
     //   console.log(key)
       setModalState(prev => ({
