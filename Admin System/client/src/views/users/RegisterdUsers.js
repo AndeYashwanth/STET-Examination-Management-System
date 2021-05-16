@@ -107,7 +107,12 @@ const RegisterdUsers = () => {
                 'Documents':
                 (item)=>(
                   <td>
-                    <CButton component="a" color="primary" href={`/#/registerd/documents/user/${item.id}`} role="button">View</CButton>
+                    <CButton component="a" color="primary" 
+                      onClick={(e) => {
+                        history.push(`/registerd/documents/user/${item.id}`);
+                        e.stopPropagation();
+                      }} 
+                      role="button">View</CButton>
                   </td>  
                 )
             }}
