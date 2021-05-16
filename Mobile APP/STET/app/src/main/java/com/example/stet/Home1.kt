@@ -71,7 +71,7 @@ class Home1 : AppCompatActivity() {
     //choose language
     private fun showChangeLang() {
 
-        val listItems = arrayOf("English","हिन्दी","नेपाली")
+        val listItems = arrayOf("English","हिन्दी")
         val sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
         val language = sharedPreferences.getString("My_Lang", "")
         var t=0
@@ -82,9 +82,6 @@ class Home1 : AppCompatActivity() {
             "hi" -> {
                 t=1
             }
-            "ne" -> {
-                t=2
-            }
         }
         val mBuilder = AlertDialog.Builder(this@Home1)
         mBuilder.setTitle(getString(R.string.chooselang))
@@ -94,9 +91,6 @@ class Home1 : AppCompatActivity() {
                 recreate()
             } else if (which == 1) {
                 setLocate("hi")
-                recreate()
-            } else if(which==2){
-                setLocate("ne")
                 recreate()
             }
             dialog.dismiss()

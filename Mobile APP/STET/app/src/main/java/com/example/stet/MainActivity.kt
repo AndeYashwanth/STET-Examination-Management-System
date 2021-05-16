@@ -1,6 +1,7 @@
 package com.example.stet
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.content.res.Configuration
@@ -11,7 +12,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.messaging.FirebaseMessaging
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
+import kotlinx.android.synthetic.main.homepage.*
 import kotlinx.android.synthetic.main.login_activity.*
+import kotlinx.android.synthetic.main.login_activity.homepage_btn
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         loadLocate()
         setContentView(R.layout.login_activity)
+        homepage_btn.setOnClickListener {
+            showChangeLang()
+        }
         FirebaseMessaging.getInstance().isAutoInitEnabled = false
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(getString(R.string.api_url))
@@ -177,6 +183,38 @@ class MainActivity : AppCompatActivity() {
             }
             .check()
         return x
+    }
+    //choose language
+    private fun showChangeLang() {
+
+        val listItems = arrayOf("English","हिन्दी")
+        val sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
+        val language = sharedPreferences.getString("My_Lang", "")
+        var t=0
+        when (language) {
+            "en" -> {
+                t=0
+            }
+            "hi" -> {
+                t=1
+            }
+        }
+        val mBuilder = AlertDialog.Builder(this@MainActivity)
+        mBuilder.setTitle(getString(R.string.chooselang))
+        mBuilder.setSingleChoiceItems(listItems, t) { dialog, which ->
+            if (which == 0) {
+                setLocate("en")
+                recreate()
+            } else if (which == 1) {
+                setLocate("hi")
+                recreate()
+            }
+            dialog.dismiss()
+
+        }
+        val mDialog = mBuilder.create()
+
+        mDialog.show()
     }
     private fun setLocate(Lang: String) {
         val locale = Locale(Lang)

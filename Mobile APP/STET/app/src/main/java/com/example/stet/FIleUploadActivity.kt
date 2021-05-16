@@ -155,14 +155,14 @@ class FIleUploadActivity : AppCompatActivity() {
             page_7_community_upload
         )
             check(
-                "graduationcertificate",
+                "bscbacertificate",
                 "Graduation_Certificate_Documents",
-                page_7_graduation_cert_upload
+                page_7_BScBA_cert_upload
             )
             check(
-                "graduationmarksheet",
+                "bedcertificate",
                 "Graduation_Marksheet_Documents",
-                page_7_GraduationDeg_upload
+                page_7_Bed_cert_upload
             )
             check("photo", "Photo_Documents", page_7_photo_upload)
             check("signature", "Signature_Documents", page_7_signature_upload)
@@ -175,8 +175,8 @@ class FIleUploadActivity : AppCompatActivity() {
                         && page_7_10th_upload.text == getString(R.string.uploaded)
                         && page_7_12th_upload.text == getString(R.string.uploaded)
                         && page_7_community_upload.text == getString(R.string.uploaded)
-                        && page_7_graduation_cert_upload.text == getString(R.string.uploaded)
-                        && page_7_GraduationDeg_upload.text == getString(R.string.uploaded)
+                        && page_7_BScBA_cert_upload.text == getString(R.string.uploaded)
+                        && page_7_Bed_cert_upload.text == getString(R.string.uploaded)
                     ) {
                         val sharedPreferences = getSharedPreferences(
                             "Settings",
@@ -240,13 +240,13 @@ class FIleUploadActivity : AppCompatActivity() {
         }
             page_7_select_graduationC.setOnClickListener {
                 t = 6
-                page_7_graduation_cert_upload.visibility = View.VISIBLE
+                page_7_BScBA_cert_upload.visibility = View.VISIBLE
                 storage()
 
             }
             page_7_select_graduationM.setOnClickListener {
                 t = 7
-                page_7_GraduationDeg_upload.visibility = View.VISIBLE
+                page_7_Bed_cert_upload.visibility = View.VISIBLE
                 storage()
 
             }
@@ -294,13 +294,13 @@ class FIleUploadActivity : AppCompatActivity() {
         }
             page_7_graduation_cert_cam.setOnClickListener {
                 t = 6
-                page_7_graduation_cert_upload.visibility = View.VISIBLE
+                page_7_BScBA_cert_upload.visibility = View.VISIBLE
                 camera()
 
             }
             page_7_graduationM_cam.setOnClickListener {
                 t = 7
-                page_7_GraduationDeg_upload.visibility = View.VISIBLE
+                page_7_Bed_cert_upload.visibility = View.VISIBLE
                 camera()
 
             }
@@ -699,16 +699,16 @@ class FIleUploadActivity : AppCompatActivity() {
                 )
             }
         }
-        page_7_graduation_cert_upload.setOnClickListener {
+        page_7_BScBA_cert_upload.setOnClickListener {
             if (s == 6) {
                 val retrofit: Retrofit = Retrofit.Builder()
                     .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 val retrofitInterface2: UploadRetro? = retrofit.create(UploadRetro::class.java)
-                if (page_7_graduation_cert_upload.text == getString(R.string.uploaded)) {
+                if (page_7_BScBA_cert_upload.text == getString(R.string.uploaded)) {
                     remove(
-                        "graduationcertificate",
+                        "bscbacertificate",
                         "Graduation_Certificate_Documents",
                         retrofitInterface2
                     )
@@ -718,21 +718,21 @@ class FIleUploadActivity : AppCompatActivity() {
                 multipartImageUploadgradc(
                     bit,
                     retrofitInterface2,
-                    "graduationcertificate",
-                    page_7_graduation_cert_upload
+                    "bscbacertificate",
+                    page_7_BScBA_cert_upload
                 )
             }
         }
-        page_7_GraduationDeg_upload.setOnClickListener {
+        page_7_Bed_cert_upload.setOnClickListener {
             if (s == 7) {
                 val retrofit: Retrofit = Retrofit.Builder()
                     .baseUrl(getString(R.string.api_url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 val retrofitInterface2: UploadRetro? = retrofit.create(UploadRetro::class.java)
-                if (page_7_GraduationDeg_upload.text == getString(R.string.uploaded)) {
+                if (page_7_Bed_cert_upload.text == getString(R.string.uploaded)) {
                     remove(
-                        "graduationmarksheet",
+                        "bedcertificate",
                         "Graduation_Marksheet_Documents",
                         retrofitInterface2
                     )
@@ -742,8 +742,8 @@ class FIleUploadActivity : AppCompatActivity() {
                 multipartImageUploadgradm(
                     bit,
                     retrofitInterface2,
-                    "graduationmarksheet",
-                    page_7_GraduationDeg_upload
+                    "bedcertificate",
+                    page_7_Bed_cert_upload
                 )
             }
         }
@@ -1039,7 +1039,7 @@ class FIleUploadActivity : AppCompatActivity() {
                     MultipartBody.Part.createFormData("upload", file.name, reqFile)
                 val name = RequestBody.create(MediaType.parse("text/plain"), phone)
                 val req: Call<ResponseBody?>? =
-                    retrofitInterface2?.postImagegraduationcertificate(body, name)
+                    retrofitInterface2?.postImageBscBacertificate(body, name)
                 req!!.enqueue(object : Callback<ResponseBody?> {
                     override fun onResponse(
                         call: Call<ResponseBody?>?,
@@ -1109,7 +1109,7 @@ class FIleUploadActivity : AppCompatActivity() {
                     MultipartBody.Part.createFormData("upload", file.name, reqFile)
                 val name = RequestBody.create(MediaType.parse("text/plain"), phone)
                 val req: Call<ResponseBody?>? =
-                    retrofitInterface2?.postImagegraduationmarksheet(body, name)
+                    retrofitInterface2?.postImageBedCertificate(body, name)
                 req!!.enqueue(object : Callback<ResponseBody?> {
                     override fun onResponse(
                         call: Call<ResponseBody?>?,

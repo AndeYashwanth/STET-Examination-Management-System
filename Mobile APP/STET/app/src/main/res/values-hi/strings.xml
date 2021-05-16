@@ -77,7 +77,7 @@
     <string name="global__next">आगे</string>
     <string name="page_1_register">रजिस्टर करें</string>
     <string name="page_1_password">कुंजिका:</string>
-    <string name="page_1_login">लॉग इन करें</string>
+    <string name="page_1_login">लॉगइन करें</string>
     <string name="page_1_signup">साइन अप करें</string>
     <string name="page_2_phn">फ़ोन नंबर सत्यापित करें:</string>
     <string name="global__send_otp">OTP भेजें</string>

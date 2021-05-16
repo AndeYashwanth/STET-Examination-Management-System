@@ -34,14 +34,11 @@ interface UploadRetro {
     @POST("/upload_signature")
     fun postImagesignature(@Part image: MultipartBody.Part?, @Part("upload") name: RequestBody?): Call<ResponseBody?>?
     @Multipart
-    @POST("/upload_subject")
-    fun postImagesubject(@Part image: MultipartBody.Part?, @Part("upload") name: RequestBody?): Call<ResponseBody?>?
+    @POST("/upload_bed")
+    fun postImageBedCertificate(@Part image: MultipartBody.Part?, @Part("upload") name: RequestBody?): Call<ResponseBody?>?
     @Multipart
-    @POST("/upload_graduationmarksheet")
-    fun postImagegraduationmarksheet(@Part image: MultipartBody.Part?, @Part("upload") name: RequestBody?): Call<ResponseBody?>?
-    @Multipart
-    @POST("/upload_graduationcertificate")
-    fun postImagegraduationcertificate(@Part image: MultipartBody.Part?, @Part("upload") name: RequestBody?): Call<ResponseBody?>?
+    @POST("/upload_bsc_ba")
+    fun postImageBscBacertificate(@Part image: MultipartBody.Part?, @Part("upload") name: RequestBody?): Call<ResponseBody?>?
 
     @Multipart
     @POST("/uploadmultiple")
@@ -70,10 +67,4 @@ interface UploadRetro {
     @Headers("Content-Type: application/pdf")
     @GET("/available/{filename}/{coll}")
     fun getfile(@Path("filename") filename: String, @Path("coll") coll: String):Call<String?>?
-
-    /*@Multipart
-    @POST("/uploadmultiple")
-    fun submitNew(
-        @Part files: Array<MultipartBody.Part?>?
-    ): Call<Void?>?*/
 }

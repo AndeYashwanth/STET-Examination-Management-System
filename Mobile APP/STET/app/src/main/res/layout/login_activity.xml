@@ -154,6 +154,29 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15sp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_marginStart="230dp"
+            android:id="@+id/homepage_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            android:text="@string/change_language"
+            android:textStyle="bold"
+            android:textColor="#F42738"
+            android:textSize="16sp"
+
+            />
+
+    </LinearLayout>
 
 
 </LinearLayout>

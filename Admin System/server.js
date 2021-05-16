@@ -27,25 +27,28 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-const url = "mongodb+srv://dbuser:Kmit123@cluster0.wmp3k.mongodb.net/project-stet?retryWrites=true&w=majority"
-
+const url = process.env.MONGO_URL
 const back_url = "http://localhost:" + PORT;
 console.log(back_url);
+const documentCollections = {
+    "Photo": { "collection_name" : "Photo_Documents", "file_name_end" : "_photo.png" },
+    "Birth Certificate": { "collection_name" : "Birth_Certificate_Documents", "file_name_end" : "_birthcertificate.png" },
+    "Community Certificate": { "collection_name" : "Community_Certificate_Documents", "file_name_end" : "_communitycertificate.png" },
+    "Signature": { "collection_name" : "Signature_Documents", "file_name_end" : "_signature.png" },
+    "Aadhar Card": { "collection_name" : "Aadhar_Documents", "file_name_end" : "_aadhar.png" },
+    "Tenth Memo": { "collection_name" : "Tenth_Documents", "file_name_end" : "_tenth.png" },
+    "Twelveth Memo": { "collection_name" : "Twelveth_Documents", "file_name_end" : "_twelveth.png" },
+    "BEd Certificate": { "collection_name" : "Bed_Certificate_Documents", "file_name_end" : "_bedcertificate.png" },
+    "BScBA Certificate": { "collection_name" : "BSc_BA_Certificate_Documents", "file_name_end" : "_bscbacertificate.png" },
+}
 firebaseAdmin.initializeApp({
     credential: firebaseAdmin.credential.cert(serviceAccount)
 });
 const conn = mongoose.createConnection(url);
 
 // Init gfs
-let gfs;
 let buffer;
 
-
-conn.once('open', () => {
-  // Init stream
-  gfs = Grid(conn.db, mongoose.mongo);
-  gfs.collection('Photo_Documents');
-});
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -223,6 +226,29 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
                 }
             })
         });
+
+        app.get('/documentnames', async (req, res) => {
+            const documentNames = Object.keys(documentCollections)
+            res.json(documentNames)
+        })
+
+        app.get('/document/:document_name/user/:user_id', async (req, res) => {
+            const gfs = Grid(conn.db, mongoose.mongo);
+            const user_id = req.params.user_id;
+            const document_name = req.params.document_name;
+            const collectionProps = documentCollections[document_name]
+            gfs.collection(collectionProps.collection_name);
+            gfs.files.findOne({ filename: user_id + collectionProps.file_name_end }, (err, file) => {
+                // Check if file
+                if (!file || file.length === 0) {
+                    return res.status(404).json({
+                        err: 'No file exists'
+                    });
+                }
+                const readstream = gfs.createReadStream(file.filename);
+                readstream.pipe(res);
+            });
+        })
 
         //=============== PDF ROUTES BEGIN =========================================
 
@@ -488,7 +514,7 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
     });
 
     app.get('/pdf/admit_card.pdf', function(req, res){
-    res.send(buffer);
+        res.send(buffer);
     })
 
     app.post('/register', async function(req, res){
@@ -502,15 +528,17 @@ mongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (e
     })
 
     app.get('/image/:filename', function(req, res){
+        const gfs = Grid(conn.db, mongoose.mongo);
+        gfs.collection('Photo_Documents');
         gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
             // Check if file
             if (!file || file.length === 0) {
-            return res.status(404).json({
-                err: 'No file exists'
-            });
+                return res.status(404).json({
+                    err: 'No file exists'
+                });
             }
-        const readstream = gfs.createReadStream(file.filename);
-        readstream.pipe(res);
+            const readstream = gfs.createReadStream(file.filename);
+            readstream.pipe(res);
         });
     });
 

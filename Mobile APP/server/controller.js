@@ -707,16 +707,6 @@ module.exports = async (app, myDb) => {
         }
     );
 
-
-
-
-
-
-
-
-
-
-
     const conn5 = mongoose.connection;
     let gfs5;
 
@@ -845,7 +835,7 @@ module.exports = async (app, myDb) => {
 
     conn8.once("open", () => {
         gfs8 = new mongoose.mongo.GridFSBucket(conn8.db, {
-            bucketName: "Graduation_Certificate_Documents", // Bucketname will be collection name
+            bucketName: "BSc_BA_Certificate_Documents", // Bucketname will be collection name
         });
     });
 
@@ -861,7 +851,7 @@ module.exports = async (app, myDb) => {
                     const filename = file.originalname;
                     const fileInfo = {
                         filename: filename,
-                        bucketName: "Graduation_Certificate_Documents",
+                        bucketName: "BSc_BA_Certificate_Documents",
                     };
                     resolve(fileInfo);
                 });
@@ -869,7 +859,7 @@ module.exports = async (app, myDb) => {
         },
     });
     app.post(
-        "/upload_graduationcertificate",
+        "/upload_bsc_ba",
         multer({
             storage: storage8,
         }).single("upload"),
@@ -886,7 +876,7 @@ module.exports = async (app, myDb) => {
 
     conn9.once("open", () => {
         gfs9 = new mongoose.mongo.GridFSBucket(conn9.db, {
-            bucketName: "Graduation_Marksheet_Documents", // Bucketname will be collection name
+            bucketName: "Bed_Certificate_Documents", // Bucketname will be collection name
         });
     });
 
@@ -902,7 +892,7 @@ module.exports = async (app, myDb) => {
                     const filename = file.originalname;
                     const fileInfo = {
                         filename: filename,
-                        bucketName: "Graduation_Marksheet_Documents",
+                        bucketName: "Bed_Certificate_Documents",
                     };
                     resolve(fileInfo);
                 });
@@ -910,7 +900,7 @@ module.exports = async (app, myDb) => {
         },
     });
     app.post(
-        "/upload_graduationmarksheet",
+        "/upload_bed",
         multer({
             storage: storage9,
         }).single("upload"),
