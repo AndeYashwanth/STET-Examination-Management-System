@@ -66,5 +66,5 @@ interface UploadRetro {
 
     @Headers("Content-Type: application/pdf")
     @GET("/available/{filename}/{coll}")
-    fun getfile(@Path("filename") filename: String, @Path("coll") coll: String):Call<String?>?
+    fun getfile(@Path("filename") filename: String, @Path("coll") coll: String):Call<Void?>?
 }

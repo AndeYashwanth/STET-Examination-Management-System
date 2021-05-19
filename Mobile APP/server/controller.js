@@ -157,7 +157,7 @@ module.exports = async (app, myDb) => {
     try {
       const result = await myDb
         .collection("registration")
-        .findOne({ Phone: req.params.Phone });
+        .findOne({ Phone: req.params.Phone, $and: [ { isRejected: { $exists: false }}, {isRejected: false} ]});
       if (result == null) {
         console.log("not registered");
         return res.status(200).send();
@@ -200,7 +200,7 @@ module.exports = async (app, myDb) => {
     try {
       const result = await myDb
         .collection("personals")
-        .findOne({ Phone: req.body.Phone });
+        .findOne({ Phone: req.body.Phone, isRejected: { $exists: false } });
       if (result == null) {
         return res.status(404).send();
       }
@@ -212,6 +212,7 @@ module.exports = async (app, myDb) => {
         FHMname: result.FHMname,
         FHLname: result.FHLname,
         DOB: result.DOB,
+        Community: result.Community,
         Gender: result.Gender,
         Aadhar: result.Aadhar,
         Hno: result.Hno,
@@ -233,17 +234,19 @@ module.exports = async (app, myDb) => {
     try {
       const result = await myDb
         .collection("academics")
-        .findOne({ Phone: req.body.Phone });
+        .findOne({ Phone: req.body.Phone, isRejected: { $exists: false } });
       if (result == null) {
         return res.status(404).send();
       }
       const objToSend = {
-        Percentage: result.Percentage,
-        University: result.University,
-        MinQualification: result.Min_Qual,
-        ProfessionalQualification: result.Pro_Qual,
-        PaperLanguage: result.Language,
         ApplicationCategory: result.App_Category,
+        PaperLanguage: result.Language,
+        TenthPercentage: result.TenthPercentage,
+        TwelfthPercentage: result.TwelfthPercentage,
+        BScBAPercentage: result.BScBAPercentage,
+        BEdPercentage: result.BEdPercentage,
+        ProfessionalQualification: result.Pro_Qual,
+        University: result.University,
         Phone: result.Phone,
       };
       res.status(200).send(JSON.stringify(objToSend));
@@ -262,6 +265,7 @@ module.exports = async (app, myDb) => {
       FHMname: req.body.FHMname,
       FHLname: req.body.FHLname,
       DOB: req.body.DOB,
+      Community: req.body.Community,
       Gender: req.body.Gender,
       Aadhar: req.body.Aadhar,
       Hno: req.body.Hno,
@@ -275,7 +279,7 @@ module.exports = async (app, myDb) => {
     try {
       const result = await myDb
         .collection("personals")
-        .findOne({ Phone: req.body.Phone });
+        .findOne({ Phone: req.body.Phone, isRejected: { $exists: false } });
       if (result == null) {
         await myDb.collection("personals").insertOne(newUser);
         return res.status(200).send();
@@ -297,7 +301,10 @@ module.exports = async (app, myDb) => {
     const newUser = {
       Min_Qual: req.body.MinQualification,
       Pro_Qual: req.body.ProfessionalQualification,
-      Percentage: req.body.Percentage,
+      TenthPercentage: req.body.TenthPercentage,
+      TwelfthPercentage: req.body.TwelfthPercentage,
+      BScBAPercentage: req.body.BScBAPercentage,
+      BEdPercentage: req.body.BEdPercentage,
       University: req.body.University,
       Language: req.body.PaperLanguage,
       App_Category: req.body.ApplicationCategory,
@@ -306,25 +313,14 @@ module.exports = async (app, myDb) => {
     try {
       const result = await myDb
         .collection("academics")
-        .findOne({ Phone: req.body.Phone });
+        .findOne({ Phone: req.body.Phone, isRejected: { $exists: false } });
       if (result == null) {
         await myDb.collection("academics").insertOne(newUser);
         return res.status(200).send();
       }
-      const User = {
-        $set: {
-          Min_Qual: req.body.MinQualification,
-          Pro_Qual: req.body.ProfessionalQualification,
-          Percentage: req.body.Percentage,
-          University: req.body.University,
-          Language: req.body.PaperLanguage,
-          App_Category: req.body.ApplicationCategory,
-          Phone: req.body.Phone,
-        },
-      };
       await myDb
         .collection("academics")
-        .updateOne({ Phone: req.body.Phone }, User);
+        .updateOne({ Phone: req.body.Phone }, { $set: newUser});
       return res.status(200).send();
     } catch (err) {
       res.status(500).send();
@@ -378,7 +374,7 @@ module.exports = async (app, myDb) => {
        */
       const obj = await myDb
         .collection(req.params.coll + ".files")
-        .findOne({ filename: req.params.filename }, { _id: 1 });
+        .findOne({ filename: req.params.filename, isRejected: { $exists: false } }, { _id: 1 });
       if (obj != null) {
         return res.status(200).send();
       } else {
@@ -393,7 +389,7 @@ module.exports = async (app, myDb) => {
     try {
       const result = await myDb
         .collection("Payment_Details")
-        .findOne({ Phone: req.params.phone });
+        .findOne({ Phone: req.params.phone, isRejected: { $exists: false } });
       if (result == null) {
         return res.status(404).send();
       }
@@ -414,13 +410,13 @@ module.exports = async (app, myDb) => {
       const collection = myDb.collection(req.params.coll + ".files");
       const collectionChunks = myDb.collection(req.params.coll + ".chunks");
       const obj = await collection.findOne(
-        { filename: req.params.filename },
+        { filename: req.params.filename, isRejected: { $exists: false } },
         { _id: 1 }
       );
       if (obj != null) {
         await collection.deleteOne(obj);
         const obj2 = await collectionChunks.findOne(
-          { files_id: obj._id },
+          { files_id: obj._id, isRejected: { $exists: false } },
           { _id: 1 }
         );
         await collectionChunks.deleteOne(obj2);
@@ -439,12 +435,12 @@ module.exports = async (app, myDb) => {
     try {
       const collection = myDb.collection(req.params.coll + ".files");
       const collectionChunks = myDb.collection(req.params.coll + ".chunks");
-      const docs = await collection.find({ filename: fileName }).toArray();
+      const docs = await collection.find({ filename: fileName, isRejected: { $exists: false } }).toArray();
       if (!docs || docs.length === 0) {
         return res.status(400).send();
       } else {
         const chunks = await collectionChunks
-          .find({ files_id: docs[0]._id })
+          .find({ files_id: docs[0]._id, isRejected: { $exists: false } })
           .sort({ n: 1 })
           .toArray();
         if (!chunks || chunks.length === 0) {
@@ -470,12 +466,12 @@ module.exports = async (app, myDb) => {
     try {
       const collection = myDb.collection(req.params.coll + ".files");
       const collectionChunks = myDb.collection(req.params.coll + ".chunks");
-      const docs = await collection.find({ filename: fileName }).toArray();
+      const docs = await collection.find({ filename: fileName, isRejected: { $exists: false } }).toArray();
       if (!docs || docs.length === 0) {
         return res.status(400).send();
       } else {
         const chunks = await collectionChunks
-          .find({ files_id: docs[0]._id })
+          .find({ files_id: docs[0]._id, isRejected: { $exists: false } })
           .sort({ n: 1 })
           .toArray();
         if (!chunks || chunks.length === 0) {

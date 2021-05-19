@@ -257,6 +257,7 @@
                     android:background="@drawable/box"
                     android:hint="dd-mm-yyyy"
                     android:inputType="date"
+                    android:paddingStart="5dp"
                     android:textSize="14sp" />
 
                 <ImageButton
@@ -376,7 +377,7 @@
                 android:background="@drawable/box"
                 android:hint="@string/global__district"
                 android:inputType="text"
-                android:paddingLeft="5dp"
+                android:paddingStart="5dp"
                 android:textSize="14sp" />
 
             <TextView
@@ -408,11 +409,11 @@
             <EditText
                 android:id="@+id/personal_info_form_activity__et__zip"
                 android:layout_width="150dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginBottom="9dp"
                 android:background="@drawable/box"
                 android:inputType="numberSigned"
-                android:paddingStart="3dp"
+                android:paddingStart="5dp"
                 android:textSize="14sp">
             </EditText>
 
@@ -433,7 +434,6 @@
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/box"
                 android:gravity="center"
-                android:paddingStart="5dp"
                 android:textSize="14sp" />
 
             <TextView
@@ -452,7 +452,6 @@
                 android:layout_marginBottom="05dp"
                 android:background="@drawable/box"
                 android:gravity="center"
-                android:paddingLeft="5dp"
                 android:textSize="14sp" />
 
             <CheckBox

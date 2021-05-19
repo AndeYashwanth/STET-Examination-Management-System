@@ -217,7 +217,7 @@ class Register : AppCompatActivity() {
                     i.putExtra("phone", phone)
                     startActivity(i)
                 } else {
-                    Toast.makeText(this@Register, getString(R.string.allthree), Toast.LENGTH_SHORT)
+                    Toast.makeText(this@Register, getString(R.string.allfour), Toast.LENGTH_SHORT)
                         .show()
                 }
             }

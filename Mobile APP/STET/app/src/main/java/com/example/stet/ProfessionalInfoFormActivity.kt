@@ -122,13 +122,10 @@ class ProfessionalInfoFormActivity : AppCompatActivity() {
                         if (result != null) {
                             page_5_spin_prof_qualification.setSelection(getSpinProfessQual(result.ProfessionalQualification))
                             page_5_enter_university.setText(result.University)
-                            /**
-                             * @todo different result percentage to all values
-                             */
-                            professional_info_form_activity__et__enter_tenth_percentage.setText(result.Percentage)
-                            professional_info_form_activity__et__enter_twelfth_percentage.setText(result.Percentage)
-                            professional_info_form_activity__et__enter_bse_ba_percentage.setText(result.Percentage)
-                            professional_info_form_activity__et__enter_bed_percentage.setText(result.Percentage)
+                            professional_info_form_activity__et__tenth_percentage.setText(result.TenthPercentage)
+                            professional_info_form_activity__et__twelfth_percentage.setText(result.TwelfthPercentage)
+                            professional_info_form_activity__et__bse_ba_percentage.setText(result.BScBAPercentage)
+                            professional_info_form_activity__et__bed_percentage.setText(result.BEdPercentage)
                             page_5_spin_category.setSelection(getSpinApplicationCategory(result.ApplicationCategory))
                             page_5_spin_language.setSelection(getSpinLanguage(result.PaperLanguage))
                             page_5_next.text = getString(R.string.update)
@@ -156,7 +153,10 @@ class ProfessionalInfoFormActivity : AppCompatActivity() {
                 progress.setProgressStyle(ProgressDialog.STYLE_SPINNER)
                 progress.isIndeterminate = true
                 progress.show()
-                if (validPercentage(professional_info_form_activity__et__enter_bed_percentage, 4) == 0
+                if (validPercentage(professional_info_form_activity__et__tenth_percentage, 4) == 0
+                    && validPercentage(professional_info_form_activity__et__twelfth_percentage, 4) == 0
+                    && validPercentage(professional_info_form_activity__et__bse_ba_percentage, 4) == 0
+                    && validPercentage(professional_info_form_activity__et__bed_percentage, 4) == 0
                     && validUniversity(page_5_enter_university) == 0
                     && validSpinner(page_5_spin_category) == 0
                     && validSpinner(page_5_spin_language) == 0
@@ -165,7 +165,10 @@ class ProfessionalInfoFormActivity : AppCompatActivity() {
                 ) {
                     val myFirstDocument: HashMap<String, String> = HashMap()
                     myFirstDocument["Phone"] = phone
-                    myFirstDocument["Percentage"] = professional_info_form_activity__et__enter_bed_percentage.text.toString()
+                    myFirstDocument["TenthPercentage"] = professional_info_form_activity__et__tenth_percentage.text.toString()
+                    myFirstDocument["TwelfthPercentage"] = professional_info_form_activity__et__twelfth_percentage.text.toString()
+                    myFirstDocument["BScBAPercentage"] = professional_info_form_activity__et__bse_ba_percentage.text.toString()
+                    myFirstDocument["BEdPercentage"] = professional_info_form_activity__et__bed_percentage.text.toString()
                     myFirstDocument["University"] = page_5_enter_university.text.toString()
                     myFirstDocument["ProfessionalQualification"] =
                         page_5_spin_prof_qualification.selectedItem.toString()

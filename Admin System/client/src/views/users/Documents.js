@@ -26,10 +26,21 @@ const { ServerPORT } = require("../newports");
 const uri = "http://localhost:" + ServerPORT;
 const Documents = ({ match }) => {
   const [documents, setData] = useState({});
+  const [userDetails, setUserDetails] = useState({});
   const [isBusy, setBusy] = useState(true);
   const [modalState, setModalState] = useState(false);
   //http://localhost:8081
   const url = uri + "/documentnames/";
+  const userDetailsUrl = uri + "/alldetails/" + match.params.id;
+  const userDocumentMapping = {
+    "Birth Certificate": "DOB",
+    "Community Certificate": "Community",
+    "Aadhar Card": "Aadhar",
+    "Tenth Memo": "Tenth Percentage",
+    "Twelfth Memo": "Twelfth Percentage",
+    "B.Ed Certificate": "B.Ed Percentage",
+    "B.Sc BA Certificate": "B.Ed Percentage"
+  }
   async function fetchData() {
     if (isBusy) {
       let headers = new Headers();
@@ -46,8 +57,18 @@ const Documents = ({ match }) => {
       setModalState(
         Object.assign({}, ...res.data.map((k) => ({ [k]: false })))
       );
+      const userDetailsRes = await axios(userDetailsUrl, {
+        mode: "cors",
+        method: "GET",
+        headers: headers,
+      });
+      console.log(userDetailsRes.data)
+      setUserDetails(userDetailsRes.data)
       setBusy(false);
     }
+  }
+  async function buttonClicked(buttonName) {
+    await axios.post(uri + "/registered/user/" + match.params.id, { "isRejected": buttonName == "reject" ? true : false })
   }
 
   useEffect(() => {
@@ -62,6 +83,7 @@ const Documents = ({ match }) => {
     }));
   };
   return (
+    <>
     <CRow>
       <CCol xl={12}>
         <CCard>
@@ -78,6 +100,7 @@ const Documents = ({ match }) => {
                   { key: "Document Name", _classes: "font-weight-bold" },
                   "Preview",
                   "View Document",
+                  "User Details"
                 ]}
                 hover
                 striped
@@ -123,6 +146,11 @@ const Documents = ({ match }) => {
                       </CModal>
                     </td>
                   ),
+                  "User Details": (item) => (
+                    <td>
+                      {userDetails[userDocumentMapping[item]]}
+                    </td>
+                  )
                 }}
               />
             )}
@@ -130,6 +158,9 @@ const Documents = ({ match }) => {
         </CCard>
       </CCol>
     </CRow>
+    <CButton component="a" color="success" role="button"  onClick={() => { buttonClicked("accept"); }}>Accept</CButton>
+    <CButton component="a" color="danger" role="button" onClick={() => { buttonClicked("reject"); }}>Reject</CButton>
+    </>
   );
 };
 

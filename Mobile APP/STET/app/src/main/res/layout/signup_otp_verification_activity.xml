@@ -112,7 +112,7 @@
                     android:paddingStart="10dp"
                     android:background="@drawable/box"
                     android:layout_marginLeft="20dp"
-                    android:inputType="numberPassword">
+                    android:inputType="number">
 
                 </EditText>
 

@@ -98,11 +98,6 @@ class PaymentActivity : Activity(), PaymentResultWithDataListener {
 
         })
 
-            page_6_next.setOnClickListener {
-                val i = Intent(this, Register::class.java)
-                i.putExtra("phone", phone)
-                startActivity(i)
-            }
             page_6_back.setOnClickListener {
                 val i = Intent(this, Register::class.java)
                 i.putExtra("phone", phone)

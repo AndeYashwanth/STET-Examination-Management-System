@@ -558,71 +558,101 @@
                     >
 
                     <TextView
-                        android:id="@+id/global__tenth_percentage_obtained"
+                        android:id="@+id/global__tenth_percentage"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__tenth_percentage_obtained"
+                        android:text="@string/global__tenth_percentage"
 
                         />
 
                     <TextView
-                        android:id="@+id/global__tenth_percentage_obtained_view"
+                        android:id="@+id/global__tenth_percentage_view"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_2"
+                    android:orientation="horizontal"
+
+                    >
                     <TextView
-                        android:id="@+id/global__twelfth_percentage_obtained"
+                        android:id="@+id/global__twelfth_percentage"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__twelfth_percentage_obtained"
+                        android:text="@string/global__twelfth_percentage"
 
                         />
 
                     <TextView
-                        android:id="@+id/global__twelfth_percentage_obtained_view"
+                        android:id="@+id/global__twelfth_percentage_view"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_2"
+                    android:orientation="horizontal"
+
+                    >
                     <TextView
-                        android:id="@+id/global__bse_ba_percentage_obtained"
+                        android:id="@+id/global__bse_ba_percentage"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__bse_ba_percentage_obtained"
+                        android:text="@string/global__bse_ba_percentage"
 
                         />
 
                     <TextView
-                        android:id="@+id/global__bse_ba_percentage_obtained_view"
+                        android:id="@+id/global__bse_ba_percentage_view"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:paddingLeft="10dp"
                         android:text=""
                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_2"
+                    android:orientation="horizontal"
+
+                    >
                     <TextView
-                        android:id="@+id/global__bed_percentage_obtained"
+                        android:id="@+id/global__bed_percentage"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"
                         android:gravity="center_horizontal"
-                        android:text="@string/global__bed_percentage_obtained"
+                        android:text="@string/global__bed_percentage"
 
                         />
 
                     <TextView
-                        android:id="@+id/global__bed_percentage_obtained_view"
+                        android:id="@+id/global__bed_percentage_view"
                         android:layout_width="158dp"
                         android:layout_height="25dp"
                         android:background="@drawable/box_2"

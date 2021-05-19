@@ -1,7 +1,10 @@
 package com.example.stet
 
 class Education(
-    val Percentage: String? = null,
+    val TenthPercentage: String? = null,
+    val TwelfthPercentage: String? = null,
+    val BScBAPercentage: String? = null,
+    val BEdPercentage: String? = null,
     val University: String? = null,
     val MinQualification: String? = null,
     val ProfessionalQualification: String? = null,

@@ -177,10 +177,10 @@
     <string name="global__application_category">Job Application Category</string>
     <string name="global__exam_language">Exam Language</string>
     <string name="page_5_min_qualification">Minimum Qualification</string>
-    <string name="global__tenth_percentage_obtained">Tenth Percentage Obtained</string>
-    <string name="global__twelfth_percentage_obtained">Twelfth Percentage Obtained</string>
-    <string name="global__bse_ba_percentage_obtained">B.Sc/B.A Percentage Obtained</string>
-    <string name="global__bed_percentage_obtained">B.Ed Percentage Obtained</string>
+    <string name="global__tenth_percentage">Tenth Percentage </string>
+    <string name="global__twelfth_percentage">Twelfth Percentage </string>
+    <string name="global__bse_ba_percentage">B.Sc/B.A Percentage </string>
+    <string name="global__bed_percentage">B.Ed Percentage </string>
     <string name="global__prof_qualification">Professional Qualification</string>
     <string name="global__university">University</string>
     <string name="global__back">Back</string>
@@ -356,7 +356,7 @@
     <string name="validemail">Enter valid email address</string>
     <string name="chooselang">Choose Language</string>
     <string name="loading">\"Loading  :) \"</string>
-    <string name="allthree">Please upload all three details</string>
+    <string name="allfour">Please update all four details</string>
     <string name="empty">Empty Object</string>
     <string name="phonenotfound">Phone Number Not Found</string>
     <string name="passwordreset">Password reset is Successfull</string>

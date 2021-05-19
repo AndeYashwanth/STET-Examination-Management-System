@@ -52,15 +52,15 @@ const documentCollections = {
     collection_name: "Tenth_Documents",
     file_name_end: "_tenth.png",
   },
-  "Twelveth Memo": {
+  "Twelfth Memo": {
     collection_name: "Twelveth_Documents",
     file_name_end: "_twelveth.png",
   },
-  "BEd Certificate": {
+  "B.Ed Certificate": {
     collection_name: "Bed_Certificate_Documents",
     file_name_end: "_bedcertificate.png",
   },
-  "BScBA Certificate": {
+  "B.Sc BA Certificate": {
     collection_name: "BSc_BA_Certificate_Documents",
     file_name_end: "_bscbacertificate.png",
   },
@@ -173,16 +173,16 @@ mongoClient.connect(
             .collection("personals")
             .findOne({ Phone: req.params.user });
           if (result != null) {
-            User.Fname = result.Fname;
-            User.Mname = result.Mname;
-            User.Lname = result.Lname;
+            User["First Name"] = result.Fname;
+            User["Middle Name"] = result.Mname;
+            User["Last Name"] = result.Lname;
             User.Gender = result.Gender;
-            User.FHFname = result.FHFname;
-            User.FHMname = result.FHMname;
-            User.FHLname = result.FHLname;
-            User.DOB = result.DOB;
-            User.Community = result.Community;
-            User.Aadhar = result.Aadhar;
+            User["Father First Name"] = result.FHFname;
+            User["Father Middle Name"] = result.FHMname;
+            User["Father Last Name"] = result.FHLname;
+            User["DOB"] = result.DOB;
+            User["Community"] = result.Community;
+            User["Aadhar"] = result.Aadhar;
             User.Hno = result.Hno;
             User.Area = result.Area;
             User.District = result.District;
@@ -195,17 +195,20 @@ mongoClient.connect(
             .collection("academics")
             .findOne({ Phone: req.params.user });
           if (result != null) {
-            User.MinQualification = result.Min_Qual;
-            User.ProfessionalQualification = result.Pro_Qual;
-            User.Percentage = result.Percentage;
-            User.University = result.University;
-            User.PaperLanguage = result.Language;
-            User.App_Category = result.App_Category;
+            User["Application Category"] = result.App_Category;
+            User["Exam Language"] = result.Language;
+            User["Tenth Percentage"] = result.TenthPercentage;
+            User["Twelfth Percentage"] = result.TwelfthPercentage;
+            User["B.Sc BA Percentage"] = result.BScBAPercentage;
+            User["B.Ed Percentage"] = result.BEdPercentage;
+            User["Professional Qualification"] = result.Pro_Qual;
+            User["University"] = result.University;
+            // User["Minimim Qualification"] = result.Min_Qual;
           }
 
           var result = await myDb
             .collection("Payment_Details")
-            .findOne({ Phone: req.params.user });
+            .findOne({ Phone: req.params.user, isRejected: { $exists: false } });
           if (result != null) {
             User.UserContact = result.UserContact;
             User.PaymentEmail = result.UserEmail;
@@ -217,9 +220,9 @@ mongoClient.connect(
 
           var result = await myDb
             .collection("registration")
-            .findOne({ Phone: req.params.user });
+            .findOne({ Phone: req.params.user, isRejected: { $exists: false } });
           if (result != null) {
-            User.FinalSubmissionDate = result.Date;
+            User["Final Submission Date"] = result.Date;
           }
           res.send(JSON.stringify(User));
         } catch (e) {
@@ -255,7 +258,7 @@ mongoClient.connect(
         var array = [];
         myDb
           .collection("registration")
-          .find({})
+          .find({ })
           .toArray(function (err, result) {
             if (err) {
               return;
@@ -291,7 +294,7 @@ mongoClient.connect(
         const collectionProps = documentCollections[document_name];
         gfs.collection(collectionProps.collection_name);
         gfs.files.findOne(
-          { filename: user_id + collectionProps.file_name_end },
+          { filename: user_id + collectionProps.file_name_end, isRejected: { $exists: false } },
           (err, file) => {
             // Check if file
             if (!file || file.length === 0) {
@@ -331,7 +334,7 @@ mongoClient.connect(
 
       async function findData({ Phone }) {
         return new Promise(async function (resolve, reject) {
-          const user = await User.findOne({ Phone: Phone });
+          const user = await User.findOne({ Phone: Phone, isRejected: { $exists: false } });
           if (user == null) resolve(null);
           else {
             const data = {
@@ -487,11 +490,9 @@ mongoClient.connect(
       });
       app.post("/generate_all", async function (req, res) {
         User.find({}, async (err, users) => {
-          console.log("I am Alive");
           if (err) console.log(err);
 
           users.map(async function (user) {
-            console.log("I can feel it");
             const data = {
               fname: user.fname,
               lname: user.lname,
@@ -571,11 +572,9 @@ mongoClient.connect(
         });
 
         User.find({}, (err, users) => {
-          console.log("I am Alive");
           if (err) console.log(err);
 
           users.map(async function (user) {
-            console.log("I can feel it");
             const data = {
               fname: user.fname,
               lname: user.lname,
@@ -639,6 +638,24 @@ mongoClient.connect(
           .then(() => res.json({}))
           .catch((err) => next(err));
       });
+
+      app.post("/registered/user/:id", async function (req, res) {
+        const user_id = req.params.id;
+        const isRejected = req.body.isRejected;
+        const status = isRejected ? "Rejected": "Approved"
+        try {
+          const result = await myDb
+            .collection("registration").updateOne({ "Phone": user_id,  isRejected: { $exists: false }}, { $set : {
+              "isRejected": isRejected,
+              "Status": status
+            }})
+            console.log(result)
+          return res.status(200).send();
+        } catch (err) {
+          res.status(500).send();
+          console.log(err);
+        }
+      })
 
       app.get("/image/:filename", function (req, res) {
         const gfs = Grid(conn.db, mongoose.mongo);

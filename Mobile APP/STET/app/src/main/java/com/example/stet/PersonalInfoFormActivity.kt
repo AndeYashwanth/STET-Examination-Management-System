@@ -186,8 +186,6 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                     val result = response.body()
 
                     if (result != null) {
-                        personal_info_form_activity__tv__email_noedit.text = result.Email
-                        personal_info_form__et_aadhar.setText(result.Aadhar)
                         personal_info_form_activity__et__cand_fname.setText(result.Fname)
                         personal_info_form_activity__et__cand_mname.setText(result.Mname)
                         personal_info_form_activity__et__cand_lname.setText(result.Lname)
@@ -202,12 +200,14 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                             personal_info_form_activity__rb__other.isChecked = true
                         }
                         personal_info_form_activity__et__dob.setText(result.DOB)
+                        personal_info_form_activity__sp__community.setSelection(getSpinCommunity(result.Community))
+                        personal_info_form__et_aadhar.setText(result.Aadhar)
                         personal_info_form_activity__et__hno.setText(result.Hno)
                         personal_info_form_activity__et__area.setText(result.Area)
                         personal_info_form_activity__et__district.setText(result.District)
-                        personal_info_form_activity__et__zip.setText(result.Pincode)
-                        personal_info_form_activity__et__zip.setSelection(getSpinCommunity(result.Community))
                         personal_info_form_activity__sp__state.setSelection(getSpinState(result.State))
+                        personal_info_form_activity__et__zip.setText(result.Pincode)
+                        personal_info_form_activity__tv__email_noedit.text = result.Email
                         ch = 1
                         personal_info_form__btn_next.text = getString(R.string.update)
                         progress2.dismiss()
@@ -263,7 +263,7 @@ class PersonalInfoFormActivity : AppCompatActivity() {
                 Personal["FHMname"] = personal_info_form_activity__et__fath_mname.text.toString()
                 Personal["FHLname"] = personal_info_form_activity__et__fath_lname.text.toString()
                 Personal["DOB"] = personal_info_form_activity__et__dob.text.toString()
-                Personal["Category"] = personal_info_form_activity__sp__community.selectedItem.toString()
+                Personal["Community"] = personal_info_form_activity__sp__community.selectedItem.toString()
                 Personal["Aadhar"] = personal_info_form__et_aadhar.text.toString()
                 Personal["Hno"] = personal_info_form_activity__et__hno.text.toString()
                 Personal["Area"] = personal_info_form_activity__et__area.text.toString()

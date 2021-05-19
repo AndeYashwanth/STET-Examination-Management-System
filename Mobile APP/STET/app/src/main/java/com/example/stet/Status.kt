@@ -182,14 +182,13 @@ class Status : AppCompatActivity() {
 
 
                         if (result != null) {
-                            global__tenth_percentage_obtained_view.text = result.Percentage
-                            global__twelfth_percentage_obtained_view.text = result.Percentage
-                            global__bse_ba_percentage_obtained_view.text = result.Percentage
-                            global__bed_percentage_obtained_view.text = result.Percentage
+                            global__tenth_percentage_view.text = result.TenthPercentage
+                            global__twelfth_percentage_view.text = result.TwelfthPercentage
+                            global__bse_ba_percentage_view.text = result.BScBAPercentage
+                            global__bed_percentage_view.text = result.BEdPercentage
                             status_application_view_uni.text = result.University
                             status_application_view_prof_quali.text =
                                 result.ProfessionalQualification
-                            status_application_view_min_quali.text = result.MinQualification
                             status_application_view_category.text = result.ApplicationCategory
                             status_application_view_paper_choice.text = result.PaperLanguage
 
@@ -279,18 +278,18 @@ class Status : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         var retrofitInterface2: UploadRetro? = retrofit.create(UploadRetro::class.java)
-        val req: Call<String?>? = retrofitInterface2?.getfile( Phone+"_"+str+".png",coll)
-        req!!.enqueue(object : Callback<String?> {
+        val req: Call<Void?>? = retrofitInterface2?.getfile( Phone+"_"+str+".png",coll)
+        req!!.enqueue(object : Callback<Void?> {
             override fun onResponse(
-                call: Call<String?>?,
-                response: Response<String?>
+                call: Call<Void?>?,
+                response: Response<Void?>
             ) {
                 if (response.code() == 200) {
                     text.text=getString(R.string.uploaded)
                 }
 
             }
-            override fun onFailure(call: Call<String?>?, t: Throwable) {
+            override fun onFailure(call: Call<Void?>?, t: Throwable) {
 
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT)
                     .show()

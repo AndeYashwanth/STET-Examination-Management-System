@@ -121,10 +121,10 @@
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textSize="17sp"
-                    android:text="@string/global__tenth_percentage_obtained" />
+                    android:text="@string/global__tenth_percentage" />
 
                 <EditText
-                    android:id="@+id/professional_info_form_activity__et__enter_tenth_percentage"
+                    android:id="@+id/professional_info_form_activity__et__tenth_percentage"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:paddingLeft="10dp"
@@ -140,10 +140,10 @@
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textSize="17sp"
-                    android:text="@string/global__twelfth_percentage_obtained" />
+                    android:text="@string/global__twelfth_percentage" />
 
                 <EditText
-                    android:id="@+id/professional_info_form_activity__et__enter_twelfth_percentage"
+                    android:id="@+id/professional_info_form_activity__et__twelfth_percentage"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:paddingLeft="10dp"
@@ -159,10 +159,10 @@
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textSize="17sp"
-                    android:text="@string/global__bse_ba_percentage_obtained" />
+                    android:text="@string/global__bse_ba_percentage" />
 
                 <EditText
-                    android:id="@+id/professional_info_form_activity__et__enter_bse_ba_percentage"
+                    android:id="@+id/professional_info_form_activity__et__bse_ba_percentage"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:paddingLeft="10dp"
@@ -178,10 +178,10 @@
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textSize="17sp"
-                    android:text="@string/global__bed_percentage_obtained" />
+                    android:text="@string/global__bed_percentage" />
 
                 <EditText
-                    android:id="@+id/professional_info_form_activity__et__enter_bed_percentage"
+                    android:id="@+id/professional_info_form_activity__et__bed_percentage"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:paddingLeft="10dp"

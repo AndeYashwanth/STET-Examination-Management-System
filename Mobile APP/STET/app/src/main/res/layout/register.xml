@@ -115,7 +115,7 @@
                     android:id="@+id/register_submit"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="90dp"
                     android:paddingStart="20sp"
                     android:paddingEnd="20sp"
                     android:textSize="17sp"
