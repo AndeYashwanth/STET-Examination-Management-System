@@ -367,7 +367,7 @@ class ExamRegisterClickActivity : AppCompatActivity() {
                 }
             })
             // Log and toast
-            Log.d("Main token: ", token)
+            Log.d("Main token: ", token.toString())
         })
     }
 }

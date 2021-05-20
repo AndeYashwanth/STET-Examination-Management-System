@@ -408,40 +408,9 @@ mongoClient.connect(
             const title = "Admit card generated successfully";
             const text =
               "Your admit card was generated successfully. Please download by logging in to the app.";
-            var mailOptions = {
-              from: process.env.MAIL_USERNAME,
-              to: data.Email,
-              subject: title,
-              text: text,
-            };
+            await sendMailNotification(data.Email, title, text)
 
-            transporter.sendMail(mailOptions, function (error, info) {
-              if (error) {
-                console.log(error);
-              } else {
-                console.log("Email sent: " + info.response);
-              }
-            });
-
-            // https://stackoverflow.com/a/39818585/9160306
-            const response = await myDb
-              .collection("firebase-app-token")
-              .findOne({ Phone: Phone });
-            if (response) {
-              var payload = {
-                notification: {
-                  title: title,
-                  body: text,
-                  click_action: "DownloadAdmitcardActivity",
-                },
-              };
-              const response2 = await firebaseAdmin
-                .messaging()
-                .sendToDevice(response.Token, payload);
-              console.log(response2);
-            } else {
-              console.log(`Firebase token not found for user : ${Phone} `);
-            }
+            await sendMobileAppNotification(data.Phone, title, text, "DownloadAdmitcardActivity")
             res.sendStatus(200);
           }
         })();
@@ -639,17 +608,52 @@ mongoClient.connect(
           .catch((err) => next(err));
       });
 
-      app.post("/registered/user/:id", async function (req, res) {
+      app.get("/registered/user/:id/status", async (req, res) =>  {
+        try {
+          const user_id = req.params.id;
+          const result = await myDb.collection("registration").findOne({ "Phone": user_id }, {projection : {
+            _id: false,
+            Status: true
+          }})
+          const Status = result.Status ? true : false
+          return res.json({ Status });
+        } catch (err) {
+          res.status(500).send();
+          console.log(err);
+        }
+      })
+
+      app.post("/registered/user/:id/statusupdate", async (req, res) => {
         const user_id = req.params.id;
-        const isRejected = req.body.isRejected;
-        const status = isRejected ? "Rejected": "Approved"
+        const isRejected = req.body.isRejected || false;
+        const rejectReason = req.body.Reject_Reason;
+        const status = req.body.Status
+        const data = {
+          "Status": status
+        }
+        if (isRejected) {
+          data.isRejected = isRejected,
+          data.Reject_Reason = rejectReason;
+        }
         try {
           const result = await myDb
-            .collection("registration").updateOne({ "Phone": user_id,  isRejected: { $exists: false }}, { $set : {
-              "isRejected": isRejected,
-              "Status": status
-            }})
-            console.log(result)
+            .collection("registration").updateOne({ "Phone": user_id,  isRejected: { $exists: false }}, { $set : data})
+            if( isRejected ) {
+              /**
+               * @todo set rejected to all
+               */
+            }
+            if(result.result.nModified == 1) {
+              const subject = "Exam Application Status Update"
+              const text = isRejected ? rejectReason : status
+              await sendMobileAppNotification(user_id, subject, text)
+              const userData = await myDb.collection("signups").findOne({ Phone: user_id }, { projection : {
+                _id: false,
+                Email: true
+              }})
+              await sendMailNotification(userData.Email, subject, text)
+              return res.status(200)
+            }
           return res.status(200).send();
         } catch (err) {
           res.status(500).send();
@@ -691,8 +695,46 @@ mongoClient.connect(
           resolve(1);
         });
       }
-
       //=================== PDF ROUTES END ==================================
+
+      async function sendMailNotification(toEmail, subject, text) {
+        var mailOptions = {
+          from: process.env.MAIL_USERNAME,
+          to: toEmail,
+          subject: subject,
+          text: text,
+        };
+        console.log(mailOptions)
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        });
+      }
+
+      // https://stackoverflow.com/a/39818585/9160306
+      async function sendMobileAppNotification(Phone, title, text, click_action = "MainActivity") {
+        var payload = {
+          notification: {
+            title,
+            body: text,
+            click_action,
+          },
+        };
+        const response = await myDb
+          .collection("firebase-app-token")
+          .findOne({ Phone });
+        if (response) {
+          const response2 = await firebaseAdmin
+            .messaging()
+            .sendToDevice(response.Token, payload);
+          console.log(response2);
+        } else {
+          console.log(`Firebase token not found for user : ${Phone} `);
+        }
+      }
     }
   }
 );

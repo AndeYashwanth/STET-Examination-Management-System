@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton, } from "@coreui/react";
+import { CCard, CCardBody, CCardHeader, CCol, CRow, CButton, CInput } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -11,8 +11,13 @@ const RegisteredUser = ({ match }) => {
   const [user, setUser] = useState({});
   const [isBusy, setBusy] = useState(true);
   const [userDetails, setDetails] = useState({});
+  const [approveButtonStatus, disableApproveButton] = useState(false);
+  const [rejectButtonStatus, disableRejectButton] = useState(false);
+  const [inputFieldStatus, disableinputField] = useState(false);
+  var registerdStatus = false;
   //http://localhost:8081
   const url = uri + "/alldetails/" + match.params.id;
+  const registerdStatusUrl = uri + "/registered/user/" + match.params.id +"/status";
   async function fetchData() {
     if (isBusy) {
       let headers = new Headers();
@@ -26,12 +31,39 @@ const RegisteredUser = ({ match }) => {
         headers: headers,
       });
       setUser(res.data);
+      const response = await axios(registerdStatusUrl, {
+        mode: "cors",
+        method: "GET",
+        headers: headers,
+      })
+      if( response && response.Status) {
+        registerdStatus = response.Status
+      }
+      updateButtonsStatus(registerdStatus);
+      disableRejectButton(true)
+      disableRejectButton(true)
       setBusy(false);
     }
   }
   async function buttonClicked(buttonName) {
-    const res = await axios.post(uri + "/registered/user/" + match.params.id, { "isRejected": buttonName == "reject" ? true : false })
+    var data = {}
+    if (buttonName == "reject") {
+      data.isRejected = buttonName == "reject" ? true : false;
+      data.Reject_Reason = document.getElementById('input-elem').value;
+      data.Status = "Details Rejected"
+    } else {
+      data.Status = "Details Approved"
+    }
+    const res = await axios.post(uri + "/registered/user/" + match.params.id + "/statusupdate", data)
     console.log(res)
+  }
+
+  function updateButtonsStatus(status) {
+    if( status ) {
+      disableApproveButton(true);
+      disableRejectButton(true)
+      disableinputField(true);
+    }
   }
 
   useEffect(() => {
@@ -82,8 +114,25 @@ const RegisteredUser = ({ match }) => {
         </CCard>
       </CCol>
     </CRow>
-    <CButton component="a" color="success" role="button"  onClick={() => { buttonClicked("accept"); }}>Accept</CButton>
-    <CButton component="a" color="danger" role="button" onClick={() => { buttonClicked("reject"); }}>Reject</CButton>
+    <CButton component="a" color="success" role="button"  onClick={() => { buttonClicked("approve"); }} disabled={approveButtonStatus}>Approve</CButton>
+    <CButton component="a" color="danger" role="button" onClick={() => { buttonClicked("reject"); }} disabled={rejectButtonStatus}>Reject</CButton>
+    <CInput
+      id="input-elem"
+      name="nf-email"
+      placeholder="Enter Reject Message"
+      disabled={inputFieldStatus}
+      onKeyUp={() => { 
+        if(!registerdStatus) {
+          if( document.getElementById('input-elem').value ) {
+            disableApproveButton(true)
+            disableRejectButton(false)
+          } else {
+            disableApproveButton(false)
+            disableRejectButton(true)
+          }
+        }
+       }}
+    />
     </>
   );
 };

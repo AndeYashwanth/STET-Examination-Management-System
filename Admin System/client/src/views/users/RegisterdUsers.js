@@ -37,6 +37,7 @@ const RegisterdUsers = () => {
   //const [hasError, setErrors] = useState(false);
   const [UsersData, setData] = useState({});
   const [isBusy, setBusy] = useState(true);
+  const [viewButtonStatus, setViewButtonDisable] = useState(true);
   const pageChange = (newPage) => {
     currentPage !== newPage && history.push(`/users?page=${newPage}`);
   };
@@ -58,6 +59,9 @@ const RegisterdUsers = () => {
         headers: headers,
       });
       setData(res.data);
+      if( res.data[res.data.length - 1].Status == "Details Approved") {
+        setViewButtonDisable(false)
+      }
       setBusy(false);
     }
   }
@@ -116,6 +120,7 @@ const RegisterdUsers = () => {
                           e.stopPropagation();
                         }}
                         role="button"
+                        disabled={viewButtonStatus}
                       >
                         View
                       </CButton>
