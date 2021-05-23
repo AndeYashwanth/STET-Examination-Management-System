@@ -18,9 +18,11 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 const getBadge = (status) => {
   switch (status) {
-    case "Approved":
+    case "Details Approved":
+    case "Documents Approved":
       return "success";
-    case "Rejected":
+    case "Details Rejected":
+    case "Documents Rejected":
       return "danger";
     default:
       return "warning";
@@ -37,7 +39,8 @@ const RegisterdUsers = () => {
   //const [hasError, setErrors] = useState(false);
   const [UsersData, setData] = useState({});
   const [isBusy, setBusy] = useState(true);
-  const [viewButtonStatus, setViewButtonDisable] = useState(true);
+  const [viewButtonStatus, setViewButtonStatus] = useState({});
+
   const pageChange = (newPage) => {
     currentPage !== newPage && history.push(`/users?page=${newPage}`);
   };
@@ -59,9 +62,9 @@ const RegisterdUsers = () => {
         headers: headers,
       });
       setData(res.data);
-      if( res.data[res.data.length - 1].Status == "Details Approved") {
-        setViewButtonDisable(false)
-      }
+      res.data.forEach(({Phone, Status}) => {
+        viewButtonStatus[Phone] = Status == "Details Approved" ? false : true;
+      });
       setBusy(false);
     }
   }
@@ -120,7 +123,7 @@ const RegisterdUsers = () => {
                           e.stopPropagation();
                         }}
                         role="button"
-                        disabled={viewButtonStatus}
+                        disabled={viewButtonStatus[item.id]}
                       >
                         View
                       </CButton>

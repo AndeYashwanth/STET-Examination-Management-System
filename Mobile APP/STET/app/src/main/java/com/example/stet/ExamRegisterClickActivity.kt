@@ -123,7 +123,6 @@ class ExamRegisterClickActivity : AppCompatActivity() {
                         x = 1
                     } else if (response.code() == 404) {
                         x = 1
-                        t=1
                         exam_register_btn.background = getDrawable(R.drawable.button_shape2)
                     }
                 }

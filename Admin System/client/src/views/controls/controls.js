@@ -168,7 +168,7 @@ const Controls = () => {
                         </CCardBody>
                       </CCard>
 
-                      <CCard>
+                      {/* <CCard>
                         <CCardHeader>Rgenerate All Admit Cards</CCardHeader>
                         <CCardBody>
                           <CButton
@@ -181,13 +181,13 @@ const Controls = () => {
                             Regenerate
                           </CButton>
                         </CCardBody>
-                      </CCard>
+                      </CCard> */}
                     </CCol>
                     <CCol>
                       <CCard>
                         <CCardHeader>Generate Admit-Card</CCardHeader>
                         <small className="text-muted">
-                          Using Student Mobile Number
+                          Using Mobile Number
                         </small>
                         <CCardBody>
                           <CForm action="" method="post">
@@ -222,10 +222,10 @@ const Controls = () => {
                           </CForm>
                         </CCardBody>
                       </CCard>
-                      <CCard>
+                      {/* <CCard>
                         <CCardHeader>Regenerate Admit-Card</CCardHeader>
                         <small className="text-muted">
-                          Using Student Mobile Number
+                          Using Mobile Number
                         </small>
                         <CCardBody>
                           <CForm action="" method="post">
@@ -259,7 +259,7 @@ const Controls = () => {
                             </CFormGroup>
                           </CForm>
                         </CCardBody>
-                      </CCard>
+                      </CCard> */}
                       <br />
                     </CCol>
                   </CRow>

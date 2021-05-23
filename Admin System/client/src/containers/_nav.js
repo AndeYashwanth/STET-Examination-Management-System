@@ -11,7 +11,7 @@ export default [
   },
   {
     _tag: "CSidebarNavItem",
-    name: "All Users",
+    name: "Signed up Users",
     to: "/users",
     icon: "cil-user",
   },

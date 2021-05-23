@@ -51,7 +51,7 @@ class FinalRegistrationActivity : AppCompatActivity() {
         )
         //shared preference for user_cookie
         val cookie:String?=sharedPreferences.getString("user_cookie","")
-        map["venue"]="Telangana"
+        map["venue"] = "KMIT, Narayanaguda, Hyderabad"
         map["eno"]=phone
         //retofit builder
         val retrofit: Retrofit = Retrofit.Builder()
@@ -159,6 +159,7 @@ class FinalRegistrationActivity : AppCompatActivity() {
                             map["dob"] = result.DOB
                             map["gender"] = result.Gender
                             map["aadhar"] = result.Aadhar
+                            map["community"] = result.Community
                             map["hno"] = result.Hno
                             map["area"] = result.Area
                             map["district"] = result.District

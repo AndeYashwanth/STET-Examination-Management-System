@@ -57,6 +57,9 @@ interface RetrofitInterface {
     @GET("/paymentdetails/{phone}")                 //get payment details
     fun getpayment(@Header ("cookieName") cookieName: String,@Path ("phone") phone:String):Call<Payment>
 
+    @GET("/getDocuments/{phone}")                 //get payment details
+    fun getDocuemnts(@Header ("cookieName") cookieName: String,@Path ("phone") phone:String):Call<Void>
+
     @GET("/submitted/{Phone}")              //check for registration
     fun submittedphone(@Header ("cookieName") cookieName: String,@Path("Phone") Phone: String):Call<Void>
 

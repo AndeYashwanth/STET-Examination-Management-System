@@ -4,10 +4,12 @@ import CIcon from "@coreui/icons-react";
 import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import { useHistory, useLocation } from "react-router-dom";
 
 const { ServerPORT } = require("../newports");
 const uri = "http://localhost:" + ServerPORT;
 const RegisteredUser = ({ match }) => {
+  const history = useHistory();
   const [user, setUser] = useState({});
   const [isBusy, setBusy] = useState(true);
   const [userDetails, setDetails] = useState({});
@@ -17,7 +19,7 @@ const RegisteredUser = ({ match }) => {
   var registerdStatus = false;
   //http://localhost:8081
   const url = uri + "/alldetails/" + match.params.id;
-  const registerdStatusUrl = uri + "/registered/user/" + match.params.id +"/status";
+  const registerdStatusUrl = uri + "/registered/userdetails/user/" + match.params.id +"/status";
   async function fetchData() {
     if (isBusy) {
       let headers = new Headers();
@@ -36,11 +38,8 @@ const RegisteredUser = ({ match }) => {
         method: "GET",
         headers: headers,
       })
-      if( response && response.Status) {
-        registerdStatus = response.Status
-      }
+      registerdStatus = response?.data.Status || false;
       updateButtonsStatus(registerdStatus);
-      disableRejectButton(true)
       disableRejectButton(true)
       setBusy(false);
     }
@@ -55,10 +54,11 @@ const RegisteredUser = ({ match }) => {
       data.Status = "Details Approved"
     }
     const res = await axios.post(uri + "/registered/user/" + match.params.id + "/statusupdate", data)
-    console.log(res)
+    history.push(`/registerd/`)
   }
 
   function updateButtonsStatus(status) {
+    console.log(status)
     if( status ) {
       disableApproveButton(true);
       disableRejectButton(true)

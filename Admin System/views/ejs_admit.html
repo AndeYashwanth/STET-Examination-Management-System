@@ -71,10 +71,10 @@
           <div class="BoxA border- padding mar-bot">
             <div class="row">
               <div class="col-sm-4">
-                <h5>Sikkim Teacher Eligibility Test - STET</h5>
+                <h5>Teacher Eligibility Test - TET</h5>
                 <p>
                   <br />
-                  SIKKIM, INDIA
+                  TELANGANA, INDIA
                 </p>
               </div>
               <div class="col-sm-4 txt-center">
@@ -82,14 +82,14 @@
               </div>
               <div class="col-sm-4">
                 <h5>Admit Card</h5>
-                <p>STET - 2021</p>
+                <p>TET - 2021</p>
               </div>
             </div>
           </div>
           <div class="BoxC border- padding mar-bot">
             <div class="row">
               <div class="col-sm-6">
-                <h5>Enrollment No : <%= data.Eno %></h5>
+                <h3>Enrollment No : <%= data.Eno %></h5>
               </div>
             </div>
           </div>
@@ -99,19 +99,14 @@
                 <table class="table table-bordered">
                   <tbody>
                     <tr>
-                      <td><b>ENROLLMENT NO : <%= data.Eno %></b></td>
-                    </tr>
-                    <tr>
                       <td>
-                        <b>Student Name: </b> <%= data.Fname %> <%= data.Lname
-                        %>
+                        <b>Student Name: </b> <%= data.Fname %> <%= data.Mname %> <%= data.Lname %>
                       </td>
                       <td><b>Sex: </b><%= data.Gender %></td>
                     </tr>
                     <tr>
                       <td>
-                        <b>Father/Husband Name: </b><%=data.FHFname %> <%=
-                        data.FHLname %>
+                        <b>Father Name: </b><%=data.FHFname %> <%=data.FHMname %> <%=data.FHLname %>
                       </td>
                       <td><b>DOB: </b><%= data.DOB %></td>
                     </tr>
@@ -144,7 +139,7 @@
                 <h5>EXAMINATION VENUE</h5>
                 <p>
                   <%= data.Venue %><br />
-                  Sikkim, INDIA
+                  INDIA
                 </p>
               </div>
             </div>
@@ -169,9 +164,6 @@
               </div>
             </div>
           </div>
-          <footer class="txt-center">
-            <p>*** Sikkim HRD ***</p>
-          </footer>
         </div>
       </div>
     </section>

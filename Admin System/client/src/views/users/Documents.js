@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import {
   CBadge,
   CCard,
@@ -16,7 +17,8 @@ import {
   CModalFooter,
   CModalTitle,
   CModalBody,
-  CInput
+  CInput,
+  CAlert
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 import axios from "axios";
@@ -26,6 +28,7 @@ import Loader from "react-loader-spinner";
 const { ServerPORT } = require("../newports");
 const uri = "http://localhost:" + ServerPORT;
 const Documents = ({ match }) => {
+  const history = useHistory();
   const [documents, setData] = useState({});
   const [userDetails, setUserDetails] = useState({});
   const [isBusy, setBusy] = useState(true);
@@ -36,7 +39,7 @@ const Documents = ({ match }) => {
   //http://localhost:8081
   const url = uri + "/documentnames/";
   const userDetailsUrl = uri + "/alldetails/" + match.params.id;
-  const registerdStatusUrl = uri + "/registered/user/" + match.params.id +"/status";
+  const registerdStatusUrl = uri + "/registered/documents/user/" + match.params.id +"/status";
   var registerdStatus = false;
 
   const userDocumentMapping = {
@@ -75,9 +78,7 @@ const Documents = ({ match }) => {
         method: "GET",
         headers: headers,
       })
-      if( response && response.Status) {
-        registerdStatus = response.Status
-      }
+      registerdStatus = response?.data.Status || false;
       updateButtonsStatus(registerdStatus);
       disableRejectButton(true)
       setBusy(false);
@@ -93,7 +94,7 @@ const Documents = ({ match }) => {
       data.Status = "Documents Approved"
     }
     const res = await axios.post(uri + "/registered/user/" + match.params.id + "/statusupdate", data)
-    console.log(res)
+    history.push(`/registerd/`)
   }
 
   function updateButtonsStatus(status) {
@@ -198,7 +199,7 @@ const Documents = ({ match }) => {
       name="nf-email"
       placeholder="Enter Reject Message"
       disabled={inputFieldStatus}
-      onKeyUp={() => { 
+      onKeyUp={() => {
         if(!registerdStatus) {
           if( document.getElementById('input-elem').value ) {
             disableApproveButton(true)

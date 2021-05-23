@@ -187,10 +187,38 @@ class Register : AppCompatActivity() {
                 }
             })
 
-            if (sharedPreferences.getBoolean("documents", false)) {
-                register_documents.background = getDrawable(R.drawable.button_shape2)
-                d = 1
+        //get payment
+        val call4: Call<Void> = retrofitInterface.getDocuemnts(cookie, phone)
+        call4!!.enqueue(object : Callback<Void> {
+            override fun onResponse(
+                call: Call<Void>,
+                response: Response<Void>
+            ) {
+                if (response.code() == 200) {
+                        register_documents.background = getDrawable(R.drawable.button_shape2)
+                        d = 1
+                } else {
+
+                }
             }
+
+            override fun onFailure(
+                call: Call<Void>,
+                t: Throwable
+            ) {
+                Log.d("Failure", t.message)
+                Toast.makeText(
+                    this@Register, t.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+
+
+//            if (sharedPreferences.getBoolean("documents", false)) {
+//                register_documents.background = getDrawable(R.drawable.button_shape2)
+//                d = 1
+//            }
             register_personal.setOnClickListener {
                 val i = Intent(this, PersonalInfoFormActivity::class.java)
                 i.putExtra("phone", phone)

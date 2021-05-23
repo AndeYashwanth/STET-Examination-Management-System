@@ -29,9 +29,9 @@ app.use(bodyParser.json());
 
 const url = process.env.MONGO_URL;
 const back_url = "http://localhost:" + PORT;
-console.log(back_url);
+var pdfData = {}
 const documentCollections = {
-  Photo: { collection_name: "Photo_Documents", file_name_end: "_photo.png" },
+  "Photo": { collection_name: "Photo_Documents", file_name_end: "_photo.png" },
   "Birth Certificate": {
     collection_name: "Birth_Certificate_Documents",
     file_name_end: "_birthcertificate.png",
@@ -40,7 +40,7 @@ const documentCollections = {
     collection_name: "Community_Certificate_Documents",
     file_name_end: "_communitycertificate.png",
   },
-  Signature: {
+  "Signature": {
     collection_name: "Signature_Documents",
     file_name_end: "_signature.png",
   },
@@ -258,7 +258,7 @@ mongoClient.connect(
         var array = [];
         myDb
           .collection("registration")
-          .find({ })
+          .find({})
           .toArray(function (err, result) {
             if (err) {
               return;
@@ -311,61 +311,33 @@ mongoClient.connect(
       //=============== PDF ROUTES BEGIN =========================================
 
       app.get(
-        "/pdf/:Fname/:Fname/:FHFname/:FHLname/:DOB/:Exam/:Eno/:Address/:Venue/:Exam_date/:Gender/:img",
+        "/pdf",
         function (req, res) {
-          const data = {
-            Fname: req.params.Fname,
-            Lname: req.params.Lname,
-            FHFname: req.params.FHFname,
-            Flname: req.params.FHLname,
-            DOB: req.params.DOB,
-            img: req.params.img,
-            simg: "/sikkim.png",
-            Exam: req.params.Exam,
-            Eno: req.params.Eno,
-            Address: req.params.Address,
-            Venue: req.params.Venue,
-            Exam_date: req.params.Exam_date,
-            Gender: req.params.Gender,
-          };
-          res.render("ejs_admit.html", { data: data });
+          res.render("ejs_admit.html", { data: pdfData });
         }
       );
 
       async function findData({ Phone }) {
-        return new Promise(async function (resolve, reject) {
-          const user = await User.findOne({ Phone: Phone, isRejected: { $exists: false } });
-          if (user == null) resolve(null);
+        try {
+          const user = await myDb.collection("registration").findOne({ Phone: Phone, isRejected: false, Status: "Documents Approved" });
+          if (user == null) return null;
           else {
-            const data = {
-              Fname: user.Fname,
-              Lname: user.Lname,
-              FHFname: user.FHFname,
-              FHLname: user.FHLname,
-              DOB: user.DOB,
-              img: `${user.Phone}_photo.png`,
-              Exam: user.Exam,
-              Eno: user.Eno,
-              Address:
-                user.Hno +
-                user.Area +
-                user.District +
-                user.State +
-                user.Pincode,
-              Venue: user.Venue,
-              Exam_date: user.Exam_date,
-              Gender: user.Gender,
-              Phone: user.Phone,
-              Email: user.Email,
-            };
-            resolve(data);
+            user.Address = user.Hno + "," +
+              user.Area + "," +
+              user.District + "," +
+              user.State + "," +
+              user.Pincode
+            user.img = `${user.Phone}_photo.png`
+            return user;
           }
-        });
+        } catch (err) {
+          res.status(500).send();
+          console.log(err);
+        }
       }
-      app.post("/pdf/generate", function (req, res) {
-        console.log(req.body);
-        var Phone = req.body.Phone;
-        (async () => {
+      app.post("/pdf/generate", async function (req, res) {
+        try {
+          var Phone = req.body.Phone;
           const data = await findData({ Phone }); // declare function
           if (data == null) {
             console.log("Phone number not found");
@@ -373,9 +345,9 @@ mongoClient.connect(
           } else {
             const browser = await puppeteer.launch(); // run browser
             const page = await browser.newPage(); // create new tab
+            pdfData = { ...data, simg: "/stet_logo.jpg" }
             await page.goto(
-              back_url +
-                `/pdf/${data.Fname}/${data.Lname}/${data.FHFname}/${data.FHLname}/${data.DOB}/${data.Exam}/${data.Eno}/${data.Address}/${data.Venue}/${data.Exam_date}/${data.Gender}/${data.img}`,
+              back_url + `/pdf`,
               { waitUntil: "load", timeout: 0 }
             ); // go to page
             await page.emulateMedia("screen"); // use screen media
@@ -387,9 +359,6 @@ mongoClient.connect(
             await browser.close(); // close browser
 
             var bucket = new mongodb.GridFSBucket(myDb);
-            /**
-             * @todo revert unlink and upload file in db.
-             */
             fs.createReadStream("./" + data.Phone + "_admit.pdf")
               .pipe(
                 bucket.openUploadStream(data.Phone + "_admit.pdf", {
@@ -413,7 +382,9 @@ mongoClient.connect(
             await sendMobileAppNotification(data.Phone, title, text, "DownloadAdmitcardActivity")
             res.sendStatus(200);
           }
-        })();
+        } catch (e) {
+          console.log(e);
+         }
       });
       app.post("/pdf/regenerate", async function (req, res) {
         console.log(req.body);
@@ -428,9 +399,9 @@ mongoClient.connect(
           (async () => {
             const browser = await puppeteer.launch(); // run browser
             const page = await browser.newPage(); // create new tab
+            pdfData = { ...data, simg: "/stet_logo.jpg" }
             await page.goto(
-              back_url +
-                `/pdf/${data.fname}/${data.lname}/${data.ffname}/${data.flname}/${data.dob}/${data.exam}/${data.eno}/${data.address}/${data.venue}/${data.exam_date}/${data.sex}/${data.img}`,
+              back_url + `/pdf`,
               { waitUntil: "load", timeout: 0 }
             ); // go to page
             await page.emulateMedia("screen"); // use screen media
@@ -453,11 +424,85 @@ mongoClient.connect(
                 return;
               }
             });
+            const title = "Admit card generated successfully";
+            const text =
+              "Your admit card was generated successfully. Please download by logging in to the app.";
+            await sendMailNotification(data.Email, title, text)
+
+            await sendMobileAppNotification(data.Phone, title, text, "DownloadAdmitcardActivity")
             res.sendStatus(200);
           })();
         }
       });
       app.post("/generate_all", async function (req, res) {
+        User.find({ isRejected: false, Status: "Documents Approved" }, async (err, users) => {
+          if (err) console.log(err);
+
+          users.map(async function (user) {
+            const data = {
+              fname: user.fname,
+              lname: user.lname,
+              ffname: user.ffname,
+              flname: user.flname,
+              dob: user.dob,
+              img: `${user.phone}_photo.png`,
+              exam: user.exam,
+              eno: user.eno,
+              address: user.address,
+              venue: user.venue,
+              exam_date: user.exam_date,
+              sex: user.sex,
+            };
+            const browser = await puppeteer.launch(); // run browser
+            const page = await browser.newPage(); // create new tab
+            pdfData = { ...data, simg: "/stet_logo.jpg" }
+            await page.goto(
+              back_url + `/pdf`,
+              { waitUntil: "load", timeout: 0 }
+            ); // go to page
+            await page.emulateMedia("screen"); // use screen media
+            buffer = await page.pdf({
+              path: user.phone + "_admit.pdf",
+              displayHeaderFooter: true,
+              printBackground: true,
+            }); // generate pdf
+            //upload.single(buffer);
+            await browser.close(); // close browser
+            var bucket = new mongodb.GridFSBucket(myDb);
+
+            fs.createReadStream("./" + user.phone + "_admit.pdf")
+              .pipe(bucket.openUploadStream(user.phone + "_admit.pdf"))
+              .on("finish", function () {
+                console.log("done!");
+              });
+            fs.unlink("./" + user.phone + "_admit.pdf", (err) => {
+              if (err) {
+                console.error(err);
+                return;
+              }
+            });
+            const title = "Admit card generated successfully";
+            const text =
+              "Your admit card was generated successfully. Please download by logging in to the app.";
+            await sendMailNotification(user.Email, title, text)
+
+            await sendMobileAppNotification(user.Phone, title, text, "DownloadAdmitcardActivity")
+          });
+          res.send(200);
+        })
+      });
+
+      app.post("/regenerate_all", function (req, res) {
+        var myquery = {};
+        myDb.collection("fs.files").deleteMany(myquery, function (err, obj) {
+          if (err) throw err;
+          console.log(obj.result.n + " document(s) deleted");
+        });
+        myDb.collection("fs.chunks").deleteMany(myquery, function (err, obj) {
+          if (err) throw err;
+          console.log(obj.result.n + " document(s) deleted");
+        });
+
         User.find({}, async (err, users) => {
           if (err) console.log(err);
 
@@ -478,10 +523,9 @@ mongoClient.connect(
             };
             const browser = await puppeteer.launch(); // run browser
             const page = await browser.newPage(); // create new tab
-            //await page.addStyleTag({path : "../public/card.css"});
+            pdfData = { ...data, simg: "/stet_logo.jpg" }
             await page.goto(
-              back_url +
-                `/pdf/${data.fname}/${data.lname}/${data.ffname}/${data.flname}/${data.dob}/${data.exam}/${data.eno}/${data.address}/${data.venue}/${data.exam_date}/${data.sex}/${data.img}`,
+              back_url + `/pdf`,
               { waitUntil: "load", timeout: 0 }
             ); // go to page
             await page.emulateMedia("screen"); // use screen media
@@ -505,117 +549,49 @@ mongoClient.connect(
                 return;
               }
             });
+            const title = "Admit card generated successfully";
+            const text =
+              "Your admit card was generated successfully. Please download by logging in to the app.";
+            await sendMailNotification(data.Email, title, text)
+
+            await sendMobileAppNotification(data.Phone, title, text, "DownloadAdmitcardActivity")
           });
-          const response = await myDb
-            .collection("firebase-app-token")
-            .findOne({ Phone: user.phone });
-          if (response) {
-            var payload = {
-              notification: {
-                title: title,
-                body: text,
-                click_action: "DownloadAdmitcardActivity",
-              },
-            };
-            const response2 = await firebaseAdmin
-              .messaging()
-              .sendToDevice(response.Token, payload, notification_options);
-            console.log(response2);
-          } else {
-            console.log(`Firebase token not found for user : ${user.phone} `);
-          }
-        }).then(function () {
           res.send(200);
-        });
-      });
-
-      app.post("/regenerate_all", function (req, res) {
-        var myquery = {};
-        myDb.collection("fs.files").deleteMany(myquery, function (err, obj) {
-          if (err) throw err;
-          console.log(obj.result.n + " document(s) deleted");
-        });
-        myDb.collection("fs.chunks").deleteMany(myquery, function (err, obj) {
-          if (err) throw err;
-          console.log(obj.result.n + " document(s) deleted");
-        });
-
-        User.find({}, (err, users) => {
-          if (err) console.log(err);
-
-          users.map(async function (user) {
-            const data = {
-              fname: user.fname,
-              lname: user.lname,
-              ffname: user.ffname,
-              flname: user.flname,
-              dob: user.dob,
-              img: `${user.phone}_photo.png`,
-              exam: user.exam,
-              eno: user.eno,
-              address: user.address,
-              venue: user.venue,
-              exam_date: user.exam_date,
-              sex: user.sex,
-            };
-            const browser = await puppeteer.launch(); // run browser
-            const page = await browser.newPage(); // create new tab
-            //await page.addStyleTag({path : "../public/card.css"});
-            await page.goto(
-              back_url +
-                `/pdf/${data.fname}/${data.lname}/${data.ffname}/${data.flname}/${data.dob}/${data.exam}/${data.eno}/${data.address}/${data.venue}/${data.exam_date}/${data.sex}/${data.img}`,
-              { waitUntil: "load", timeout: 0 }
-            ); // go to page
-            await page.emulateMedia("screen"); // use screen media
-            buffer = await page.pdf({
-              path: user.phone + "_admit.pdf",
-              displayHeaderFooter: true,
-              printBackground: true,
-            }); // generate pdf
-            //upload.single(buffer);
-            await browser.close(); // close browser
-            var bucket = new mongodb.GridFSBucket(myDb);
-
-            fs.createReadStream("./" + user.phone + "_admit.pdf")
-              .pipe(bucket.openUploadStream(user.phone + "_admit.pdf"))
-              .on("finish", function () {
-                console.log("done!");
-              });
-            fs.unlink("./" + user.phone + "_admit.pdf", (err) => {
-              if (err) {
-                console.error(err);
-                return;
-              }
-            });
-          });
-        }).then(function () {
-          res.send(200);
-        });
+        })
       });
 
       app.get("/pdf/admit_card.pdf", function (req, res) {
         res.send(buffer);
       });
 
-      app.post("/register", async function (req, res) {
-        // if (await User.findOne({ username: req.body.eno })) {
-        //     throw 'Username "' + req.body.eno + '" is already taken';
-        // }
-        const user = new User(req.body);
-        await user
-          .save()
-          .then(() => res.json({}))
-          .catch((err) => next(err));
-      });
+      // app.post("/register", async function (req, res) {
+      //   // if (await User.findOne({ username: req.body.eno })) {
+      //   //     throw 'Username "' + req.body.eno + '" is already taken';
+      //   // }
+      //   const user = new User(req.body);
+      //   await user
+      //     .save()
+      //     .then(() => res.json({}))
+      //     .catch((err) => next(err));
+      // });
 
-      app.get("/registered/user/:id/status", async (req, res) =>  {
+      app.get("/registered/:page/user/:id/status/", async (req, res) => {
         try {
           const user_id = req.params.id;
-          const result = await myDb.collection("registration").findOne({ "Phone": user_id }, {projection : {
-            _id: false,
-            Status: true
-          }})
-          const Status = result.Status ? true : false
+          const page = req.params.page;
+          const data = { "Phone": user_id }
+          if (page == "documents") {
+            data.Status = "Details Approved"
+          } else if (page == "userdetails") {
+            data.Status = { $exists: false }
+          }
+          const result = await myDb.collection("registration").findOne(data, {
+            projection: {
+              _id: false,
+              Status: true
+            }
+          })
+          const Status = result ? false : true
           return res.json({ Status });
         } catch (err) {
           res.status(500).send();
@@ -629,31 +605,30 @@ mongoClient.connect(
         const rejectReason = req.body.Reject_Reason;
         const status = req.body.Status
         const data = {
-          "Status": status
+          "Status": status,
+          "isRejected": isRejected
         }
         if (isRejected) {
-          data.isRejected = isRejected,
           data.Reject_Reason = rejectReason;
         }
         try {
           const result = await myDb
-            .collection("registration").updateOne({ "Phone": user_id,  isRejected: { $exists: false }}, { $set : data})
-            if( isRejected ) {
-              /**
-               * @todo set rejected to all
-               */
-            }
-            if(result.result.nModified == 1) {
-              const subject = "Exam Application Status Update"
-              const text = isRejected ? rejectReason : status
-              await sendMobileAppNotification(user_id, subject, text)
-              const userData = await myDb.collection("signups").findOne({ Phone: user_id }, { projection : {
+            .collection("registration").updateOne({ "Phone": user_id }, { $set: data })
+          if (result.result.nModified == 1) {
+            const subject = "Exam Application Status Update"
+            const text = isRejected ? rejectReason : status
+            await sendMobileAppNotification(user_id, subject, text)
+            const userData = await myDb.collection("signups").findOne({ Phone: user_id }, {
+              projection: {
                 _id: false,
                 Email: true
-              }})
-              await sendMailNotification(userData.Email, subject, text)
-              return res.status(200)
-            }
+              }
+            })
+            await sendMailNotification(userData.Email, subject, text)
+            return res.json({ "success": true, "message": "Status update successful" })
+          } else {
+            return res.json({ "success": false, "message": "Status update unsuccessful" })
+          }
           return res.status(200).send();
         } catch (err) {
           res.status(500).send();
@@ -704,7 +679,6 @@ mongoClient.connect(
           subject: subject,
           text: text,
         };
-        console.log(mailOptions)
         transporter.sendMail(mailOptions, function (error, info) {
           if (error) {
             console.log(error);
@@ -730,7 +704,7 @@ mongoClient.connect(
           const response2 = await firebaseAdmin
             .messaging()
             .sendToDevice(response.Token, payload);
-          console.log(response2);
+          console.log(response2.successCount);
         } else {
           console.log(`Firebase token not found for user : ${Phone} `);
         }

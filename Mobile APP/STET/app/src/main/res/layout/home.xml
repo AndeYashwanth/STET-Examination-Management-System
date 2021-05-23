@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    android:layout_height="match_parent" >
+
+    <WebView
+        android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       >
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="match_parent"
+        android:layerType="hardware" />
 
-            android:layout_height="490dp"/>
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

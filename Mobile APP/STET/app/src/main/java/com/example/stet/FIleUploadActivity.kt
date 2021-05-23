@@ -156,12 +156,12 @@ class FIleUploadActivity : AppCompatActivity() {
         )
             check(
                 "bscbacertificate",
-                "Graduation_Certificate_Documents",
+                "BSc_BA_Certificate_Documents",
                 page_7_BScBA_cert_upload
             )
             check(
                 "bedcertificate",
-                "Graduation_Marksheet_Documents",
+                "Bed_Certificate_Documents",
                 page_7_Bed_cert_upload
             )
             check("photo", "Photo_Documents", page_7_photo_upload)
@@ -183,7 +183,7 @@ class FIleUploadActivity : AppCompatActivity() {
                             Context.MODE_PRIVATE
                         )
                         val myEdit = sharedPreferences.edit()
-                        myEdit.putBoolean("documents", true).apply()
+//                        myEdit.putBoolean("documents", true).apply()
                         val i = Intent(this, Register::class.java)
                         i.putExtra("phone", phone)
                         startActivity(i)
