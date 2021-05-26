@@ -1,4 +1,4 @@
-const config = require("./config.json");
+require("dotenv").config();
 const mongoose = require("mongoose");
 const connectionOptions = {
   useCreateIndex: true,
@@ -7,7 +7,7 @@ const connectionOptions = {
   useFindAndModify: false,
 };
 mongoose.connect(
-  process.env.MONGODB_URI || config.connectionString,
+  process.env.MONGO_URL,
   connectionOptions
 );
 mongoose.Promise = global.Promise;
