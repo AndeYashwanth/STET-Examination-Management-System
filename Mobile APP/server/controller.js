@@ -499,7 +499,7 @@ module.exports = async (app, myDb) => {
         return res.status(400).send();
       } else {
         const chunks = await collectionChunks
-          .find({ files_id: docs[0]._id })
+          .find({ files_id: docs[docs.length - 1]._id })
           .sort({ n: 1 })
           .toArray();
         if (!chunks || chunks.length === 0) {
